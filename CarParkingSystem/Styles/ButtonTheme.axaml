@@ -1,0 +1,1007 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:suki="https://github.com/kikipoulet/SukiUI"
+                    xmlns:theme="using:SukiUI.Theme"
+					xmlns:vm="using:CarParkingSystem.ViewModels"
+					xmlns:control="using:CarParkingSystem.Controls"
+					xmlns:unities="using:CarParkingSystem.Unities"
+					xmlns:assists="using:CarParkingSystem.Assists">
+
+			<ResourceDictionary.ThemeDictionaries>
+				<ResourceDictionary x:Key='Light'>
+					<SolidColorBrush x:Key='BackgroundBrush'>#f8f7f4</SolidColorBrush>
+					<SolidColorBrush x:Key='BorderBrush'>#e2e2e2</SolidColorBrush>
+					<SolidColorBrush x:Key='ActiveBrush'>#0a59f7</SolidColorBrush>
+					<SolidColorBrush x:Key='ForegroundBrush'>#222222</SolidColorBrush>
+				</ResourceDictionary>
+				<ResourceDictionary x:Key='Dark'>
+					<SolidColorBrush x:Key='BackgroundBrush'>#18243a</SolidColorBrush>
+					<SolidColorBrush x:Key='BorderBrush'>#555555</SolidColorBrush>
+					<SolidColorBrush x:Key='ActiveBrush'>#0a59f7</SolidColorBrush>
+					<SolidColorBrush x:Key='ForegroundBrush'>#eff0f1</SolidColorBrush>
+				</ResourceDictionary>
+			</ResourceDictionary.ThemeDictionaries>
+	
+	<!--<Design.PreviewWith>
+		<Border Padding="20"/>
+	</Design.PreviewWith>-->
+  <!-- Add Resources Here -->
+	<!--Color-->
+	<!--<Color x:Key="AccentColor" R="92" G="194" B="207"></Color>
+	<Color x:Key="AccentColor15" R="92" G="194" B="207" A="38"></Color>-->
+	<!--Themes Color-->
+	<SolidColorBrush x:Key="Themes" Color="#FFFFFF"></SolidColorBrush>
+	<SolidColorBrush x:Key="Accent"   Color="#5CC2CF"></SolidColorBrush>
+	<SolidColorBrush x:Key="Support" Color="#C5D017"></SolidColorBrush>
+	<SolidColorBrush x:Key="Accent75"   Color="#5CC2CF" Opacity="0.75"></SolidColorBrush>
+	<SolidColorBrush x:Key="Support75" Color="#C5D017" Opacity="0.75"></SolidColorBrush>
+	<SolidColorBrush x:Key="Accent50"   Color="#5CC2CF" Opacity="0.50"></SolidColorBrush>
+	<SolidColorBrush x:Key="Support50" Color="#C5D017" Opacity="0.50"></SolidColorBrush>
+	<SolidColorBrush x:Key="Accent25"   Color="#5CC2CF" Opacity="0.25"></SolidColorBrush>
+	<SolidColorBrush x:Key="Support25" Color="#C5D017" Opacity="0.25"></SolidColorBrush>
+	<SolidColorBrush x:Key="Accent15"   Color="#5CC2CF" Opacity="0.15"></SolidColorBrush>
+	<SolidColorBrush x:Key="Support15" Color="#C5D017" Opacity="0.15"></SolidColorBrush>
+
+	<!--Element Color-->
+	<SolidColorBrush x:Key="Emphasise" Color="#000000"></SolidColorBrush>
+	<SolidColorBrush x:Key="Text" Color="#333333"></SolidColorBrush>
+	<SolidColorBrush x:Key="EmphasiseGray" Color="#AAAAAA"></SolidColorBrush>
+	<SolidColorBrush x:Key="Border" Color="#CCCCCC"></SolidColorBrush>
+	<SolidColorBrush x:Key="Disabled" Color="#E5E5E5"></SolidColorBrush>
+	<SolidColorBrush x:Key="CardBack" Color="#F5F5F5"></SolidColorBrush>
+
+	<!--Status Color-->
+	<SolidColorBrush x:Key="Success" Color="#00C236"></SolidColorBrush>
+	<SolidColorBrush x:Key="Info" Color="#18A0FB"></SolidColorBrush>
+	<SolidColorBrush x:Key="Warning" Color="#F3C830"></SolidColorBrush>
+	<SolidColorBrush x:Key="Failed" Color="#FF5353"></SolidColorBrush>
+	<SolidColorBrush x:Key="Success75" Color="#00C236" Opacity="0.75"></SolidColorBrush>
+	<SolidColorBrush x:Key="Info75" Color="#18A0FB" Opacity="0.75"></SolidColorBrush>
+	<SolidColorBrush x:Key="Warning75" Color="#F3C830" Opacity="0.75"></SolidColorBrush>
+	<SolidColorBrush x:Key="Failed75" Color="#FF5353" Opacity="0.75"></SolidColorBrush>
+	<SolidColorBrush x:Key="Success50" Color="#00C236" Opacity="0.5"></SolidColorBrush>
+	<SolidColorBrush x:Key="Info50" Color="#18A0FB" Opacity="0.5"></SolidColorBrush>
+	<SolidColorBrush x:Key="Warning50" Color="#F3C830" Opacity="0.5"></SolidColorBrush>
+	<SolidColorBrush x:Key="Failed50" Color="#FF5353" Opacity="0.5"></SolidColorBrush>
+	<SolidColorBrush x:Key="Success25" Color="#00C236" Opacity="0.25"></SolidColorBrush>
+	<SolidColorBrush x:Key="Info25" Color="#18A0FB" Opacity="0.25"></SolidColorBrush>
+	<SolidColorBrush x:Key="Warning25" Color="#F3C830" Opacity="0.25"></SolidColorBrush>
+	<SolidColorBrush x:Key="Failed25" Color="#FF5353" Opacity="0.25"></SolidColorBrush>
+	<SolidColorBrush x:Key="Success15" Color="#00C236" Opacity="0.15"></SolidColorBrush>
+	<SolidColorBrush x:Key="Info15" Color="#18A0FB" Opacity="0.15"></SolidColorBrush>
+	<SolidColorBrush x:Key="Warning15" Color="#F3C830" Opacity="0.15"></SolidColorBrush>
+	<SolidColorBrush x:Key="Failed15" Color="#FF5353" Opacity="0.15"></SolidColorBrush>
+
+	<ControlTheme x:Key="PagerButtonTheme" TargetType="control:PagerButton">
+		<Setter Property="BorderThickness" Value="1.2" />
+		<Setter Property="BorderBrush" Value="{DynamicResource SukiMediumBorderBrush}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource SmallCornerRadius}" />
+		<Setter Property="Background" Value="{DynamicResource SukiBackground}" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border x:Name="RootBorder" CornerRadius="4" BorderThickness="1" Width="32" Height="32" Margin="4,0" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+					<Border.Transitions>
+						<Transitions>
+							<DoubleTransition Property="Opacity" Duration="0:0:0.35"></DoubleTransition>
+						</Transitions>
+					</Border.Transitions>
+					<ContentPresenter Foreground="{TemplateBinding Foreground}" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^ /template/ ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource SukiText}" />
+			<Setter Property="FontSize" Value="15" />
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Foreground" Duration="0:0:0.3" />
+				</Transitions>
+			</Setter>
+		</Style>
+
+		<Style Selector="^:disabled /template/ Border#RootBorder">
+			<Setter Property="Opacity" Value="0.5"></Setter>
+		</Style>
+
+		<!--  Events For Basic Button  -->
+		<Style Selector="^:pointerover">
+			<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}"/>
+			<Style Selector="^ /template/ TextBlock">
+				<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+
+			<Style Selector="^ /template/ Border">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			<Style Selector="^ /template/ TextBlock">
+				<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+			<Style Selector="^ /template/ Border">
+				<!--  <Setter Property="Background" Value="{DynamicResource SukiCardBackground}" /> -->
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+				<Setter Property="RenderTransform">
+					<Setter.Value>
+						<ScaleTransform ScaleX="0.97" ScaleY="0.97" />
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style Selector="^ /template/ Border">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+				<Setter Property="RenderTransform">
+					<Setter.Value>
+						<ScaleTransform ScaleX="0.95" ScaleY="0.95" />
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+	
+	<ControlTheme x:Key="PagerButtonHolderTheme" TargetType="control:PagerButton">
+		<Setter Property="IsEnabled" Value="False"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border x:Name="b1" CornerRadius="4" BorderThickness="1" Width="32" Height="32" Margin="4,0"  Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+					<Border.Transitions>
+						<Transitions>
+							<DoubleTransition Property="Opacity" Duration="0:0:0.35"></DoubleTransition>
+						</Transitions>
+					</Border.Transitions>
+					<ContentPresenter Foreground="{TemplateBinding Foreground}" Content="..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^ /template/ ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource SukiText}" />
+			<Setter Property="FontSize" Value="15" />
+			<Setter Property="Transitions">
+				<Transitions>
+					<BrushTransition Property="Foreground" Duration="0:0:0.3" />
+				</Transitions>
+			</Setter>
+		</Style>
+
+		<Style Selector="^:disabled /template/ Border#RootBorder">
+			<Setter Property="Opacity" Value="0.5"></Setter>
+		</Style>
+
+		<!--  Events For Basic Button  -->
+		<Style Selector="^:pointerover">
+			<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}"/>
+			<Style Selector="^ /template/ TextBlock">
+				<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+
+			<Style Selector="^ /template/ Border">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			<Style Selector="^ /template/ TextBlock">
+				<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+			<Style Selector="^ /template/ Border">
+				<!--  <Setter Property="Background" Value="{DynamicResource SukiCardBackground}" /> -->
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+				<Setter Property="RenderTransform">
+					<Setter.Value>
+						<ScaleTransform ScaleX="0.97" ScaleY="0.97" />
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style Selector="^ /template/ Border">
+				<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+				<Setter Property="RenderTransform">
+					<Setter.Value>
+						<ScaleTransform ScaleX="0.95" ScaleY="0.95" />
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="PagerButtonTheme2" TargetType="Button">
+		<Setter Property="Background" Value="Blue"/>
+		<Setter Property="Foreground" Value="Yellow"/>
+		<Setter Property="Padding" Value="8"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Ellipse Fill="{TemplateBinding Background}"
+							 HorizontalAlignment="Stretch"
+							 VerticalAlignment="Stretch"/>
+					<ContentPresenter x:Name="PART_ContentPresenter"
+									  Content="{TemplateBinding Content}"
+									  Margin="{TemplateBinding Padding}"/>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="DataGridHeaderToggleButton" TargetType="Button">
+		<Setter Property="Background" Value="Red"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+					<ContentPresenter Grid.ColumnSpan="2" Foreground="Green" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<PathIcon Grid.Row="0" Grid.Column="1" x:Name="upArrow"  Margin="0,0,0,1" Data="M0,0 3,0 1.5,-3 Z" Foreground="Red"/>
+					<PathIcon Grid.Row="1" Grid.Column="1" x:Name="downArrow"  Margin="0,1,0,0" Data="M0,0 3,0 1.5,3 Z" Foreground="Red"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="SukiSideMenuTreeViewStyle" TargetType="suki:SukiSideMenu">
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<SplitView DisplayMode="CompactInline"
+                           IsPaneOpen="{TemplateBinding IsMenuExpanded}"
+                           OpenPaneLength="{TemplateBinding OpenPaneLength}">
+					<SplitView.Pane>
+						<Border Margin="{Binding ShowTitlebarBackground, Converter={x:Static suki:WindowBackgroundToMarginConverter.Instance}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type suki:SukiWindow}}}"
+                        >
+							<Grid Background="Transparent">
+								<Grid.Styles>
+									<Style Selector="suki|GlassCard">
+										<!-- in case someone use sukisidemenu without sukiwindow -->
+										<Setter Property="CornerRadius" Value="0"></Setter>
+									</Style>
+								</Grid.Styles>
+								<suki:GlassCard Name="Glass"
+                                                BorderThickness="0,0,1,0"
+                                                CornerRadius="{Binding ShowTitlebarBackground, Converter={x:Static suki:WindowBackgroundToCornerRadiusConverter.Instance}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type suki:SukiWindow}}}"
+                                                IsAnimated="False" />
+								<DockPanel>
+									<Button Name="PART_SidebarToggleButton"
+                                            Margin="7"
+                                            HorizontalAlignment="{TemplateBinding TogglePaneButtonPosition}"
+                                            VerticalAlignment="Top"
+                                            Classes="Basic"
+                                            Cursor="Hand"
+                                            DockPanel.Dock="Top"
+											IsVisible="{TemplateBinding SidebarToggleEnabled}">
+										<Panel>
+											<!--Data="{x:Static suki:Icons.ChevronLeft content:Icons.ChevronLeft}"-->
+											<PathIcon Name="PART_ExpandIcon"
+                                                      Classes="Flippable"
+                                                        Width="12"
+                                                        Height="12"
+                                                        Data="{x:Static suki:Icons.ChevronLeft}"
+                                                        Foreground="{DynamicResource SukiText}">
+												<PathIcon.Transitions>
+													<Transitions>
+														<TransformOperationsTransition Property="RenderTransform" Duration="{StaticResource MediumAnimationDuration}" />
+													</Transitions>
+												</PathIcon.Transitions>
+											</PathIcon>
+										</Panel>
+									</Button>
+									<Grid MinHeight="{TemplateBinding HeaderMinHeight}"
+                                          DockPanel.Dock="Top"
+                                          IsVisible="{TemplateBinding IsMenuExpanded}">
+										<ContentPresenter Content="{TemplateBinding HeaderContent}" />
+									</Grid>
+									<ContentControl Margin="0,0,0,12"
+                                                    Content="{TemplateBinding FooterContent}"
+                                                    DockPanel.Dock="Bottom"
+                                                    IsVisible="{TemplateBinding IsMenuExpanded}" />
+									<Grid Name="PART_Spacer"
+                                          Height="15"
+                                          DockPanel.Dock="Top" />
+									<DockPanel>
+										<StackPanel IsVisible="{TemplateBinding IsSearchEnabled}" DockPanel.Dock="Top">
+											<StackPanel.Styles>
+												<Style Selector="suki|GlassCard.Search:pointerover, suki|GlassCard.Search:focus-within">
+													<Setter Property="Width" Value="190"></Setter>
+													<Setter Property="CornerRadius" Value="12" />
+												</Style>
+											</StackPanel.Styles>
+											<suki:GlassCard IsVisible="{TemplateBinding IsMenuExpanded}" Classes="Search" HorizontalAlignment="Right" IsAnimated="False" Width="42" Margin="15,10,15,15" CornerRadius="22" Height="42">
+												<suki:GlassCard.Transitions>
+													<Transitions>
+														<CornerRadiusTransition Property="CornerRadius" Duration="0:0:0.35"></CornerRadiusTransition>
+														<DoubleTransition Property="Width" Duration="0:0:0.35"></DoubleTransition>
+													</Transitions>
+												</suki:GlassCard.Transitions>
+												<DockPanel Margin="-3,-1,0,0">
+													<!--Data="{x:Static content:Icons.Search}" -->
+													<PathIcon Width="13" DockPanel.Dock="Left" VerticalAlignment="Center" Foreground="{DynamicResource SukiLowText}"
+															  Height="13"
+															  Data="{x:Static suki:Icons.Search}" />
+													<TextBox theme:TextBoxExtensions.AddDeleteButton="True" Classes="NoShadow" Text="{TemplateBinding SearchText, Mode=TwoWay}" BorderThickness="0" Watermark="Search"/>
+												</DockPanel>
+											</suki:GlassCard>
+
+											<!--  <Border Height="1" Margin="20,0,20,15" Background="{DynamicResource SukiBorderBrush}"/> -->
+										</StackPanel>
+										<ScrollViewer Name="PART_ScrollViewer"
+                                                      AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                                                      Background="{TemplateBinding Background}"
+                                                      BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}"
+                                                      Classes="Stack"
+                                                      HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                                                      HorizontalSnapPointsType="{TemplateBinding (ScrollViewer.HorizontalSnapPointsType)}"
+                                                      IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                                                      VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+                                                      VerticalSnapPointsType="{TemplateBinding (ScrollViewer.VerticalSnapPointsType)}">
+											<StackPanel theme:StackPanelExtensions.AnimatedScroll="True">
+												<ItemsPresenter Name="PART_ItemsPresenter"
+																Margin="{TemplateBinding Padding}"
+																theme:ItemsPresenterExtensions.AnimatedScroll="True"
+																ItemsPanel="{TemplateBinding ItemsPanel}" IsVisible="False"/>
+												
+												<TreeView Margin="10" IsVisible="True"
+                    ItemsSource="{TemplateBinding ItemsSource}"
+                    SelectionMode="Single" SelectedItem="{Binding ActivePage}" x:DataType="vm:MainWindowViewModel">
+													<TreeView.ItemTemplate>
+														<TreeDataTemplate ItemsSource="{Binding SubPages}" DataType="vm:DemoPageBase">
+															<Border HorizontalAlignment="Left"
+																			BorderBrush="Gray" BorderThickness="1"
+																			CornerRadius="5" Padding="15 3">
+																<TextBlock Text="{Binding DisplayName}" />
+															</Border>
+														</TreeDataTemplate>
+													</TreeView.ItemTemplate>
+												</TreeView>
+											</StackPanel>
+
+										</ScrollViewer>
+									</DockPanel>
+								</DockPanel>
+							</Grid>
+						</Border>
+					</SplitView.Pane>
+					<Border Name="ContentBorder"
+                            Margin="0,0,0,0"
+                            Background="{DynamicResource SukiBackground}"
+                            BorderBrush="{DynamicResource SukiBorderBrush}"
+                            BorderThickness="0,0,0,0">
+						<suki:SukiTransitioningContentControl Name="PART_TransitioningContentControl" />
+					</Border>
+				</SplitView>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^[IsToggleButtonVisible=False]">
+			<Style Selector="^[IsMenuExpanded=False]">
+				<Style Selector="^ /template/ Button#PART_SidebarToggleButton">
+					<Setter Property="Opacity" Value="0" />
+					<Setter Property="IsVisible" Value="False" />
+				</Style>
+			</Style>
+			<Style Selector="^[IsMenuExpanded=True]">
+				<Style Selector="^ /template/ Button#PART_SidebarToggleButton">
+					<Setter Property="Opacity" Value="0" />
+					<Setter Property="IsHitTestVisible" Value="False" />
+				</Style>
+			</Style>
+		</Style>
+		<Style Selector="^[IsMenuExpanded=False]">
+			<Style Selector="^ /template/ PathIcon#PART_ExpandIcon">
+				<Setter Property="RenderTransform" Value="rotate(-180deg)" />
+			</Style>
+			<Style Selector="^ /template/ Grid#PART_Spacer">
+				<Setter Property="Height" Value="0" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="NavigateTreeViewItem" TargetType="TreeViewItem">
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Background" Value="{DynamicResource TreeViewItemBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource TreeViewItemBorderThemeThickness}" />
+		<Setter Property="Foreground" Value="{DynamicResource TreeViewItemForeground}" />
+		<Setter Property="MinHeight" Value="{DynamicResource TreeViewItemMinHeight}" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<StackPanel>
+					<!--Background="{TemplateBinding Background}"-->
+					<Border Name="PART_LayoutRoot"
+							Classes="TreeViewItemLayoutRoot"
+							Focusable="True"
+							Background="Pink"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							MinHeight="{TemplateBinding MinHeight}"
+							TemplatedControl.IsTemplateFocusTarget="True">
+						<Grid Name="PART_Header"
+								ColumnDefinitions="Auto, *"
+								Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
+							<Panel Name="PART_ExpandCollapseChevronContainer"
+									Margin="{StaticResource TreeViewItemExpandCollapseChevronMargin}">
+								<ToggleButton Name="PART_ExpandCollapseChevron"
+												Theme="{StaticResource FluentTreeViewExpandCollapseChevron}"
+												Focusable="False"
+												IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" />
+							</Panel>
+							<ContentPresenter Name="PART_HeaderPresenter"
+												Grid.Column="1"
+												Focusable="False"
+												Background="Transparent"
+												Content="{TemplateBinding Header}"
+												ContentTemplate="{TemplateBinding HeaderTemplate}"
+												HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+												VerticalAlignment="{TemplateBinding VerticalAlignment}"
+												Margin="{TemplateBinding Padding}" />
+						</Grid>
+					</Border>
+					<ItemsPresenter Name="PART_ItemsPresenter"
+									IsVisible="{TemplateBinding IsExpanded}"
+									ItemsPanel="{TemplateBinding ItemsPanel}" />
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<!-- 在 App.axaml 或 Window.Resources 中定义 -->
+	<ControlTheme x:Key="TreeViewItem3" TargetType="TreeViewItem">
+		<!-- 基本属性设置 -->
+		<Setter Property="Background" Value="Red"/>
+		<Setter Property="Padding" Value="5,2"/>
+
+		<!-- 核心模板 -->
+		<Setter Property="Template">
+			<ControlTemplate>
+				<StackPanel Spacing="3">
+					<!-- 头部区域 -->
+					<Border Name="PART_HeaderBorder"
+							Background="{TemplateBinding Background}"
+							CornerRadius="4"
+							Padding="{TemplateBinding Padding}">
+						<Grid ColumnDefinitions="*,Auto">
+							<!-- 内容展示 -->
+							<ContentPresenter Grid.Column="0"
+											  Content="{TemplateBinding Header}"
+											  VerticalAlignment="Center"/>
+							<!-- 展开箭头 -->
+							<ToggleButton Name="PART_Expander"
+										 Grid.Column="1"
+										 Width="16"
+										 IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+										 Focusable="False">
+								<PathIcon Data="{x:Static suki:Icons.CircleOutlineClose}"
+									  Foreground="Gray"
+									  HorizontalAlignment="Center"/>
+							</ToggleButton>
+
+						</Grid>
+					</Border>
+
+					<!-- 子项容器 -->
+					<ItemsPresenter Name="PART_ItemsPresenter"
+									Margin="15,0,0,0"
+									IsVisible="{TemplateBinding IsExpanded}"/>
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- 状态样式 -->
+		<Style Selector="^:pointerover /template/ Border#PART_HeaderBorder">
+			<Setter Property="Background" Value="#F0F0F0"/>
+		</Style>
+
+		<Style Selector="^:selected /template/ Border#PART_HeaderBorder">
+			<Setter Property="Background" Value="#E0E0FF"/>
+			<Setter Property="BorderBrush" Value="Blue"/>
+		</Style>
+
+		<!-- 展开箭头动画 -->
+		<!--<Style Selector="ToggleButton#PART_Expander">
+			<Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
+			<Setter Property="RenderTransform">
+				<RotateTransform Angle="-90"/>
+			</Setter>
+			<Style Selector="^:checked">
+				<Setter Property="RenderTransform">
+					<RotateTransform Angle="0"/>
+				</Setter>
+			</Style>
+		</Style>-->
+	</ControlTheme>
+
+<ControlTheme x:Key="AntDesignTreeViewToggleButtonStyle" TargetType="ToggleButton">
+		<Setter Property="Margin" Value="{StaticResource Margin}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<Border Background="Transparent"
+						Width="{TemplateBinding Width}"
+						Height="{TemplateBinding Height}">
+					<!--Data="{StaticResource RightIconGeometry}" Width="{DynamicResource TreeViewItemExpandCollapseChevronSize}" Height="{DynamicResource TreeViewItemExpandCollapseChevronSize}"
+							 -->
+					<PathIcon x:Name="ChevronPath"
+							   Data="{x:Static suki:Icons.Plus}"
+							  Foreground="{TemplateBinding Foreground}" 
+							  HorizontalAlignment="Center"
+							  VerticalAlignment="Center"
+							  RenderTransform ="none">
+						<!--<PathIcon.Transitions>
+							<Transitions>
+								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+							</Transitions>
+						</PathIcon.Transitions>-->	
+					</PathIcon>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:checked /template/ PathIcon#ChevronPath">
+			<!--<Setter Property="RenderTransform" Value="rotate(90deg)" />-->
+			<Setter Property="Data" Value="{x:Static suki:Icons.Minus}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="AntDesignTreeViewLikeVsToggleButtonStyle" TargetType="ToggleButton">
+		<Setter Property="Margin" Value="{StaticResource Margin}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<Border Background="Transparent">   
+					<Border x:Name="PART_Container"
+							Width="12" Height="12"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center">
+						<Border.Transitions>
+							<Transitions>
+								<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+							</Transitions>
+						</Border.Transitions>
+						<Viewbox >
+							<Path x:Name="ChevronPath"
+								  Data="{StaticResource RightGeometry}"
+								  Stretch="Uniform"
+								  Stroke="{TemplateBinding Foreground}"
+								  StrokeThickness="40"/>
+						</Viewbox> 
+					</Border>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ Border#PART_Container">
+				<Setter Property="RenderTransform" Value="rotate(45deg)" />
+			</Style>
+			<Style Selector="^ /template/ Path#ChevronPath">
+				<Setter Property="StrokeThickness" Value="0" />
+				<Setter Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}" />
+			</Style>
+		</Style>
+		
+	</ControlTheme>
+
+
+	<!--x:Key="{x:Type TreeViewItem}"-->
+	<ControlTheme x:Key="TreeViewItemTt" TargetType="TreeViewItem">
+		<!--<Setter Property="MinHeight" Value="{DynamicResource TreeViewItemMinHeight}"/>
+		<Setter Property="Background" Value="{DynamicResource TreeViewItemBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource TreeViewItemForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverBackground" Value="{DynamicResource TreeViewItemPointerOverBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverForeground" Value="{DynamicResource TreeViewItemPointerOverForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverBorderBrush" Value="{DynamicResource TreeViewItemPointerOverBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedBackground" Value="{DynamicResource TreeViewItemPressedBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedForeground" Value="{DynamicResource TreeViewItemPressedForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedBorderBrush" Value="{DynamicResource TreeViewItemPressedBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedBackground" Value="{DynamicResource TreeViewItemSelectedBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedForeground" Value="{DynamicResource TreeViewItemSelectedForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedBorderBrush" Value="{DynamicResource TreeViewItemSelectedBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedNoFocusForeground" Value="{DynamicResource TreeViewItemSelectedNoFocusForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.InnerBorderBackground" Value="{DynamicResource TreeViewItemInnerBorderBackground}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />-->
+		<Setter Property="Template">
+			<ControlTemplate TargetType="TreeViewItem">
+					<StackPanel>
+						<Border x:Name="{x:Static unities:PARTNameHelper.PART_LayoutRoot}"
+								Focusable="True"
+								MinHeight="{TemplateBinding MinHeight}"
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{TemplateBinding CornerRadius}"
+								Padding="{TemplateBinding Padding}"
+								TemplatedControl.IsTemplateFocusTarget="True">
+
+							<Grid  ColumnDefinitions="Auto, Auto, *">
+								<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource TreeViewItemInnerBorderWidth}">
+									<Border x:Name="PART_InnerBorder"
+											Height="{DynamicResource TreeViewItemInnerBorderHeight}"
+											Background="{TemplateBinding assists:TreeViewItemAssists.InnerBorderBackground}"
+											BorderThickness="0"
+											IsVisible="False"/>
+								</Panel>
+
+								<Panel Grid.Column="1" Width="{DynamicResource TreeViewItemDecoratorSpacing}"/>
+
+								<Grid x:Name="{x:Static unities:PARTNameHelper.PART_Header}"
+									  Grid.Column="2"
+									  ColumnDefinitions="*, Auto"
+									  Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
+
+									<Panel x:Name="{x:Static unities:PARTNameHelper.PART_ExpandCollapseChevronContainer}"
+										   Grid.Column="1"
+										   Margin="{StaticResource TreeViewItemExpandCollapseChevronMargin}">
+										<ToggleButton x:Name="{x:Static unities:PARTNameHelper.PART_ExpandCollapseChevron}"
+													  Focusable="False"
+													  Foreground="{Binding #PART_HeaderPresenter.Foreground}"
+													  Theme="{StaticResource AntDesignTreeViewToggleButtonStyle}"
+													  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
+									</Panel>
+									<ContentPresenter x:Name="PART_HeaderPresenter"
+													  Grid.Column="0"
+													  Focusable="False"
+													  Background="Transparent"
+													  Content="{TemplateBinding Header}"
+													  ContentTemplate="{TemplateBinding HeaderTemplate}"
+													  HorizontalAlignment="Stretch"
+													  VerticalAlignment="Stretch"
+													  HorizontalContentAlignment="Left"
+													  VerticalContentAlignment="Center" />
+								</Grid>
+
+							</Grid>
+
+
+						</Border>
+
+						<ItemsPresenter x:Name="PART_ItemsPresenter"
+										IsVisible="{TemplateBinding IsExpanded}"
+										ItemsPanel="{TemplateBinding ItemsPanel}" />
+					</StackPanel>
+				</ControlTemplate>
+		</Setter>
+
+		<!--<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+			<Setter Property="Theme" Value="{StaticResource AntDesignTreeViewToggleButtonStyle}" />
+		</Style>
+		--><!--  PointerOver state  --><!--
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBorderBrush}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverForeground}" />
+			</Style>
+		</Style>
+
+		--><!--  Pressed state  --><!--
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pressed">
+			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBorderBrush}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PressedForeground}" />
+			</Style>
+		</Style>
+
+		--><!--  Selected state  --><!--
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedForeground}" />
+			</Style>
+
+			<Style  Selector="^ /template/ Border#PART_InnerBorder">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+
+			--><!--  Selected PointerOver state  --><!--
+			<Style Selector="^:pointerover">
+
+			</Style>
+
+			--><!--  Selected Pressed state  --><!--
+			<Style Selector="^:pressed">
+				<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+			</Style>
+
+			<Style Selector="^:not(:focus) /template/ ContentPresenter#PART_HeaderPresenter">
+				--><!--<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedNoFocusForeground}" />--><!--
+			</Style>
+
+			--><!--  Disabled Selected state  --><!--
+			<Style Selector="^:disabled">
+				<Setter Property="Opacity" Value="0.5"/>
+			</Style>
+
+		</Style>
+		--><!--  Disabled state  --><!--
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
+		</Style>
+
+		<Style Selector="^:empty">
+			<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+			<Style Selector="^ /template/ Panel#PART_ExpandCollapseChevronContainer">
+				<Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
+			</Style>
+		</Style>-->
+
+		<!--<Style Selector="^.remove">
+			<Style  Selector="^ /template/ Panel#PART_DecoratorContainer">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.title">
+			<Style Selector="^ /template/ Panel#PART_ExpandCollapseChevronContainer">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+		</Style>-->
+
+	</ControlTheme>
+
+	<ControlTheme x:Key="TreeViewItem" TargetType="TreeViewItem">
+		<Setter Property="MinHeight" Value="{DynamicResource TreeViewItemMinHeight}"/>
+		<Setter Property="Background" Value="{DynamicResource TreeViewItemBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource TreeViewItemForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverBackground" Value="{DynamicResource TreeViewItemPointerOverBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverForeground" Value="{DynamicResource TreeViewItemPointerOverForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.PointerOverBorderBrush" Value="{DynamicResource TreeViewItemPointerOverBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedBackground" Value="{DynamicResource TreeViewItemPressedBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedForeground" Value="{DynamicResource TreeViewItemPressedForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.PressedBorderBrush" Value="{DynamicResource TreeViewItemPressedBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedBackground" Value="{DynamicResource TreeViewItemSelectedBackground}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedForeground" Value="{DynamicResource TreeViewItemSelectedForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedBorderBrush" Value="{DynamicResource TreeViewItemSelectedBorderBrush}" />
+		<Setter Property="assists:TreeViewItemAssists.SelectedNoFocusForeground" Value="{DynamicResource TreeViewItemSelectedNoFocusForeground}" />
+		<Setter Property="assists:TreeViewItemAssists.InnerBorderBackground" Value="{DynamicResource TreeViewItemInnerBorderBackground}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource Padding}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="TreeViewItem">
+				<StackPanel>
+					<Border x:Name="{x:Static unities:PARTNameHelper.PART_LayoutRoot}"
+							Focusable="True"
+							MinHeight="{TemplateBinding MinHeight}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Padding="{TemplateBinding Padding}"
+							TemplatedControl.IsTemplateFocusTarget="True">
+
+						<Grid ColumnDefinitions="Auto,Auto, *">
+							<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource TreeViewItemInnerBorderWidth}">
+								<Border x:Name="PART_InnerBorder"
+										Height="{DynamicResource TreeViewItemInnerBorderHeight}"
+										Background="{TemplateBinding assists:TreeViewItemAssists.InnerBorderBackground}"
+										BorderThickness="0"
+										IsVisible="False"/>
+							</Panel>
+
+							<Panel Grid.Column="1" IsVisible="False" Width="{DynamicResource TreeViewItemDecoratorSpacing}"/>
+
+							<Grid x:Name="{x:Static unities:PARTNameHelper.PART_Header}"
+								  Grid.Column="2"
+								  ColumnDefinitions="Auto, *"
+								  Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
+
+								<Panel x:Name="{x:Static unities:PARTNameHelper.PART_ExpandCollapseChevronContainer}"
+									   Grid.Column="0"
+									   Margin="{StaticResource TreeViewItemExpandCollapseChevronMargin}">
+									<ToggleButton x:Name="{x:Static unities:PARTNameHelper.PART_ExpandCollapseChevron}"
+												  Focusable="False"
+												  Foreground="{Binding #PART_HeaderPresenter.Foreground}"
+												  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
+								</Panel>
+								<ContentPresenter x:Name="PART_HeaderPresenter"
+												  Grid.Column="1"
+												  Focusable="False"
+												  Background="Transparent"
+												  Content="{TemplateBinding Header}"
+												  ContentTemplate="{TemplateBinding HeaderTemplate}"
+												  HorizontalAlignment="Stretch"
+												  VerticalAlignment="Stretch"
+												  HorizontalContentAlignment="Left"
+												  VerticalContentAlignment="Center"/>
+							</Grid>
+						</Grid>
+
+					</Border>
+
+					<ItemsPresenter x:Name="PART_ItemsPresenter"
+									IsVisible="{TemplateBinding IsExpanded}"
+									ItemsPanel="{TemplateBinding ItemsPanel}" />
+
+					<!-- <Grid> -->
+					<!-- <ItemsPresenter x:Name="PART_ItemsPresenter" -->
+					<!-- IsVisible="{TemplateBinding IsExpanded}" -->
+					<!-- ItemsPanel="{TemplateBinding ItemsPanel}" /> -->
+
+					<!-- <Border  BorderBrush="Red" -->
+					<!--  BorderThickness="1,0,0,0" -->
+					<!--  HorizontalAlignment="Left" -->
+					<!--  Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemxLeftMarginConverter}, ConverterParameter={StaticResource TreeViewItemExpandCollapseChevronMargin}}">  -->
+					<!-- </Border> -->
+
+					<!-- </Grid> -->
+
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+			<Setter Property="Theme" Value="{StaticResource AntDesignTreeViewToggleButtonStyle}" />
+		</Style>
+		<!--  PointerOver state  -->
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBorderBrush}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverForeground}" />
+			</Style>
+		</Style>
+
+		<!--  Pressed state  -->
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pressed">
+			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBorderBrush}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PressedForeground}" />
+			</Style>
+		</Style>
+
+		<!--  Selected state  -->
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedForeground}" />
+			</Style>
+
+			<Style  Selector="^ /template/ Border#PART_InnerBorder">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+
+			<!--  Selected PointerOver state  -->
+			<Style Selector="^:pointerover">
+
+			</Style>
+
+			<!--  Selected Pressed state  -->
+			<Style Selector="^:pressed">
+				<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+			</Style>
+
+			<Style Selector="^:not(:focus) /template/ ContentPresenter#PART_HeaderPresenter">
+				<!--<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedNoFocusForeground}" />-->
+			</Style>
+
+			<!--  Disabled Selected state  -->
+			<Style Selector="^:disabled">
+				<Setter Property="Opacity" Value="0.5"/>
+			</Style>
+
+		</Style>
+		<!--  Disabled state  -->
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
+		</Style>
+
+		<Style Selector="^:empty">
+			<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+			<Style Selector="^ /template/ Panel#PART_ExpandCollapseChevronContainer">
+				<Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.end">
+			<Setter Property="Template">
+				<ControlTemplate TargetType="TreeViewItem">
+					<StackPanel>
+						<Border x:Name="{x:Static unities:PARTNameHelper.PART_LayoutRoot}"
+								Focusable="True"
+								MinHeight="{TemplateBinding MinHeight}"
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}"
+								CornerRadius="{TemplateBinding CornerRadius}"
+								Padding="{TemplateBinding Padding}"
+								TemplatedControl.IsTemplateFocusTarget="True">
+
+							<Grid  ColumnDefinitions="Auto, Auto, *">
+								<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource TreeViewItemInnerBorderWidth}">
+									<Border x:Name="PART_InnerBorder"
+											Height="{DynamicResource TreeViewItemInnerBorderHeight}"
+											Background="{TemplateBinding assists:TreeViewItemAssists.InnerBorderBackground}"
+											BorderThickness="0"
+											IsVisible="False"/>
+								</Panel>
+
+								<Panel Grid.Column="1" Width="{DynamicResource TreeViewItemDecoratorSpacing}"/>
+
+								<Grid x:Name="{x:Static unities:PARTNameHelper.PART_Header}"
+									  Grid.Column="2"
+									  ColumnDefinitions="*, Auto"
+									  Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
+
+									<Panel x:Name="{x:Static unities:PARTNameHelper.PART_ExpandCollapseChevronContainer}"
+										   Grid.Column="1"
+										   Margin="{StaticResource TreeViewItemExpandCollapseChevronMargin}">
+										<ToggleButton x:Name="{x:Static unities:PARTNameHelper.PART_ExpandCollapseChevron}"
+													  Focusable="False"
+													  Foreground="{Binding #PART_HeaderPresenter.Foreground}"
+													  Theme="{StaticResource AntDesignTreeViewToggleButtonStyle}"
+													  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
+									</Panel>
+									<ContentPresenter x:Name="PART_HeaderPresenter"
+													  Grid.Column="0"
+													  Focusable="False"
+													  Background="Transparent"
+													  Content="{TemplateBinding Header}"
+													  ContentTemplate="{TemplateBinding HeaderTemplate}"
+													  HorizontalAlignment="Stretch"
+													  VerticalAlignment="Stretch"
+													  HorizontalContentAlignment="Left"
+													  VerticalContentAlignment="Center" />
+								</Grid>
+
+							</Grid>
+
+
+						</Border>
+
+						<ItemsPresenter x:Name="PART_ItemsPresenter"
+										IsVisible="{TemplateBinding IsExpanded}"
+										ItemsPanel="{TemplateBinding ItemsPanel}" />
+					</StackPanel>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="^.remove">
+			<Style  Selector="^ /template/ Panel#PART_DecoratorContainer">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.title">
+			<Style Selector="^ /template/ Panel#PART_ExpandCollapseChevronContainer">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+		</Style>
+
+	</ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,107 @@
+<suki:SukiWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:suki="https://github.com/kikipoulet/SukiUI"
+		xmlns:i18n="https://codewf.com"
+		xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+		xmlns:vm="using:CarParkingSystem.ViewModels"
+		xmlns:cv="using:CarParkingSystem.Converters"
+		xmlns:ap="using:CarParkingSystem.AttachedProperty"
+        x:Class="CarParkingSystem.CodeFieldActionWindow"
+		mc:Ignorable="d" d:DesignWidth="580" d:DesignHeight="480"
+		Width="580" SizeToContent="Height"
+        Title="{Binding Title}"
+		IsTitleBarVisible="False"
+		WindowStartupLocation="CenterOwner"
+				 CanMaximize="False"
+				 CanResize="False"
+		x:DataType="vm:CodeFieldActionWindowViewModel">
+	<suki:SukiWindow.Hosts>
+		<Panel HorizontalAlignment="Center" VerticalAlignment="Center">
+			<suki:SukiToastHost Manager="{ Binding ToastManager}" />
+		</Panel>
+		<suki:SukiDialogHost Manager="{ Binding DialogManager}"/>
+	</suki:SukiWindow.Hosts>
+	<Panel>
+		<StackPanel Spacing="5" Margin="20, 30, 20, 30">
+			<TextBlock Text="{ Binding Title}" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="10,20"/>
+			<Grid ColumnDefinitions="3*, 5*, 3* "  ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="*" Foreground="Red"/>
+					<Run Text="{i18n:I18n {x:Static lang:Language.FieldName}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding FieldName}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding FieldNameValidationMessage}" IsVisible="{Binding FieldNameValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="3*, 5*, 3* "  ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="*" Foreground="Red"/>
+					<Run Text="{i18n:I18n {x:Static lang:Language.FieldType}}"/>
+				</TextBlock>
+				<!--<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding FieldType}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />-->
+				<ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding SqliteTypes}" SelectedItem="{Binding FieldType}"/>
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding FieldTypeValidationMessage}" IsVisible="{Binding FieldTypeValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="3*, 5*, 3* "  ShowGridLines="False" IsVisible="{Binding FieldLength, Converter={StaticResource numToBoolConverter}}">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="{i18n:I18n {x:Static lang:Language.FieldLength}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding FieldLength}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding FieldLengthValidationMessage}" IsVisible="{Binding FieldLengthValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="3*, 5*, 3* "  ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="{i18n:I18n {x:Static lang:Language.FieldRemark}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding FieldRemark}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding FieldRemarkValidationMessage}" IsVisible="{Binding FieldRemarkValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"/>
+			</Grid>
+
+			<!--有些早期的表可能没有主键 id-->
+			<Grid ColumnDefinitions="3*, 5*, 3* "  ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="{i18n:I18n {x:Static lang:Language.IsMainKey}}"/>
+				</TextBlock>
+				<CheckBox Grid.Row="1" Grid.Column="1" Height="50" Margin="5,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsMainKey}" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding IsMainKeyValidationMessage}" IsVisible="{Binding IsMainKeyValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="3*, 5*, 3* "  ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="{i18n:I18n {x:Static lang:Language.IsAllowNull}}"/>
+				</TextBlock>
+				<!--<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding IsAllowNull}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />-->
+				<CheckBox Grid.Row="1" Grid.Column="1" Height="50" Margin="5,0,0,0" VerticalAlignment="Center" IsChecked="{Binding IsAllowNull}" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding IsAllowNullValidationMessage}" IsVisible="{Binding IsAllowNullValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"/>
+			</Grid>
+
+			<!--Add or Update Button-->
+			<Grid ColumnDefinitions="3*, 5*, 3* " ShowGridLines="False">
+				<StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Left">
+					<TextBlock Text="{Binding UpdateInfo}" Foreground="Red" HorizontalAlignment="Left" Margin="0,10"/>
+					<Button Content="{i18n:I18n {x:Static lang:Language.Add}}" Command="{Binding AddCommand}" Classes="Flat" Margin="5,0,0,30" Height="50" MinWidth="150"
+							IsVisible="{Binding IsAddCodeField}" HotKey="Enter"/>
+					<Button Content="{i18n:I18n {x:Static lang:Language.Update}}" Command="{Binding UpdateCommand}" Classes="Flat" Margin="5,0,0,30" Height="50" MinWidth="150" IsVisible="{Binding !IsAddCodeField}" HotKey="Enter"/>
+				</StackPanel>
+			</Grid>
+		</StackPanel>
+
+		<!--右上角关闭按钮-->
+		<Button Classes="Rounded PathIconButton"
+				Width="24"
+				Height="24"
+			Margin="0, 10, 10, 0" Padding="0"
+		  HorizontalAlignment="Right"
+		  VerticalAlignment="Top"
+				HorizontalContentAlignment="Center"
+				FontSize="12"
+				FontWeight="DemiBold" Command="{ Binding CloseCommand}">
+			<PathIcon Data="{x:Static suki:Icons.CircleOutlineClose}"  Classes="Manual">
+			</PathIcon>
+		</Button>
+	</Panel>
+</suki:SukiWindow>

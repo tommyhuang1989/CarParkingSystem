@@ -1,0 +1,70 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- Add Controls for Previewer Here -->
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+	<Style Selector="DataGridColumnHeader.tt">
+		<!--<Setter Property="Foreground" Value="{DynamicResource DataGridColumnHeaderForegroundBrush}" />
+		<Setter Property="Background" Value="{DynamicResource DataGridColumnHeaderBackgroundBrush}" />-->
+		<!--<Setter Property="HorizontalContentAlignment" Value="Stretch" />-->
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="SeparatorBrush" Value="{DynamicResource DataGridGridLinesBrush}" />
+		<Setter Property="Padding" Value="12,0,0,0" />
+		<!--<Setter Property="Padding" Value="0,0,0,0" />-->
+		<Setter Property="FontSize" Value="12" />
+		<Setter Property="MinHeight" Value="32" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<!--BorderThickness="{TemplateBinding BorderThickness}"-->
+				<Border x:Name="HeaderBorder"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+					<!--ColumnDefinitions="*,Auto"-->
+					<Grid Name="PART_ColumnHeaderRoot" ColumnDefinitions="*">
+
+						<Panel Margin="{TemplateBinding Padding}"
+							  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							  VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+							<Grid ShowGridLines="True">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+
+								<ContentPresenter x:Name="PART_ContentPresenter"
+												  Content="{TemplateBinding Content}"
+												  ContentTemplate="{TemplateBinding ContentTemplate}" />
+							</Grid>
+						</Panel>
+
+						<!--<Rectangle Name="VerticalSeparator"
+								   Grid.Column="1"
+								   Width="1"
+								   VerticalAlignment="Stretch"
+								   Fill="{TemplateBinding SeparatorBrush}"
+								   IsVisible="{TemplateBinding AreSeparatorsVisible}" HorizontalAlignment="Right"/>-->
+
+						
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover /template/ Grid#PART_ColumnHeaderRoot">
+			<Setter Property="Background" Value="{DynamicResource DataGridColumnHeaderHoveredBackgroundBrush}" />
+		</Style>
+
+		<Style Selector="^:pressed /template/ Grid#PART_ColumnHeaderRoot">
+			<Setter Property="Background" Value="{DynamicResource DataGridColumnHeaderPressedBackgroundBrush}" />
+		</Style>
+
+		<Style Selector="^:dragIndicator">
+			<Setter Property="Opacity" Value="0.5" />
+		</Style>
+	</Style>
+</Styles>

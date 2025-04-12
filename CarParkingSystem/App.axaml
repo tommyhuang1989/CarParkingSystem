@@ -1,0 +1,79 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CarParkingSystem.App"
+             xmlns:local="using:CarParkingSystem"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+			 xmlns:semi="https://irihi.tech/semi"
+			 xmlns:u-semi="https://irihi.tech/ursa/themes/semi"
+			 xmlns:sty="using:FluentAvalonia.Styling"
+			 xmlns:au="using:Aura.UI"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <!--<Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>-->
+
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="avares://CarParkingSystem/Converters/ConverterManager.axaml" />
+				<ResourceInclude Source="avares://CarParkingSystem/Styles/AntDesignAccents.axaml" />
+				<ResourceInclude Source="avares://CarParkingSystem/Styles/ButtonTheme.axaml" />
+				<ResourceInclude Source="avares://CarParkingSystem/Styles/TreeViewTheme.axaml" />
+				<ResourceInclude Source="avares://CarParkingSystem/Styles/NewDatePickerTheme.axaml" />
+				<ResourceInclude Source="avares://CarParkingSystem/Styles/CommonDialogTheme.axaml" />
+				<ResourceInclude Source="avares://CarParkingSystem/Styles/NewToastTheme.axaml" />
+				<!--<ResourceInclude Source="avares://CarParkingSystem/Styles/CheckBoxTheme.axaml" />-->
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
+	
+    <Application.Styles>
+
+		<!--<StyleInclude Source="avares://Aura.UI.FluentTheme/AuraUI.xaml"/>
+		<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseLight.xaml"/>
+		<StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
+		<StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>-->
+		<!--<sty:FluentAvaloniaTheme />-->
+		<semi:SemiTheme Locale="zh-CN" />
+		<u-semi:SemiTheme Locale="zh-CN"/>
+		
+        <FluentTheme/>
+		<suki:SukiTheme ThemeColor="Blue"/>
+		<StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
+		<StyleInclude Source="avares://Material.Icons.Avalonia/MaterialIconStyles.axaml" />
+		<!--<StyleInclude Source="avares://SukiUI.Demo/Styles/MaterialIconStyles.axaml" />-->
+
+		<StyleInclude Source="avares://CarParkingSystem/Styles/CommonStyles.axaml"/>
+		<StyleInclude Source="avares://CarParkingSystem/Styles/IconStyles.axaml"/>
+		<StyleInclude Source="avares://CarParkingSystem/Styles/ButtonStyles.axaml"/>
+		<StyleInclude Source="avares://CarParkingSystem/Styles/DataPagerStyle.axaml"/>
+		<StyleInclude Source="avares://CarParkingSystem/Styles/TreeViewItemStyles.axaml"/>
+		<StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+		<StyleInclude Source="avares://CarParkingSystem/Styles/CheckBoxStyles.axaml"/>
+		<StyleInclude Source="avares://CarParkingSystem/Styles/DataGridStyles.axaml"/>
+		<StyleInclude Source="avares://CarParkingSystem/Styles/TabItemStyles.axaml"/>
+		<StyleInclude Source="avares://CarParkingSystem/Styles/FBCDateTimePickerPresenterStyles.axaml"/>
+	</Application.Styles>
+	
+	<TrayIcon.Icons>
+		<TrayIcons>
+			<TrayIcon Icon="/Assets/avalonia-logo.ico"
+					  ToolTipText="Avalonia Tray Icon ToolTip">
+				<TrayIcon.Menu>
+					<NativeMenu>
+						<NativeMenuItem Header="Settings">
+							<NativeMenu>
+								<NativeMenuItem Header="Option 1"/>
+								<NativeMenuItem Header="Option 2"/>
+								<NativeMenuItemSeparator />
+								<NativeMenuItem Header="Option 3"/>
+							</NativeMenu>
+						</NativeMenuItem>
+					</NativeMenu>
+				</TrayIcon.Menu>
+			</TrayIcon>
+		</TrayIcons>
+	</TrayIcon.Icons>
+</Application>

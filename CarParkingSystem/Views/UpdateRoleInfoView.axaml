@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+			 xmlns:vm="using:CarParkingSystem.ViewModels"
+			 xmlns:suki="https://github.com/kikipoulet/SukiUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CarParkingSystem.UpdateRoleInfoView"
+			 x:DataType="vm:UpdateRoleInfoViewModel"
+			 >
+	<Panel>
+		<suki:GlassCard Margin="20">
+			<StackPanel Spacing="5" Margin="20,30,20,30">
+				<TextBlock Text="{i18n:I18n {x:Static lang:Language.ChangeInformation}}" FontSize="32" FontWeight="Bold" Margin="0,0,0,10"/>
+				<Grid ColumnDefinitions="3*,5*,3*"  ShowGridLines="False">
+					<TextBlock Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+						<Run Text="*" Foreground="Red"/>
+						<Run Text="{i18n:I18n {x:Static lang:Language.RealName}}"/>
+					</TextBlock>
+					<TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Watermark="eg: Admin" suki:TextBoxExtensions.AddDeleteButton="True"/>
+					<!--<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding OldPasswordValidationMessage}" IsVisible="{Binding OldPasswordValidationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"/>-->
+				</Grid>
+
+				<!--新密码-->
+				<Grid ColumnDefinitions="3*,5*,3*" ShowGridLines="False">
+					<TextBlock Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center">
+						<Run Text="*" Foreground="Red"/>
+						<Run Text="{i18n:I18n {x:Static lang:Language.Phone}}"/>
+					</TextBlock>
+					<TextBox Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center"  suki:TextBoxExtensions.AddDeleteButton="True"/>
+					<!--<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding NewPasswordValidationMessage}" IsVisible="{Binding NewPasswordValidationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"/>-->
+				</Grid>
+
+				<!--Add or Update Button-->
+				<Grid ColumnDefinitions="3*,5*,3*" ShowGridLines="False">
+					<StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Left">
+						<!--<TextBlock Text="{Binding UpdateInfo}" Foreground="Red" HorizontalAlignment="Left" Margin="0,10"/>-->
+						<Button Content="{i18n:I18n {x:Static lang:Language.Save}}" Classes="Flat" Margin="5,0,0,30" Height="50" MinWidth="150"/>
+					</StackPanel>
+				</Grid>
+			</StackPanel>
+		</suki:GlassCard>
+	</Panel>
+</UserControl>

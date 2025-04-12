@@ -1,0 +1,56 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:control="using:CarParkingSystem.Controls">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- Add Controls for Previewer Here -->
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+	<Style Selector="control|FBCDateTimePickerPresenter">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid ColumnDefinitions="Auto, Auto" RowDefinitions="Auto,40" Background="White">
+					<Grid.Styles>
+						<Style Selector="Grid" >
+							<Setter Property="VerticalAlignment"  Value="Center"/>
+						</Style>
+						<Style Selector="Calendar">
+							<Setter Property="HorizontalAlignment"  Value="Center"/>
+							<Setter Property="Margin" Value="10"/>
+						</Style>
+						<Style Selector="NumericUpDown">
+							<Setter Property="VerticalAlignment"  Value="Top"/>
+							<Setter Property="BorderBrush" Value="Orange"/>
+							<Setter Property="Margin" Value="0,10,10,0"/>
+						</Style>
+						<Style Selector="TextBlock" >
+							<Setter Property="HorizontalAlignment" Value="Center"/>
+							<Setter Property="VerticalAlignment"  Value="Bottom"/>
+							<Setter Property="Margin" Value="0,10,0,0"/>
+						</Style>
+						<Style Selector="Button" >
+							<Setter Property="HorizontalAlignment" Value="Center"/>
+							<Setter Property="VerticalAlignment"  Value="Center"/>
+							<Setter Property="BorderBrush" Value="Orange"/>
+						</Style>
+					</Grid.Styles>
+					<Calendar SelectedDate="{TemplateBinding DateOnly}"/>
+					<Grid Grid.Column="1" RowDefinitions="1*,1*,1*,1*,1*,1*">
+						<TextBlock Grid.Row="0" Text="Saat" />
+						<NumericUpDown Name="Hour" Grid.Row="1"  Minimum="0" Maximum="23" Value="{TemplateBinding Hour}"/>
+						<TextBlock Grid.Row="2"  Text="Dakika" />
+						<NumericUpDown Name="Minute"  Grid.Row="3"  Minimum="0" Maximum="59" Value="{TemplateBinding Minute}"/>
+						<TextBlock Grid.Row="4"  Text="Saniye" />
+						<NumericUpDown Name="Second"  Grid.Row="5"  Minimum="0" Maximum="59" Value="{TemplateBinding Second}"/>
+					</Grid>
+					<Grid Grid.Row="2" Grid.ColumnSpan="2" ColumnDefinitions="1*, 1*">
+						<Button Grid.Column="0" Content="Tamam" Name="BtnOK"/>
+						<Button Grid.Column="1" Content="Vazgeç" Name="BtnCancel"/>
+					</Grid>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>

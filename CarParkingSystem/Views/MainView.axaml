@@ -1,0 +1,137 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="https://github.com/kikipoulet/SukiUI"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+			 xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+			 xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+			 xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:vm="clr-namespace:CarParkingSystem.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CarParkingSystem.Views.MainView"
+             x:DataType="vm:MainWindowViewModel">
+  <!--<Design.DataContext>
+    --><!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) --><!--
+    <vm:MainViewModel />
+  </Design.DataContext>-->
+
+	<StackPanel>
+		<!--手动实现 二级菜单 TreeView 的方式-->
+		<SplitView IsPaneOpen="{Binding IsOpenPane}" OpenPaneLength="300" CompactPaneLength="70"
+			DisplayMode="CompactInline" IsVisible="True">
+			<SplitView.Pane>
+				<StackPanel>
+					<Button
+						Classes="Rounded PathIconButton"
+						Width="24"
+						Height="24"
+					Margin="0,10,10,0" Padding="0"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Top"
+						HorizontalContentAlignment="Center"
+						FontSize="12"
+							FontWeight="DemiBold"
+						Command="{Binding TogglePaneCommand}">
+						<PathIcon Classes.isOpen="{Binding IsOpenPane}"  Classes="Manual">
+							<PathIcon.Styles>
+								<Style Selector="PathIcon">
+									<Setter Property="Data" Value="{x:Static suki:Icons.ChevronRight}"/>
+								</Style>
+								<Style Selector="PathIcon.isOpen">
+									<Setter Property="Data" Value="{x:Static suki:Icons.ChevronLeft}"/>
+								</Style>
+							</PathIcon.Styles>
+						</PathIcon>
+					</Button>
+
+					<!--登录的用户信息、头像, 
+                   Margin="30,10,30,30"，  Source="/Assets/OIG.N5o-removebg-preview.png"-->
+					<StackPanel Margin="0,20" HorizontalAlignment="Center">
+						<Image
+				   HorizontalAlignment="Center"
+                   Classes="AppIcon"
+                   IsVisible="{Binding $parent[suki:SukiWindow].((vm:MainWindowViewModel)DataContext).TitleBarVisible}"
+				   PointerPressed="Image_PointerPressed"
+                   Source="/Assets/parking-lot.png" Classes.isOpen="{Binding !IsOpenPane}" Classes.isNotOpen="{Binding IsOpenPane}">
+							<Image.Styles>
+								<Style Selector="Image.isNotOpen">
+									<Setter Property="Width" Value="80"/>
+									<Setter Property="Height" Value="80"/>
+									<Setter Property="Transitions">
+										<Transitions>
+											<DoubleTransition Property="Width" Duration="0:0:0.35"></DoubleTransition>
+											<DoubleTransition Property="Height" Duration="0:0:0.35"></DoubleTransition>
+										</Transitions>
+									</Setter>
+								</Style>
+								<Style Selector="Image.isOpen">
+									<Setter Property="Width" Value="40"/>
+									<Setter Property="Height" Value="40"/>
+									<Setter Property="Transitions">
+										<Transitions>
+											<DoubleTransition Property="Width" Duration="0:0:0.35"></DoubleTransition>
+											<DoubleTransition Property="Height" Duration="0:0:0.35"></DoubleTransition>
+										</Transitions>
+									</Setter>
+								</Style>
+							</Image.Styles>
+						</Image>
+						<TextBlock Text="{Binding CurrentUser.Username}" HorizontalAlignment="Center" Margin="10,10" Classes.isOpen="{Binding !IsOpenPane}" Classes.isNotOpen="{Binding IsOpenPane}">
+							<TextBlock.Styles>
+								<Style Selector="TextBlock.isNotOpen">
+									<Setter Property="IsVisible" Value="True"/>
+								</Style>
+								<Style Selector="TextBlock.isOpen">
+									<Setter Property="IsVisible" Value="False"/>
+								</Style>
+							</TextBlock.Styles>
+						</TextBlock>
+					</StackPanel>
+					
+					<!--<Expander Expanded="Expander_Expanded"/> PointerReleased="TreeView_PointerReleased" Height="650"-->
+					<TreeView x:Name="tv" SelectionChanged="TreeView_SelectionChanged" Margin="10"  IsVisible="True"
+				ItemsSource="{Binding DemoPages}"
+				SelectionMode="Single" SelectedItem="{Binding ActivePage}"
+							  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+							  ScrollViewer.VerticalScrollBarVisibility="Auto"
+							  Classes.isOpen="{Binding !IsOpenPane}" Classes.isNotOpen="{Binding IsOpenPane}" Height="550">
+						<TreeView.Styles>
+							<Style Selector="TreeView.isOpen TreeViewItem[IsExpanded=True]">
+								<Setter Property="IsExpanded" Value="False"/>
+							</Style>
+							<Style Selector="TreeView.Classes.isNotOpen ToggleButton">
+								<Setter Property="IsVisible" Value="True"/>
+							</Style>
+							<Style Selector="TreeView.isOpen ToggleButton">
+								<Setter Property="IsVisible" Value="False"/>
+							</Style>
+							<!--did not show menu without subPages, except set ShowEvenOneFloor =  true;-->
+							<!--<Style Selector="TreeViewItem" x:DataType="vm:DemoPageBase">
+								<Setter Property="IsVisible" Value="{Binding Converter={StaticResource showFirstMenuConverter}}">
+								</Setter>
+							</Style>-->
+							<Style Selector="TreeViewItem" x:DataType="vm:DemoPageBase">
+								<Setter Property="IsVisible" Value="{Binding Converter={StaticResource showHiddenPageConverter}}">
+								</Setter>
+							</Style>
+						</TreeView.Styles>
+						<TreeView.ItemTemplate>
+							<TreeDataTemplate ItemsSource="{Binding SubPages}">
+								<Grid ColumnDefinitions="40,140,20" Height="40" ShowGridLines="False"  HorizontalAlignment="Left">
+									<avalonia:MaterialIcon Kind="{Binding Icon}"/>
+									<TextBlock Grid.Column="1" Text="{i18n:I18n {Binding DisplayName}}" TextWrapping="Wrap" Width="130" Margin="5,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+								</Grid>
+							</TreeDataTemplate>
+						</TreeView.ItemTemplate>
+					</TreeView>
+				</StackPanel>
+			</SplitView.Pane>
+			<SplitView.Content>
+				<TransitioningContentControl Content="{Binding ActivePage}"/>
+			</SplitView.Content>
+		</SplitView>
+	</StackPanel>
+</UserControl>

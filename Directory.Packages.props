@@ -1,0 +1,44 @@
+<Project>
+  <!-- https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Avalonia packages -->
+    <!-- Important: keep version in sync! -->
+    <PackageVersion Include="Aura.UI" Version="0.1.4.2" />
+    <PackageVersion Include="Aura.UI.FluentTheme" Version="0.1.4.2" />
+    <PackageVersion Include="AutoMapper" Version="14.0.0" />
+    <PackageVersion Include="Avalonia" Version="11.2.6" />
+    <PackageVersion Include="Avalonia.Controls.ColorPicker" Version="11.2.6" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.2.6" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.2.6" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="11.2.6" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="11.2.6" />
+    <PackageVersion Include="Avalonia.Desktop" Version="11.2.1" />
+    <PackageVersion Include="Avalonia.iOS" Version="11.2.1" />
+    <PackageVersion Include="Avalonia.Browser" Version="11.2.1" />
+    <PackageVersion Include="Avalonia.Android" Version="11.2.1" />
+    <PackageVersion Include="Avalonia.Xaml.Interactions" Version="11.2.0.13" />
+    <PackageVersion Include="Avalonia.Xaml.Interactivity" Version="11.2.0.13" />
+    <PackageVersion Include="AvaloniaExtensions.Axaml" Version="1.0.3" />
+    <PackageVersion Include="ClosedXML" Version="0.104.2" />
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <PackageVersion Include="FluentAvaloniaUI" Version="2.2.0" />
+    <PackageVersion Include="Irihi.Ursa" Version="1.10.0" />
+    <PackageVersion Include="Irihi.Ursa.Themes.Semi" Version="1.10.0" />
+    <PackageVersion Include="LayUI" Version="2.4.5" />
+    <PackageVersion Include="LayUI.Wpf" Version="1.0.2.250104" />
+    <PackageVersion Include="LinqKit" Version="1.3.8" />
+    <PackageVersion Include="Material.Icons.Avalonia" Version="2.3.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="9.0.2" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.2" />
+    <PackageVersion Include="NETStandard.Library" Version="2.0.3" />
+    <PackageVersion Include="Semi.Avalonia" Version="11.2.1.6" />
+    <PackageVersion Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageVersion Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.10" />
+    <PackageVersion Include="SukiUI" Version="6.0.1" />
+    <PackageVersion Include="System.Resources.Extensions" Version="9.0.3" />
+    <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.1" />
+  </ItemGroup>
+</Project>

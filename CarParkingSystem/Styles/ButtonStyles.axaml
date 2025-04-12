@@ -1,0 +1,264 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:control="using:CarParkingSystem.Controls"
+					xmlns:unities="using:CarParkingSystem.Unities"
+					xmlns:assists="using:CarParkingSystem.Assists">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- Add Controls for Previewer Here -->
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+	<!--<Style Selector="control|PagerButton">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border x:Name="b1" CornerRadius="4" 
+                                        BorderThickness="1" BorderBrush="Red"
+                                        Width="32" Height="32" Margin="4,0">
+					<ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>-->
+
+	
+
+	<Style Selector="Border#b1:pointerover">
+		<Setter Property="BorderBrush" Value="{DynamicResource ActiveBrush}"></Setter>
+	</Style>
+
+	<Style Selector="control|PagerButton[IsActive=True]">
+		<Setter Property="IsEnabled" Value="False"></Setter>
+	</Style>
+	<Style Selector="control|PagerButton[IsActive=True] Border#RootBorder">
+		<Setter Property="BorderBrush" Value="{DynamicResource SukiPrimaryColor}" />
+	</Style>
+
+	<Style Selector="Button.PathIconButton">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Name="border" Background="{TemplateBinding Background}"
+						CornerRadius="5" Padding="10">
+					<ContentPresenter Content="{TemplateBinding Content}"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<!--<Style Selector="Button:disabled #border">
+			<Setter Property="Opacity" Value="0.5" />
+		</Style>-->
+	</Style>
+
+	<Style Selector="PathIcon.Manual:pointerover">
+		<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+		<Setter Property="RenderTransform">
+			<Setter.Value>
+				<ScaleTransform ScaleX="0.95" ScaleY="0.95" />
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!--<Style Selector="PathIcon.Manual:disabled">
+		<Setter Property="Foreground" Value="{DynamicResource SukiPrimaryColor}" />
+	</Style>-->
+	
+	<Style Selector="ToggleButton.PathIconButton">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Name="border" Background="Transparent"
+						CornerRadius="5" Padding="10">
+					<ContentPresenter Content="{TemplateBinding Content}"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<!--<Style Selector="Button:disabled #border">
+			<Setter Property="Opacity" Value="0.5" />
+		</Style>-->
+	</Style>
+
+	<Style Selector="ToggleButton.DataGridHeader">
+		<!--<Setter Property="Background" Value="LightBlue"/>
+		<Setter Property="Foreground" Value="DarkBlue"/>-->
+		<Setter Property="FontSize" Value="14"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid ColumnDefinitions="*,Auto" RowDefinitions="*,*">
+					<ContentPresenter Grid.RowSpan="2" Foreground="{DynamicResource ForegroundBrush}" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					<Viewbox Width="10" Grid.Row="0" Grid.Column="1" Margin="5,0,0,0">
+						<PathIcon x:Name="upArrow"  Margin="0,0,0,1" Data="M0,0 0.6,0 0.3,-0.6 Z" IsVisible="{Binding !$parent[ToggleButton].IsChecked}"/>
+					</Viewbox>
+					<Viewbox Width="10" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
+						<PathIcon x:Name="downArrow"  Margin="0,1,0,0" Data="M0,0 0.6,0 0.3,0.6 Z" IsVisible="{Binding $parent[ToggleButton].IsChecked}" x:CompileBindings="False"/>
+					</Viewbox>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+	<Style Selector="TreeViewItem.clll">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="TreeViewItem">
+				<StackPanel>
+					<Border x:Name="{x:Static unities:PARTNameHelper.PART_LayoutRoot}"
+						Focusable="True"
+						MinHeight="{TemplateBinding MinHeight}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Padding="{TemplateBinding Padding}"
+						TemplatedControl.IsTemplateFocusTarget="True">
+
+						<Grid  ColumnDefinitions="Auto, Auto, *">
+							<Panel x:Name="PART_DecoratorContainer" Width="{DynamicResource TreeViewItemInnerBorderWidth}">
+								<Border x:Name="PART_InnerBorder"
+									Height="{DynamicResource TreeViewItemInnerBorderHeight}"
+									Background="{TemplateBinding assists:TreeViewItemAssists.InnerBorderBackground}"
+									BorderThickness="0"
+									IsVisible="False"/>
+							</Panel>
+
+							<Panel Grid.Column="1" Width="{DynamicResource TreeViewItemDecoratorSpacing}"/>
+
+							<Grid x:Name="{x:Static unities:PARTNameHelper.PART_Header}"
+								Grid.Column="2"
+								ColumnDefinitions="*, Auto"
+								Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource TreeViewItemLeftMarginConverter}}">
+
+								<Panel x:Name="{x:Static unities:PARTNameHelper.PART_ExpandCollapseChevronContainer}"
+									 Grid.Column="1"
+									 Margin="{StaticResource TreeViewItemExpandCollapseChevronMargin}">
+									<ToggleButton x:Name="{x:Static unities:PARTNameHelper.PART_ExpandCollapseChevron}"
+											Focusable="False"
+											Foreground="{Binding #PART_HeaderPresenter.Foreground}"
+											Theme="{StaticResource AntDesignTreeViewToggleButtonStyle}"
+											IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
+								</Panel>
+								<ContentPresenter x:Name="PART_HeaderPresenter"
+										  Grid.Column="0"
+										  Focusable="False"
+										  Background="Transparent"
+										  Content="{TemplateBinding Header}"
+										  ContentTemplate="{TemplateBinding HeaderTemplate}"
+										  HorizontalAlignment="Stretch"
+										  VerticalAlignment="Stretch"
+										  HorizontalContentAlignment="Left"
+										  VerticalContentAlignment="Center" />
+							</Grid>
+
+						</Grid>
+
+
+					</Border>
+
+					<ItemsPresenter x:Name="PART_ItemsPresenter"
+							IsVisible="{TemplateBinding IsExpanded}"
+							ItemsPanel="{TemplateBinding ItemsPanel}" />
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+
+
+
+		<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+			<Setter Property="Theme" Value="{StaticResource AntDesignTreeViewToggleButtonStyle}" />
+		</Style>
+		<!--  PointerOver state  -->
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverBorderBrush}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PointerOverForeground}" />
+			</Style>
+		</Style>
+
+		<!--  Pressed state  -->
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pressed">
+			<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBackground}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.PressedBorderBrush}" />
+			<Style Selector="^ /template/ Border#PART_LayoutRoot > ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.PressedForeground}" />
+			</Style>
+		</Style>
+
+		<!--  Selected state  -->
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#PART_LayoutRoot">
+				<Setter Property="Background" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedBorderBrush}" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedForeground}" />
+			</Style>
+
+			<Style  Selector="^ /template/ Border#PART_InnerBorder">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+
+			<!--  Selected PointerOver state  -->
+			<Style Selector="^:pointerover">
+
+			</Style>
+
+			<!--  Selected Pressed state  -->
+			<Style Selector="^:pressed">
+				<Setter Property="BorderThickness" Value="{DynamicResource OverlayBorderThickness}" />
+			</Style>
+
+			<Style Selector="^:not(:focus) /template/ ContentPresenter#PART_HeaderPresenter">
+				<!--<Setter Property="Foreground" Value="{TemplateBinding assists:TreeViewItemAssists.SelectedNoFocusForeground}" />-->
+			</Style>
+
+			<!--  Disabled Selected state  -->
+			<Style Selector="^:disabled">
+				<Setter Property="Opacity" Value="0.5"/>
+			</Style>
+
+		</Style>
+		<!--  Disabled state  -->
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5"/>
+		</Style>
+
+		<Style Selector="^:empty">
+			<Style Selector="^ /template/ ToggleButton#PART_ExpandCollapseChevron">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+			<Style Selector="^ /template/ Panel#PART_ExpandCollapseChevronContainer">
+				<Setter Property="Width" Value="{StaticResource TreeViewItemExpandCollapseChevronSize}" />
+			</Style>
+		</Style>
+
+
+		<Style Selector="^.remove">
+			<Style  Selector="^ /template/ Panel#PART_DecoratorContainer">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.title">
+			<Style Selector="^ /template/ Panel#PART_ExpandCollapseChevronContainer">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+		</Style>
+
+	</Style>
+	
+	<Style Selector="Button.HyperLink">
+		<Setter Property="Template">
+		  <ControlTemplate>
+			<TextBlock Text="{TemplateBinding Content}" Foreground="{StaticResource SystemAccentColor}">
+			  <TextBlock.Styles>
+				<Style Selector="TextBlock:pointerover">
+				  <Setter Property="Foreground" Value="{StaticResource SystemAccentColorLight1}"/>
+					<Setter Property="TextDecorations" Value="Underline"/>
+				</Style>
+			  </TextBlock.Styles>
+			</TextBlock>
+		  </ControlTemplate>
+		</Setter>
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="0"/>
+  </Style>
+</Styles>

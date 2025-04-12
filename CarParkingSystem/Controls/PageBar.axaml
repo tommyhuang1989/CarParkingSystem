@@ -1,0 +1,109 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+			 xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+			 xmlns:vm="using:CarParkingSystem.ViewModels"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+			 xmlns:control="using:CarParkingSystem.Controls"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
+             x:Class="CarParkingSystem.Controls.PagerBar"
+			 x:DataType="control:PagerBar">
+	<!--<UserControl.DataContext>
+		<control:PagerBar/>
+	</UserControl.DataContext> Height="40"-->
+	<DockPanel Height="40" Margin="20,0">
+		<StackPanel Orientation="Horizontal" Spacing="3" DockPanel.Dock="Left">
+		<!--总数量和总页数-->
+		<TextBlock x:Name="txtAllCountTitle" Text="{i18n:I18n {x:Static lang:Language.TotalRecords}}" VerticalAlignment="Center"/>
+		<TextBlock x:Name="txtAllCount" Text="{Binding AllCount, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" x:CompileBindings="False" VerticalAlignment="Center"/>
+
+		<TextBlock x:Name="txtPageCountTitle" Text="{i18n:I18n {x:Static lang:Language.TotalPages}}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+		<TextBlock x:Name="txtPageCount" Text="{Binding PageCount, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" x:CompileBindings="False" VerticalAlignment="Center" Margin="0,0,20,0"/>
+			
+			<!--每页数量选择 SelectedIndex="0", CommandParameter="{Binding #cb.SelectedIndex}" ItemsSource="{Binding _comboBoxItems, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" -->
+		<ComboBox x:Name="cb" x:CompileBindings="False">
+			<i:Interaction.Behaviors>
+				<ia:EventTriggerBehavior EventName="SelectionChanged">
+					<ia:InvokeCommandAction Command="{Binding SelectionChangedCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding #cb.SelectedItem.SelectedValue}"/>
+				</ia:EventTriggerBehavior>
+			</i:Interaction.Behaviors>
+			<ComboBox.ItemTemplate>
+				<DataTemplate>
+					<!-- 显示 DisplayName -->
+					<TextBlock Text="{Binding DisplayName}"/>
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+
+		<!--跳转-->
+		<TextBlock x:Name="txtGoToTitle" Text="{i18n:I18n {x:Static lang:Language.GoTo}}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+		<TextBox x:Name="txtGoTo" Text="{Binding IndexToGo, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}, Converter={StaticResource indexToGoConverter}}" x:CompileBindings="False" Width="40"/>
+		<Button x:Name="btnGoTo" Content="{i18n:I18n {x:Static lang:Language.Submit}}" Command="{Binding GoToPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding #txtGoTo.Text}" x:CompileBindings="False"/>
+			</StackPanel>
+
+
+		<StackPanel Orientation="Horizontal" Spacing="2" DockPanel.Dock="Right" HorizontalAlignment="Right">
+		<!--导航按钮-->
+		<Button x:Name="btnFirst" Command="{Binding FirstPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}"  x:CompileBindings="False" Classes="PathIconButton">
+			<PathIcon Data="{StaticResource arrow_previous_regular}" Classes="Manual">
+				<!--<PathIcon.Styles>
+					<Style Selector="PathIcon:pointerover">
+						<Setter Property="Foreground" Value="Blue"/>
+					</Style>
+					<Style Selector="PathIcon:disabled">
+						<Setter Property="Foreground" Value="Gray"/>
+					</Style>
+				</PathIcon.Styles>-->
+			</PathIcon>
+		</Button>
+		<Button x:Name="btnPrev" Command="{Binding PrevPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}"  x:CompileBindings="False" Classes="PathIconButton">
+			<PathIcon Data="{StaticResource chevron_left_regular}" Classes="Manual">
+				<!--<PathIcon.Styles>
+					<Style Selector="PathIcon:pointerover">
+						<Setter Property="Foreground" Value="Blue"/>
+					</Style>
+					<Style Selector="PathIcon:disabled">
+						<Setter Property="Foreground" Value="Gray"/>
+					</Style>
+				</PathIcon.Styles>-->
+			</PathIcon>
+		</Button>
+			
+		<control:PagerButton x:Name="btn1" Command="{Binding GoToPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding $self.Content}" x:CompileBindings="False"/>
+		<control:PagerButton x:Name="btn2" Command="{Binding GoToPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding $self.Content}" x:CompileBindings="False"/>
+		<control:PagerButton x:Name="btn3" Command="{Binding GoToPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding $self.Content}" x:CompileBindings="False"/>
+		<control:PagerButton x:Name="btn4" Command="{Binding GoToPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding $self.Content}" x:CompileBindings="False"/>
+		<control:PagerButton x:Name="btn5" Command="{Binding GoToPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding $self.Content}" x:CompileBindings="False"/>
+		<control:PagerButton x:Name="btn6" Command="{Binding GoToPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding $self.Content}" x:CompileBindings="False"/>
+		<control:PagerButton x:Name="btn7" Command="{Binding GoToPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" CommandParameter="{Binding $self.Content}" x:CompileBindings="False"/>
+
+		<Button x:Name="btnNext" Command="{Binding NextPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" x:CompileBindings="False" Classes="PathIconButton">
+			<PathIcon Data="{StaticResource chevron_right_regular}" Classes="Manual">
+				<!--<PathIcon.Styles>
+					<Style Selector="PathIcon:pointerover">
+						<Setter Property="Foreground" Value="Blue"/>
+					</Style>
+					<Style Selector="PathIcon:disabled">
+						<Setter Property="Foreground" Value="Gray"/>
+					</Style>
+				</PathIcon.Styles>-->
+			</PathIcon>
+		</Button>
+		<Button x:Name="btnLast" Command="{Binding LastPageCommand, RelativeSource={RelativeSource AncestorLevel=1, AncestorType=UserControl}}" x:CompileBindings="False" Classes="PathIconButton">
+			<PathIcon Data="{StaticResource arrow_next_regular}" Classes="Manual">
+				<!--<PathIcon.Styles>
+					<Style Selector="PathIcon:pointerover">
+						<Setter Property="Foreground" Value="Blue"/>
+					</Style>
+					<Style Selector="PathIcon:disabled">
+						<Setter Property="Foreground" Value="Gray"/>
+					</Style>
+				</PathIcon.Styles>-->
+			</PathIcon>
+		</Button>
+		</StackPanel>
+	</DockPanel>
+</UserControl>

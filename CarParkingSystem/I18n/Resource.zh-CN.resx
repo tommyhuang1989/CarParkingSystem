@@ -1,0 +1,5109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="InputUsername" xml:space="preserve">
+    <value>请输入用户名</value>
+  </data>
+  <data name="InputPassword" xml:space="preserve">
+    <value>请输入密码</value>
+  </data>
+  <data name="ForgetPassword" xml:space="preserve">
+    <value>忘记密码</value>
+  </data>
+  <data name="EmailActivation" xml:space="preserve">
+    <value>使用邮箱激活</value>
+  </data>
+  <data name="SwitchTheme" xml:space="preserve">
+    <value>切换主题</value>
+  </data>
+  <data name="UserManagement" xml:space="preserve">
+    <value>员工管理</value>
+  </data>
+  <data name="RoleManagement" xml:space="preserve">
+    <value>角色管理</value>
+  </data>
+  <data name="CurrentUser" xml:space="preserve">
+    <value>当前用户</value>
+  </data>
+  <data name="ChangeRolePassword" xml:space="preserve">
+    <value>更改角色密码</value>
+  </data>
+  <data name="UpdateRoleInfo" xml:space="preserve">
+    <value>更新角色信息</value>
+  </data>
+  <data name="UserManagementDesc" xml:space="preserve">
+    <value>对用户信息进行管理，新增、删除、修改</value>
+  </data>
+  <data name="RoleManagementDesc" xml:space="preserve">
+    <value>对角色信息进行管理，新增、删除、修改</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>邮箱</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>手机号码</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="CreatedDateTime" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="UpdatedDateTime" xml:space="preserve">
+    <value>更新时间</value>
+  </data>
+  <data name="StartDateTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="EndDateTime" xml:space="preserve">
+    <value>结束时间</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="Operate" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="TotalRecords" xml:space="preserve">
+    <value>总数量</value>
+  </data>
+  <data name="TotalPages" xml:space="preserve">
+    <value>总页数</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>跳转</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>导出</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>添加用户</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="RoleCode" xml:space="preserve">
+    <value>角色码</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>角色名称</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="ChangeInformation" xml:space="preserve">
+    <value>修改资料</value>
+  </data>
+  <data name="RealName" xml:space="preserve">
+    <value>真实姓名</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>修改密码</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>旧密码</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="RepeatPassword" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="CreateNewUser" xml:space="preserve">
+    <value>增加新用户</value>
+  </data>
+  <data name="CreateNewRole" xml:space="preserve">
+    <value>增加新角色</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="RoleCodeExample" xml:space="preserve">
+    <value>例如：ADMIN</value>
+  </data>
+  <data name="RoleNameExample" xml:space="preserve">
+    <value>例如：超级管理员</value>
+  </data>
+  <data name="UpdateUserInfo" xml:space="preserve">
+    <value>更新用户信息</value>
+  </data>
+  <data name="DeleteUserPrompt" xml:space="preserve">
+    <value>删除用户信息提示</value>
+  </data>
+  <data name="SelectDeleteUser" xml:space="preserve">
+    <value>请先选择需要删除的用户</value>
+  </data>
+  <data name="Sure" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="DeleteUser" xml:space="preserve">
+    <value>删除用户</value>
+  </data>
+  <data name="SureWantToDeleteUser" xml:space="preserve">
+    <value>确定删除所选用户吗？</value>
+  </data>
+  <data name="DeleteSuccessfully" xml:space="preserve">
+    <value>删除成功</value>
+  </data>
+  <data name="UserInfo" xml:space="preserve">
+    <value>用户信息</value>
+  </data>
+  <data name="UpdateUserPrompt" xml:space="preserve">
+    <value>更新用户信息提示</value>
+  </data>
+  <data name="UsernameExists" xml:space="preserve">
+    <value>该用户名已存在</value>
+  </data>
+  <data name="UpdateSuccessfully" xml:space="preserve">
+    <value>更新成功</value>
+  </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>更新失败</value>
+  </data>
+  <data name="EmailExists" xml:space="preserve">
+    <value>邮箱已存在</value>
+  </data>
+  <data name="CreateUserPrompt" xml:space="preserve">
+    <value>添加用户信息提示</value>
+  </data>
+  <data name="CreateSuccessfully" xml:space="preserve">
+    <value>添加成功</value>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>用户名不能为空</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>密码不能为空</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>邮箱不能为空</value>
+  </data>
+  <data name="PhoneRequired" xml:space="preserve">
+    <value>手机号码不能为空</value>
+  </data>
+  <data name="IncorrectEmailFormat" xml:space="preserve">
+    <value>邮箱格式不对</value>
+  </data>
+  <data name="IncorrectPhoneFormat" xml:space="preserve">
+    <value>手机号格式不正确（需为11位，以1开头且第二位为3-9）</value>
+  </data>
+  <data name="DeleteRole" xml:space="preserve">
+    <value>删除角色</value>
+  </data>
+  <data name="SureWantToDeleteRole" xml:space="preserve">
+    <value>确定删除所选角色吗？</value>
+  </data>
+  <data name="DeleteRolePrompt" xml:space="preserve">
+    <value>删除角色信息提示</value>
+  </data>
+  <data name="RoleCodeRequired" xml:space="preserve">
+    <value>角色码不能为空</value>
+  </data>
+  <data name="RoleNameRequired" xml:space="preserve">
+    <value>角色名不能为空</value>
+  </data>
+  <data name="UpdateRolePrompt" xml:space="preserve">
+    <value>更新角色信息提示</value>
+  </data>
+  <data name="RoleCodeExists" xml:space="preserve">
+    <value>当前角色码已存在</value>
+  </data>
+  <data name="CreateRolePrompt" xml:space="preserve">
+    <value>添加角色信息提示</value>
+  </data>
+  <data name="UsernameNotExists" xml:space="preserve">
+    <value>用户名不存在</value>
+  </data>
+  <data name="LoginPrompt" xml:space="preserve">
+    <value>登录提示</value>
+  </data>
+  <data name="LoginSuccessfully" xml:space="preserve">
+    <value>登录成功</value>
+  </data>
+  <data name="IncorrectPassword" xml:space="preserve">
+    <value>密码不正确</value>
+  </data>
+  <data name="OldPasswordRequired" xml:space="preserve">
+    <value>旧密码不能为空</value>
+  </data>
+  <data name="NewPasswordRequired" xml:space="preserve">
+    <value>新密码不能为空</value>
+  </data>
+  <data name="RepeatPasswordRequired" xml:space="preserve">
+    <value>确认密码不能为空</value>
+  </data>
+  <data name="NewPasswordCannotBeSameWithOldPassword" xml:space="preserve">
+    <value>新密码不能跟旧密码相同</value>
+  </data>
+  <data name="PasswordsNotMatch" xml:space="preserve">
+    <value>两次输入的密码不一致</value>
+  </data>
+  <data name="IncorrectOldPassword" xml:space="preserve">
+    <value>旧密码不正确</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="TitleBar" xml:space="preserve">
+    <value>标题栏</value>
+  </data>
+  <data name="ChangeTitleBarBackgroundVisibility" xml:space="preserve">
+    <value>更改标题栏背景可见性</value>
+  </data>
+  <data name="RightToLeft" xml:space="preserve">
+    <value>从右到左</value>
+  </data>
+  <data name="Fullscreen" xml:space="preserve">
+    <value>全屏</value>
+  </data>
+  <data name="Toggles" xml:space="preserve">
+    <value>切换</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="SwitchTo" xml:space="preserve">
+    <value>切换到...</value>
+  </data>
+  <data name="ShadcnMode" xml:space="preserve">
+    <value>沙德模式</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>渐变</value>
+  </data>
+  <data name="GradientSoft" xml:space="preserve">
+    <value>渐变柔软</value>
+  </data>
+  <data name="GradientDarker" xml:space="preserve">
+    <value>渐变深色</value>
+  </data>
+  <data name="Flat" xml:space="preserve">
+    <value>平坦的</value>
+  </data>
+  <data name="Bubble" xml:space="preserve">
+    <value>气泡</value>
+  </data>
+  <data name="Animations" xml:space="preserve">
+    <value>动画</value>
+  </data>
+  <data name="Transitions" xml:space="preserve">
+    <value>过渡</value>
+  </data>
+  <data name="WindowLock" xml:space="preserve">
+    <value>窗口锁</value>
+  </data>
+  <data name="TogglesMinimizingAndResizing" xml:space="preserve">
+    <value>切换最小化和调整大小。</value>
+  </data>
+  <data name="TogglesTheRightToLeft" xml:space="preserve">
+    <value>切换右至左。</value>
+  </data>
+  <data name="MakesTheAppFullscreen" xml:space="preserve">
+    <value>使应用程序全屏。</value>
+  </data>
+  <data name="TogglesTheTitleBar" xml:space="preserve">
+    <value>切换标题栏。</value>
+  </data>
+  <data name="Orange" xml:space="preserve">
+    <value>橙色</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>红色</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>绿色</value>
+  </data>
+  <data name="Blue" xml:space="preserve">
+    <value>蓝色</value>
+  </data>
+  <data name="ThemeChanged" xml:space="preserve">
+    <value>主题改变了</value>
+  </data>
+  <data name="ThemeHasChangedTo" xml:space="preserve">
+    <value>主题已更改为{0}</value>
+  </data>
+  <data name="ColorChanged" xml:space="preserve">
+    <value>颜色改变了</value>
+  </data>
+  <data name="ColorHasChangedTo" xml:space="preserve">
+    <value>颜色已更改为{0}</value>
+  </data>
+  <data name="WindowLocked" xml:space="preserve">
+    <value>窗口锁定</value>
+  </data>
+  <data name="WindowUnlocked" xml:space="preserve">
+    <value>窗口解锁</value>
+  </data>
+  <data name="WindowHasBeenLocked" xml:space="preserve">
+    <value>窗口已被锁定</value>
+  </data>
+  <data name="WindowHasBeenUnlocked" xml:space="preserve">
+    <value>窗口已解锁</value>
+  </data>
+  <data name="AnimationEnabled" xml:space="preserve">
+    <value>动画启用</value>
+  </data>
+  <data name="AnimationDisabled" xml:space="preserve">
+    <value>动画禁用</value>
+  </data>
+  <data name="BackgroundAnimationsAreNowEnabled" xml:space="preserve">
+    <value>现在启用了背景动画。</value>
+  </data>
+  <data name="BackgroundAnimationsAreNowDisabled" xml:space="preserve">
+    <value>背景动画现在被禁用。</value>
+  </data>
+  <data name="TransitionsEnabled" xml:space="preserve">
+    <value>启用过渡</value>
+  </data>
+  <data name="TransitionsDisabled" xml:space="preserve">
+    <value>过渡禁用</value>
+  </data>
+  <data name="BackgroundTransitionsAreNowEnabled" xml:space="preserve">
+    <value>现在启用了背景过渡。</value>
+  </data>
+  <data name="BackgroundTransitionsAreNowDisabled" xml:space="preserve">
+    <value>背景过渡现在被禁用。</value>
+  </data>
+  <data name="TitleBarVisible" xml:space="preserve">
+    <value>可见标题栏</value>
+  </data>
+  <data name="TitleBarHidden" xml:space="preserve">
+    <value>标题栏隐藏</value>
+  </data>
+  <data name="WindowTitleBarHasBeenShown" xml:space="preserve">
+    <value>窗口标题栏已显示</value>
+  </data>
+  <data name="WindowTitleBarHasBeenHidden" xml:space="preserve">
+    <value>窗户标题栏已被隐藏</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>创建</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="CreateCustom" xml:space="preserve">
+    <value>创建自定义</value>
+  </data>
+  <data name="CreateCustomTheme" xml:space="preserve">
+    <value>创建自定义主题</value>
+  </data>
+  <data name="ThisColorThemeHasAlreadyBeenAdded" xml:space="preserve">
+    <value>此颜色主题已经添加。</value>
+  </data>
+  <data name="ColorName" xml:space="preserve">
+    <value>颜色名称</value>
+  </data>
+  <data name="PrimaryColor" xml:space="preserve">
+    <value>主色</value>
+  </data>
+  <data name="AccentColor" xml:space="preserve">
+    <value>强调色</value>
+  </data>
+  <data name="ShadcnModeInformation" xml:space="preserve">
+    <value>沙德模式信息</value>
+  </data>
+  <data name="AnExceptionOccurredDuringProgramOperation" xml:space="preserve">
+    <value>程序运行过程中发生异常</value>
+  </data>
+  <data name="HandleGlobalException" xml:space="preserve">
+    <value>处理全局异常</value>
+  </data>
+  <data name="DomainUnhandledException" xml:space="preserve">
+    <value>未处理的异常</value>
+  </data>
+  <data name="FeeManagement" xml:space="preserve">
+    <value>费用管理</value>
+  </data>
+  <data name="UpdateFeePrompt" xml:space="preserve">
+    <value>更新费用提示</value>
+  </data>
+  <data name="FeeExists" xml:space="preserve">
+    <value>费用存在</value>
+  </data>
+  <data name="CreateFeePrompt" xml:space="preserve">
+    <value>创建费用提示</value>
+  </data>
+  <data name="CarType" xml:space="preserve">
+    <value>车辆类型</value>
+  </data>
+  <data name="LicensePlate" xml:space="preserve">
+    <value>牌照</value>
+  </data>
+  <data name="PaymentAmount" xml:space="preserve">
+    <value>付款金额</value>
+  </data>
+  <data name="PaymentDateTime" xml:space="preserve">
+    <value>付款日期</value>
+  </data>
+  <data name="PaymentChannel" xml:space="preserve">
+    <value>支付渠道</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>付款方式</value>
+  </data>
+  <data name="LaneName" xml:space="preserve">
+    <value>车道名称</value>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>订单号</value>
+  </data>
+  <data name="CreatedAt" xml:space="preserve">
+    <value>创建在</value>
+  </data>
+  <data name="FeeInfo" xml:space="preserve">
+    <value>费用信息</value>
+  </data>
+  <data name="CreateNewFee" xml:space="preserve">
+    <value>创建新费用</value>
+  </data>
+  <data name="UpdateFeeInfo" xml:space="preserve">
+    <value>更新费用信息</value>
+  </data>
+  <data name="DeleteFeePrompt" xml:space="preserve">
+    <value>删除费用提示</value>
+  </data>
+  <data name="SelectDeleteFee" xml:space="preserve">
+    <value>选择需要删除的费用</value>
+  </data>
+  <data name="DeleteFee" xml:space="preserve">
+    <value>删除费</value>
+  </data>
+  <data name="SureWantToDeleteFee" xml:space="preserve">
+    <value>确定想删除费用</value>
+  </data>
+  <data name="FeeManagementDesc" xml:space="preserve">
+    <value>费用管理说明</value>
+  </data>
+  <data name="ParkingManagement" xml:space="preserve">
+    <value>停车管理</value>
+  </data>
+  <data name="CarManagement" xml:space="preserve">
+    <value>车辆管理</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>项目名称</value>
+  </data>
+  <data name="TableName" xml:space="preserve">
+    <value>表名</value>
+  </data>
+  <data name="ClassName" xml:space="preserve">
+    <value>类别名称</value>
+  </data>
+  <data name="DeleteCodeClass" xml:space="preserve">
+    <value>删除代码类</value>
+  </data>
+  <data name="SelectDeleteCodeClass" xml:space="preserve">
+    <value>选择删除代码类</value>
+  </data>
+  <data name="DeleteCodeClassPrompt" xml:space="preserve">
+    <value>删除代码类提示</value>
+  </data>
+  <data name="UpdateCodeClassInfo" xml:space="preserve">
+    <value>更新代码类信息</value>
+  </data>
+  <data name="CreateNewCodeClass" xml:space="preserve">
+    <value>创建新的代码类</value>
+  </data>
+  <data name="CodeClassInfo" xml:space="preserve">
+    <value>代码类信息</value>
+  </data>
+  <data name="CodeClassManagement" xml:space="preserve">
+    <value>数据表和类管理</value>
+  </data>
+  <data name="CodeClassManagementDesc" xml:space="preserve">
+    <value>代码类管理说明</value>
+  </data>
+  <data name="CreateCodeClassPrompt" xml:space="preserve">
+    <value>创建代码类提示</value>
+  </data>
+  <data name="CodeClassExists" xml:space="preserve">
+    <value>代码类存在</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="GenerateCodeClassPrompt" xml:space="preserve">
+    <value>生成代码类提示</value>
+  </data>
+  <data name="SelectGenerateCodeClass" xml:space="preserve">
+    <value>选择生成代码类</value>
+  </data>
+  <data name="GenerateCodeClass" xml:space="preserve">
+    <value>生成代码类</value>
+  </data>
+  <data name="SureWantToGenerateCodeClass" xml:space="preserve">
+    <value>确定想生成代码类</value>
+  </data>
+  <data name="FieldName" xml:space="preserve">
+    <value>字段名称</value>
+  </data>
+  <data name="FieldType" xml:space="preserve">
+    <value>字段类型</value>
+  </data>
+  <data name="FieldLength" xml:space="preserve">
+    <value>字段长度</value>
+  </data>
+  <data name="FieldRemark" xml:space="preserve">
+    <value>字段备注</value>
+  </data>
+  <data name="IsMainKey" xml:space="preserve">
+    <value>是主键</value>
+  </data>
+  <data name="IsAllowNull" xml:space="preserve">
+    <value>允许空值</value>
+  </data>
+  <data name="IsAutoIncrement" xml:space="preserve">
+    <value>自动增长</value>
+  </data>
+  <data name="IsUnique" xml:space="preserve">
+    <value>唯一的</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>默认值</value>
+  </data>
+  <data name="CodeFieldManagement" xml:space="preserve">
+    <value>代码字段管理</value>
+  </data>
+  <data name="CodeFieldManagementDesc" xml:space="preserve">
+    <value>代码字段管理说明</value>
+  </data>
+  <data name="PleaseEnterProjectName" xml:space="preserve">
+    <value>请输入项目名称</value>
+  </data>
+  <data name="PleaseEnterTableName" xml:space="preserve">
+    <value>输入表名</value>
+  </data>
+  <data name="PleaseEnterClassName" xml:space="preserve">
+    <value>请输入班级名</value>
+  </data>
+  <data name="PleaseEnterFields" xml:space="preserve">
+    <value>请输入必要字段</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>字段</value>
+  </data>
+  <data name="ProjectNameCannoBeEmpty" xml:space="preserve">
+    <value>项目名不能为空</value>
+  </data>
+  <data name="TableNameCannotBeEmpty" xml:space="preserve">
+    <value>表名不能为空</value>
+  </data>
+  <data name="ClassNameCannotBeEmpty" xml:space="preserve">
+    <value>类名不能为空</value>
+  </data>
+  <data name="FieldsCannotBeEmpty" xml:space="preserve">
+    <value>字段字典不能为空</value>
+  </data>
+  <data name="CreateNewCodeField" xml:space="preserve">
+    <value>创建新字段</value>
+  </data>
+  <data name="UpdateCodeFieldInfo" xml:space="preserve">
+    <value>更新字段信息</value>
+  </data>
+  <data name="UpdateCodeFieldPrompt" xml:space="preserve">
+    <value>更新字段提示</value>
+  </data>
+  <data name="CreateCodeFieldPrompt" xml:space="preserve">
+    <value>创建字段提示</value>
+  </data>
+  <data name="DeleteCodeFieldPrompt" xml:space="preserve">
+    <value>删除字段提示</value>
+  </data>
+  <data name="SelectDeleteCodeField" xml:space="preserve">
+    <value>选择删除字段</value>
+  </data>
+  <data name="DeleteCodeField" xml:space="preserve">
+    <value>删除字段</value>
+  </data>
+  <data name="SureWantToDeleteCodeField" xml:space="preserve">
+    <value>确保要删除代码字段</value>
+  </data>
+  <data name="SureWantToDeleteCodeClass" xml:space="preserve">
+    <value>确保要删除代码类</value>
+  </data>
+  <data name="PerPageItems15" xml:space="preserve">
+    <value>15条/页</value>
+  </data>
+  <data name="PerPageItems25" xml:space="preserve">
+    <value>25条/页</value>
+  </data>
+  <data name="PerPageItems50" xml:space="preserve">
+    <value>50条/页</value>
+  </data>
+  <data name="PerPageItems100" xml:space="preserve">
+    <value>100条/页</value>
+  </data>
+  <data name="RestartIsRequiredToTakeEffect" xml:space="preserve">
+    <value>重新启动必须生效</value>
+  </data>
+  <data name="PleaseEnterCarType" xml:space="preserve">
+    <value>请输入汽车类型</value>
+  </data>
+  <data name="PleaseEnterLicensePlate" xml:space="preserve">
+    <value>请输入车牌</value>
+  </data>
+  <data name="PleaseEnterPaymentChannel" xml:space="preserve">
+    <value>请输入付款渠道</value>
+  </data>
+  <data name="PleaseEnterPaymentMethod" xml:space="preserve">
+    <value>请输入付款方式</value>
+  </data>
+  <data name="PleaseEnterLaneName" xml:space="preserve">
+    <value>请输入车道名称</value>
+  </data>
+  <data name="PleaseEnterOrderNumber" xml:space="preserve">
+    <value>请输入订单号</value>
+  </data>
+  <data name="UpdateTestPrompt" xml:space="preserve">
+    <value>更新测试提示</value>
+  </data>
+  <data name="TestExists" xml:space="preserve">
+    <value>测试存在</value>
+  </data>
+  <data name="CreateTestPrompt" xml:space="preserve">
+    <value>创建测试提示</value>
+  </data>
+  <data name="ParkingLotName" xml:space="preserve">
+    <value>停车场名称</value>
+  </data>
+  <data name="PleaseEnterParkingLotName" xml:space="preserve">
+    <value>请输入停车场的名字</value>
+  </data>
+  <data name="RuleName" xml:space="preserve">
+    <value>规则名称</value>
+  </data>
+  <data name="PleaseEnterRuleName" xml:space="preserve">
+    <value>请输入规则名称</value>
+  </data>
+  <data name="RuleType" xml:space="preserve">
+    <value>规则类型</value>
+  </data>
+  <data name="PleaseEnterRuleType" xml:space="preserve">
+    <value>请输入规则类型</value>
+  </data>
+  <data name="RuleContent" xml:space="preserve">
+    <value>规则内容</value>
+  </data>
+  <data name="PleaseEnterRuleContent" xml:space="preserve">
+    <value>请输入规则内容</value>
+  </data>
+  <data name="TestInfo" xml:space="preserve">
+    <value>测试信息</value>
+  </data>
+  <data name="CreateNewTest" xml:space="preserve">
+    <value>创建新测试</value>
+  </data>
+  <data name="UpdateTestInfo" xml:space="preserve">
+    <value>更新测试信息</value>
+  </data>
+  <data name="DeleteTestPrompt" xml:space="preserve">
+    <value>删除测试提示</value>
+  </data>
+  <data name="SelectDeleteTest" xml:space="preserve">
+    <value>选择Deletete测试</value>
+  </data>
+  <data name="DeleteTest" xml:space="preserve">
+    <value>删除测试</value>
+  </data>
+  <data name="SureWantToDeleteTest" xml:space="preserve">
+    <value>确保要删除测试</value>
+  </data>
+  <data name="TestManagement" xml:space="preserve">
+    <value>测试管理</value>
+  </data>
+  <data name="TestManagementDesc" xml:space="preserve">
+    <value>测试管理详情</value>
+  </data>
+  <data name="UpdateABCPrompt" xml:space="preserve">
+    <value>更新B C提示</value>
+  </data>
+  <data name="ABCExists" xml:space="preserve">
+    <value>A B C存在</value>
+  </data>
+  <data name="CreateABCPrompt" xml:space="preserve">
+    <value>创建B C提示</value>
+  </data>
+  <data name="ABCInfo" xml:space="preserve">
+    <value>A B C信息</value>
+  </data>
+  <data name="CreateNewABC" xml:space="preserve">
+    <value>创建新的A B C</value>
+  </data>
+  <data name="UpdateABCInfo" xml:space="preserve">
+    <value>更新A B C信息</value>
+  </data>
+  <data name="DeleteABCPrompt" xml:space="preserve">
+    <value>删除A B C提示</value>
+  </data>
+  <data name="SelectDeleteABC" xml:space="preserve">
+    <value>选择删除A B C</value>
+  </data>
+  <data name="DeleteABC" xml:space="preserve">
+    <value>删除A B C</value>
+  </data>
+  <data name="SureWantToDeleteABC" xml:space="preserve">
+    <value>当然想删除A B C</value>
+  </data>
+  <data name="ABCManagement" xml:space="preserve">
+    <value>A B C管理</value>
+  </data>
+  <data name="ABCManagementDesc" xml:space="preserve">
+    <value>A B C管理DESC</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="PleaseSelectDate" xml:space="preserve">
+    <value>请选择日期</value>
+  </data>
+  <data name="UpdateStudentPrompt" xml:space="preserve">
+    <value>更新学生提示</value>
+  </data>
+  <data name="StudentExists" xml:space="preserve">
+    <value>学生存在</value>
+  </data>
+  <data name="CreateStudentPrompt" xml:space="preserve">
+    <value>创建学生提示</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>姓名</value>
+  </data>
+  <data name="PleaseEnterName" xml:space="preserve">
+    <value>请输入名称</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="PleaseEnterAddress" xml:space="preserve">
+    <value>请输入地址</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>分数</value>
+  </data>
+  <data name="PleaseEnterScore" xml:space="preserve">
+    <value>请输入分数</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>年龄</value>
+  </data>
+  <data name="PleaseEnterAge" xml:space="preserve">
+    <value>请输入年龄</value>
+  </data>
+  <data name="StudentInfo" xml:space="preserve">
+    <value>学生信息</value>
+  </data>
+  <data name="CreateNewStudent" xml:space="preserve">
+    <value>创建新学生</value>
+  </data>
+  <data name="UpdateStudentInfo" xml:space="preserve">
+    <value>更新学生信息</value>
+  </data>
+  <data name="DeleteStudentPrompt" xml:space="preserve">
+    <value>删除学生提示</value>
+  </data>
+  <data name="SelectDeleteStudent" xml:space="preserve">
+    <value>选择“删除学生”</value>
+  </data>
+  <data name="DeleteStudent" xml:space="preserve">
+    <value>删除学生</value>
+  </data>
+  <data name="SureWantToDeleteStudent" xml:space="preserve">
+    <value>当然想删除学生</value>
+  </data>
+  <data name="StudentManagement" xml:space="preserve">
+    <value>学生管理</value>
+  </data>
+  <data name="StudentManagementDesc" xml:space="preserve">
+    <value>学生管理描述</value>
+  </data>
+  <data name="Name1" xml:space="preserve">
+    <value>姓名1</value>
+  </data>
+  <data name="PleaseEnterName1" xml:space="preserve">
+    <value>请输入姓名1</value>
+  </data>
+  <data name="Name2" xml:space="preserve">
+    <value>姓名2</value>
+  </data>
+  <data name="PleaseEnterName2" xml:space="preserve">
+    <value>请输入NAME2</value>
+  </data>
+  <data name="Name3" xml:space="preserve">
+    <value>姓名3</value>
+  </data>
+  <data name="PleaseEnterName3" xml:space="preserve">
+    <value>请输入NAME3</value>
+  </data>
+  <data name="Name4" xml:space="preserve">
+    <value>姓名4</value>
+  </data>
+  <data name="PleaseEnterName4" xml:space="preserve">
+    <value>请输入名称4</value>
+  </data>
+  <data name="Name5" xml:space="preserve">
+    <value>姓名5</value>
+  </data>
+  <data name="PleaseEnterName5" xml:space="preserve">
+    <value>请输入NAME5</value>
+  </data>
+  <data name="Name6" xml:space="preserve">
+    <value>姓名6</value>
+  </data>
+  <data name="PleaseEnterName6" xml:space="preserve">
+    <value>请输入NAME6</value>
+  </data>
+  <data name="Name7" xml:space="preserve">
+    <value>姓名7</value>
+  </data>
+  <data name="PleaseEnterName7" xml:space="preserve">
+    <value>请输入名称7</value>
+  </data>
+  <data name="IdRequired" xml:space="preserve">
+    <value>id必填</value>
+  </data>
+  <data name="Name1Required" xml:space="preserve">
+    <value>姓名1为必填项！</value>
+  </data>
+  <data name="Name2Required" xml:space="preserve">
+    <value>姓名2为必填项！</value>
+  </data>
+  <data name="Name3Required" xml:space="preserve">
+    <value>姓名3为必填项！</value>
+  </data>
+  <data name="Name4Required" xml:space="preserve">
+    <value>姓名4为必填项！</value>
+  </data>
+  <data name="Name5Required" xml:space="preserve">
+    <value>姓名5为必填项！</value>
+  </data>
+  <data name="Name6Required" xml:space="preserve">
+    <value>姓名6为必填项！</value>
+  </data>
+  <data name="Name7Required" xml:space="preserve">
+    <value>姓名7为必填项！</value>
+  </data>
+  <data name="AddressRequired" xml:space="preserve">
+    <value>电子邮件地址（必需）</value>
+  </data>
+  <data name="ScoreRequired" xml:space="preserve">
+    <value>需要垃圾邮件评分</value>
+  </data>
+  <data name="AgeRequired" xml:space="preserve">
+    <value>年龄必填</value>
+  </data>
+  <data name="Dismiss" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>需要名称</value>
+  </data>
+  <data name="CreatedAtRequired" xml:space="preserve">
+    <value>根据需要创建</value>
+  </data>
+  <data name="UpdatedAtRequired" xml:space="preserve">
+    <value>按要求更新</value>
+  </data>
+  <data name="UpdateWorkerPrompt" xml:space="preserve">
+    <value>更新工人提示</value>
+  </data>
+  <data name="WorkerExists" xml:space="preserve">
+    <value>工人存在</value>
+  </data>
+  <data name="CreateWorkerPrompt" xml:space="preserve">
+    <value>创建工人提示</value>
+  </data>
+  <data name="PleaseEnterCreatedAt" xml:space="preserve">
+    <value>请输入创建的</value>
+  </data>
+  <data name="UpdatedAt" xml:space="preserve">
+    <value>更新在</value>
+  </data>
+  <data name="PleaseEnterUpdatedAt" xml:space="preserve">
+    <value>请在</value>
+  </data>
+  <data name="WorkerInfo" xml:space="preserve">
+    <value>工人信息</value>
+  </data>
+  <data name="CreateNewWorker" xml:space="preserve">
+    <value>创建新的工人</value>
+  </data>
+  <data name="UpdateWorkerInfo" xml:space="preserve">
+    <value>更新工人信息</value>
+  </data>
+  <data name="DeleteWorkerPrompt" xml:space="preserve">
+    <value>删除工人提示</value>
+  </data>
+  <data name="SelectDeleteWorker" xml:space="preserve">
+    <value>选择需要删除的工人</value>
+  </data>
+  <data name="DeleteWorker" xml:space="preserve">
+    <value>删除工人</value>
+  </data>
+  <data name="SureWantToDeleteWorker" xml:space="preserve">
+    <value>当然想删除工人</value>
+  </data>
+  <data name="WorkerManagement" xml:space="preserve">
+    <value>工人管理</value>
+  </data>
+  <data name="WorkerManagementDesc" xml:space="preserve">
+    <value>工人管理描述</value>
+  </data>
+  <data name="GenerateSuccessfully" xml:space="preserve">
+    <value>成功生成</value>
+  </data>
+  <data name="GenerateFailed" xml:space="preserve">
+    <value>生成失败</value>
+  </data>
+  <data name="AllGeneratedSuccessfully" xml:space="preserve">
+    <value>全部成功生成</value>
+  </data>
+  <data name="SomeBuildsFailed" xml:space="preserve">
+    <value>部分构建失败</value>
+  </data>
+  <data name="YouNeedToRestartTheProgramToTakeEffect" xml:space="preserve">
+    <value>您需要重新启动该程序才能生效</value>
+  </data>
+  <data name="PleaseCheckTheCodeAndViewTheLog" xml:space="preserve">
+    <value>请检查代码并查看日志</value>
+  </data>
+  <data name="CarTypeRequired" xml:space="preserve">
+    <value>需要汽车类型</value>
+  </data>
+  <data name="LicensePlateRequired" xml:space="preserve">
+    <value>需要车牌</value>
+  </data>
+  <data name="PaymentAmountRequired" xml:space="preserve">
+    <value>所需的付款金额</value>
+  </data>
+  <data name="PaymentChannelRequired" xml:space="preserve">
+    <value>需要支付渠道</value>
+  </data>
+  <data name="PaymentMethodRequired" xml:space="preserve">
+    <value>需要付款方式</value>
+  </data>
+  <data name="LaneNameRequired" xml:space="preserve">
+    <value>需要车道名称</value>
+  </data>
+  <data name="OrderNumberRequired" xml:space="preserve">
+    <value>订单编号所需</value>
+  </data>
+  <data name="PleaseEnterPaymentAmount" xml:space="preserve">
+    <value>请输入付款金额</value>
+  </data>
+  <data name="PaymentDateTimeRequired" xml:space="preserve">
+    <value>所需的付款时间</value>
+  </data>
+  <data name="ParkingLotNameRequired" xml:space="preserve">
+    <value>需要停车场名称</value>
+  </data>
+  <data name="RuleNameRequired" xml:space="preserve">
+    <value>需要规则名称</value>
+  </data>
+  <data name="RuleTypeRequired" xml:space="preserve">
+    <value>规则类型所需</value>
+  </data>
+  <data name="RuleContentRequired" xml:space="preserve">
+    <value>需要规则内容</value>
+  </data>
+  <data name="UpdateChargingRulePrompt" xml:space="preserve">
+    <value>更新充电规则提示</value>
+  </data>
+  <data name="ChargingRuleExists" xml:space="preserve">
+    <value>充电规则存在</value>
+  </data>
+  <data name="CreateChargingRulePrompt" xml:space="preserve">
+    <value>创建充电规则提示</value>
+  </data>
+  <data name="ChargingRuleInfo" xml:space="preserve">
+    <value>充电规则信息</value>
+  </data>
+  <data name="CreateNewChargingRule" xml:space="preserve">
+    <value>创建新的充电规则</value>
+  </data>
+  <data name="UpdateChargingRuleInfo" xml:space="preserve">
+    <value>更新充电规则信息</value>
+  </data>
+  <data name="DeleteChargingRulePrompt" xml:space="preserve">
+    <value>删除充电规则提示</value>
+  </data>
+  <data name="SelectDeleteChargingRule" xml:space="preserve">
+    <value>选择需要删除的充电规则</value>
+  </data>
+  <data name="DeleteChargingRule" xml:space="preserve">
+    <value>删除充电规则</value>
+  </data>
+  <data name="SureWantToDeleteChargingRule" xml:space="preserve">
+    <value>当然想删除充电规则</value>
+  </data>
+  <data name="ChargingRuleManagement" xml:space="preserve">
+    <value>充电规则管理</value>
+  </data>
+  <data name="ChargingRuleManagementDesc" xml:space="preserve">
+    <value>收费规则管理描述</value>
+  </data>
+  <data name="UpdateFeeRulePrompt" xml:space="preserve">
+    <value>更新费用规则提示</value>
+  </data>
+  <data name="FeeRuleExists" xml:space="preserve">
+    <value>费用规则存在</value>
+  </data>
+  <data name="CreateFeeRulePrompt" xml:space="preserve">
+    <value>创建收费规则提示</value>
+  </data>
+  <data name="FeeRuleInfo" xml:space="preserve">
+    <value>费用规则信息</value>
+  </data>
+  <data name="CreateNewFeeRule" xml:space="preserve">
+    <value>创建新的费用规则</value>
+  </data>
+  <data name="UpdateFeeRuleInfo" xml:space="preserve">
+    <value>更新费用规则信息</value>
+  </data>
+  <data name="DeleteFeeRulePrompt" xml:space="preserve">
+    <value>删除费用提示</value>
+  </data>
+  <data name="SelectDeleteFeeRule" xml:space="preserve">
+    <value>选择“删除费”规则</value>
+  </data>
+  <data name="DeleteFeeRule" xml:space="preserve">
+    <value>删除费规则</value>
+  </data>
+  <data name="SureWantToDeleteFeeRule" xml:space="preserve">
+    <value>当然想删除费用规则</value>
+  </data>
+  <data name="FeeRuleManagement" xml:space="preserve">
+    <value>费用规则管理</value>
+  </data>
+  <data name="FeeRuleManagementDesc" xml:space="preserve">
+    <value>费用规则管理描述</value>
+  </data>
+  <data name="PleaseEnterUsername" xml:space="preserve">
+    <value>请输入用户名</value>
+  </data>
+  <data name="PleaseEnterPassword" xml:space="preserve">
+    <value>请输入密码</value>
+  </data>
+  <data name="PleaseEnterEmail" xml:space="preserve">
+    <value>请输入电子邮件</value>
+  </data>
+  <data name="PleaseEnterPhone" xml:space="preserve">
+    <value>请输入手机号码</value>
+  </data>
+  <data name="SelectDeleteRole" xml:space="preserve">
+    <value>选择删除角色</value>
+  </data>
+  <data name="BasicInformation" xml:space="preserve">
+    <value>基础信息</value>
+  </data>
+  <data name="ParkingInRecord" xml:space="preserve">
+    <value>场内车辆</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>数据统计</value>
+  </data>
+  <data name="SystemManagement" xml:space="preserve">
+    <value>系统管理</value>
+  </data>
+  <data name="product_typeRequired" xml:space="preserve">
+    <value>需要产品类型</value>
+  </data>
+  <data name="product_idRequired" xml:space="preserve">
+    <value>需要造成生产力</value>
+  </data>
+  <data name="create_userRequired" xml:space="preserve">
+    <value>需要创建器</value>
+  </data>
+  <data name="pay_orderRequired" xml:space="preserve">
+    <value>需要薪台</value>
+  </data>
+  <data name="transaction_idRequired" xml:space="preserve">
+    <value>需要交易</value>
+  </data>
+  <data name="UpdateOrderRefundPrompt" xml:space="preserve">
+    <value>更新订单退款提示</value>
+  </data>
+  <data name="OrderRefundExists" xml:space="preserve">
+    <value>订单退款存在</value>
+  </data>
+  <data name="CreateOrderRefundPrompt" xml:space="preserve">
+    <value>创建订单退款提示</value>
+  </data>
+  <data name="PleaseEnteraysn_id" xml:space="preserve">
+    <value>请Enteraysnid</value>
+  </data>
+  <data name="product_type" xml:space="preserve">
+    <value>产品类型</value>
+  </data>
+  <data name="PleaseEnterproduct_type" xml:space="preserve">
+    <value>请企业型</value>
+  </data>
+  <data name="product_id" xml:space="preserve">
+    <value>productid</value>
+  </data>
+  <data name="PleaseEnterproduct_id" xml:space="preserve">
+    <value>请企业</value>
+  </data>
+  <data name="PleaseEnterBuyer" xml:space="preserve">
+    <value>请输入买家</value>
+  </data>
+  <data name="PleaseEnterorder_money" xml:space="preserve">
+    <value>请输入订单</value>
+  </data>
+  <data name="PleaseEnterrefund_type" xml:space="preserve">
+    <value>请输入退款类型</value>
+  </data>
+  <data name="PleaseEnterrefund_money" xml:space="preserve">
+    <value>请肠内</value>
+  </data>
+  <data name="PleaseEnterReason" xml:space="preserve">
+    <value>请输入原因</value>
+  </data>
+  <data name="PleaseEnterrefund_status" xml:space="preserve">
+    <value>请肠道</value>
+  </data>
+  <data name="PleaseEnterrefund_remark" xml:space="preserve">
+    <value>请肠道标记</value>
+  </data>
+  <data name="create_user" xml:space="preserve">
+    <value>创建器</value>
+  </data>
+  <data name="PleaseEntercreate_user" xml:space="preserve">
+    <value>请进入createuser</value>
+  </data>
+  <data name="pay_order" xml:space="preserve">
+    <value>薪机</value>
+  </data>
+  <data name="PleaseEnterpay_order" xml:space="preserve">
+    <value>请输入订单</value>
+  </data>
+  <data name="PleaseEnterrefund_order_id" xml:space="preserve">
+    <value>请EutteRefundOrderID</value>
+  </data>
+  <data name="PleaseEnterrefund_transaction_id" xml:space="preserve">
+    <value>请输入退款转换ID</value>
+  </data>
+  <data name="PleaseEnterMerchant" xml:space="preserve">
+    <value>请输入商户号</value>
+  </data>
+  <data name="transaction_id" xml:space="preserve">
+    <value>交易</value>
+  </data>
+  <data name="PleaseEntertransaction_id" xml:space="preserve">
+    <value>请enterTransactionId</value>
+  </data>
+  <data name="PleaseEnterclient_type" xml:space="preserve">
+    <value>请输入客户端类型</value>
+  </data>
+  <data name="PleaseEnterclient_id" xml:space="preserve">
+    <value>请输入客户端编号</value>
+  </data>
+  <data name="OrderRefundInfo" xml:space="preserve">
+    <value>订购退款信息</value>
+  </data>
+  <data name="CreateNewOrderRefund" xml:space="preserve">
+    <value>创建新订单退款</value>
+  </data>
+  <data name="UpdateOrderRefundInfo" xml:space="preserve">
+    <value>更新订单退款信息</value>
+  </data>
+  <data name="DeleteOrderRefundPrompt" xml:space="preserve">
+    <value>删除订单退款提示</value>
+  </data>
+  <data name="SelectDeleteOrderRefund" xml:space="preserve">
+    <value>选择Deletete订单退款</value>
+  </data>
+  <data name="DeleteOrderRefund" xml:space="preserve">
+    <value>删除订单退款</value>
+  </data>
+  <data name="SureWantToDeleteOrderRefund" xml:space="preserve">
+    <value>当然想删除订单退款</value>
+  </data>
+  <data name="OrderRefundManagement" xml:space="preserve">
+    <value>订购退款管理</value>
+  </data>
+  <data name="OrderRefundManagementDesc" xml:space="preserve">
+    <value>订购退款管理DESC</value>
+  </data>
+  <data name="create_date" xml:space="preserve">
+    <value>创建</value>
+  </data>
+  <data name="ProductTypeRequired" xml:space="preserve">
+    <value>需要产品类型</value>
+  </data>
+  <data name="ProductIdRequired" xml:space="preserve">
+    <value>需要产品ID</value>
+  </data>
+  <data name="OrderMoneyRequired" xml:space="preserve">
+    <value>订购所需的钱</value>
+  </data>
+  <data name="RefundTypeRequired" xml:space="preserve">
+    <value>需要退款类型</value>
+  </data>
+  <data name="RefundMoneyRequired" xml:space="preserve">
+    <value>需要退款</value>
+  </data>
+  <data name="RefundStatusRequired" xml:space="preserve">
+    <value>需要退款状态</value>
+  </data>
+  <data name="RefundRemarkRequired" xml:space="preserve">
+    <value>需要退款备注</value>
+  </data>
+  <data name="CreateUserRequired" xml:space="preserve">
+    <value>创建所需的用户</value>
+  </data>
+  <data name="PayOrderRequired" xml:space="preserve">
+    <value>所需的付款订单</value>
+  </data>
+  <data name="RefundOrderIdRequired" xml:space="preserve">
+    <value>需要退款订单ID</value>
+  </data>
+  <data name="RefundTransactionIdRequired" xml:space="preserve">
+    <value>需要退款交易ID</value>
+  </data>
+  <data name="TransactionIdRequired" xml:space="preserve">
+    <value>所需的交易ID</value>
+  </data>
+  <data name="ClientTypeRequired" xml:space="preserve">
+    <value>客户类型不能为空</value>
+  </data>
+  <data name="ClientIdRequired" xml:space="preserve">
+    <value>客户端编号不能为空</value>
+  </data>
+  <data name="ProductType" xml:space="preserve">
+    <value>产品类型</value>
+  </data>
+  <data name="PleaseEnterProductType" xml:space="preserve">
+    <value>请输入产品类型</value>
+  </data>
+  <data name="ProductId" xml:space="preserve">
+    <value>产品ID</value>
+  </data>
+  <data name="PleaseEnterProductId" xml:space="preserve">
+    <value>请输入产品ID</value>
+  </data>
+  <data name="OrderMoney" xml:space="preserve">
+    <value>订购钱</value>
+  </data>
+  <data name="PleaseEnterOrderMoney" xml:space="preserve">
+    <value>请输入订单</value>
+  </data>
+  <data name="RefundType" xml:space="preserve">
+    <value>退款类型</value>
+  </data>
+  <data name="PleaseEnterRefundType" xml:space="preserve">
+    <value>请输入退款类型</value>
+  </data>
+  <data name="RefundMoney" xml:space="preserve">
+    <value>退款钱</value>
+  </data>
+  <data name="PleaseEnterRefundMoney" xml:space="preserve">
+    <value>请输入退款钱</value>
+  </data>
+  <data name="RefundStatus" xml:space="preserve">
+    <value>退款状态</value>
+  </data>
+  <data name="PleaseEnterRefundStatus" xml:space="preserve">
+    <value>请输入退款状态</value>
+  </data>
+  <data name="RefundRemark" xml:space="preserve">
+    <value>退款说明</value>
+  </data>
+  <data name="PleaseEnterRefundRemark" xml:space="preserve">
+    <value>请输入退款备注</value>
+  </data>
+  <data name="CreateUser" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="PleaseEnterCreateUser" xml:space="preserve">
+    <value>请输入创建用户</value>
+  </data>
+  <data name="PayOrder" xml:space="preserve">
+    <value>付款订单</value>
+  </data>
+  <data name="PleaseEnterPayOrder" xml:space="preserve">
+    <value>请输入订单</value>
+  </data>
+  <data name="RefundOrderId" xml:space="preserve">
+    <value>退款订单ID</value>
+  </data>
+  <data name="PleaseEnterRefundOrderId" xml:space="preserve">
+    <value>请输入退款订单ID</value>
+  </data>
+  <data name="RefundTransactionId" xml:space="preserve">
+    <value>退款交易ID</value>
+  </data>
+  <data name="PleaseEnterRefundTransactionId" xml:space="preserve">
+    <value>请输入退款交易ID</value>
+  </data>
+  <data name="TransactionId" xml:space="preserve">
+    <value>事务ID</value>
+  </data>
+  <data name="PleaseEnterTransactionId" xml:space="preserve">
+    <value>请输入交易ID</value>
+  </data>
+  <data name="ClientType" xml:space="preserve">
+    <value>客户类型</value>
+  </data>
+  <data name="PleaseEnterClientType" xml:space="preserve">
+    <value>请输入客户类型</value>
+  </data>
+  <data name="ClientId" xml:space="preserve">
+    <value>客户端编号</value>
+  </data>
+  <data name="PleaseEnterClientId" xml:space="preserve">
+    <value>请输入客户端编号</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>创建日期</value>
+  </data>
+  <data name="AysnId" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="PayTypeRequired" xml:space="preserve">
+    <value>需要付费类型</value>
+  </data>
+  <data name="UpdateUserRequired" xml:space="preserve">
+    <value>需要更新用户</value>
+  </data>
+  <data name="PayTimeRequired" xml:space="preserve">
+    <value>所需的付费时间</value>
+  </data>
+  <data name="MerchantRequired" xml:space="preserve">
+    <value>需要商户号</value>
+  </data>
+  <data name="PayUuidRequired" xml:space="preserve">
+    <value>需要付费编号</value>
+  </data>
+  <data name="ParkUuidRequired" xml:space="preserve">
+    <value>需要车场编号</value>
+  </data>
+  <data name="RemainingCarsRequired" xml:space="preserve">
+    <value>需要剩余的汽车</value>
+  </data>
+  <data name="TotalCarsRequired" xml:space="preserve">
+    <value>总汽车</value>
+  </data>
+  <data name="UpdateParkInfoPrompt" xml:space="preserve">
+    <value>更新车场信息提示</value>
+  </data>
+  <data name="ParkInfoExists" xml:space="preserve">
+    <value>存在车场信息</value>
+  </data>
+  <data name="CreateParkInfoPrompt" xml:space="preserve">
+    <value>创建车场信息提示</value>
+  </data>
+  <data name="PayType" xml:space="preserve">
+    <value>付款类型</value>
+  </data>
+  <data name="PleaseEnterPayType" xml:space="preserve">
+    <value>请输入付费类型</value>
+  </data>
+  <data name="UpdateUser" xml:space="preserve">
+    <value>更新用户</value>
+  </data>
+  <data name="PleaseEnterUpdateUser" xml:space="preserve">
+    <value>请输入更新用户</value>
+  </data>
+  <data name="PayTime" xml:space="preserve">
+    <value>付费时间</value>
+  </data>
+  <data name="PleaseEnterPayTime" xml:space="preserve">
+    <value>请输入付款时间</value>
+  </data>
+  <data name="Merchant" xml:space="preserve">
+    <value>商户号</value>
+  </data>
+  <data name="PayUuid" xml:space="preserve">
+    <value>付费编号</value>
+  </data>
+  <data name="PleaseEnterPayUuid" xml:space="preserve">
+    <value>请输入付费编号</value>
+  </data>
+  <data name="ParkUuid" xml:space="preserve">
+    <value>车场编号</value>
+  </data>
+  <data name="PleaseEnterParkUuid" xml:space="preserve">
+    <value>请输入车场的编号</value>
+  </data>
+  <data name="RemainingCars" xml:space="preserve">
+    <value>剩余的汽车</value>
+  </data>
+  <data name="PleaseEnterRemainingCars" xml:space="preserve">
+    <value>请输入剩余的汽车</value>
+  </data>
+  <data name="TotalCars" xml:space="preserve">
+    <value>总计车辆</value>
+  </data>
+  <data name="PleaseEnterTotalCars" xml:space="preserve">
+    <value>请输入总车</value>
+  </data>
+  <data name="ParkInfoInfo" xml:space="preserve">
+    <value>车场信息信息</value>
+  </data>
+  <data name="CreateNewParkInfo" xml:space="preserve">
+    <value>创建新的车场信息</value>
+  </data>
+  <data name="UpdateParkInfoInfo" xml:space="preserve">
+    <value>更新车场信息信息</value>
+  </data>
+  <data name="DeleteParkInfoPrompt" xml:space="preserve">
+    <value>删除车场信息提示</value>
+  </data>
+  <data name="SelectDeleteParkInfo" xml:space="preserve">
+    <value>选择需要删除的停车场信息</value>
+  </data>
+  <data name="DeleteParkInfo" xml:space="preserve">
+    <value>删除车场信息</value>
+  </data>
+  <data name="SureWantToDeleteParkInfo" xml:space="preserve">
+    <value>当然想删除车场信息</value>
+  </data>
+  <data name="ParkInfoManagement" xml:space="preserve">
+    <value>车场信息管理</value>
+  </data>
+  <data name="ParkInfoManagementDesc" xml:space="preserve">
+    <value>车场信息管理DESC</value>
+  </data>
+  <data name="UpdateDate" xml:space="preserve">
+    <value>更新日期</value>
+  </data>
+  <data name="ParkSettings" xml:space="preserve">
+    <value>车场设置</value>
+  </data>
+  <data name="PlatformSettings" xml:space="preserve">
+    <value>平台设置</value>
+  </data>
+  <data name="CarSettings" xml:space="preserve">
+    <value>汽车设置</value>
+  </data>
+  <data name="AreaNameRequired" xml:space="preserve">
+    <value>需要区域名称</value>
+  </data>
+  <data name="ShowAreaLotRequired" xml:space="preserve">
+    <value>显示所需区域</value>
+  </data>
+  <data name="TempCarFullCanInRequired" xml:space="preserve">
+    <value>临时汽车满足需要</value>
+  </data>
+  <data name="UpateUserRequired" xml:space="preserve">
+    <value>需要使用用户</value>
+  </data>
+  <data name="UsedCarsRequired" xml:space="preserve">
+    <value>需要使用车位</value>
+  </data>
+  <data name="UpdateParkAreaPrompt" xml:space="preserve">
+    <value>更新区域提示</value>
+  </data>
+  <data name="ParkAreaExists" xml:space="preserve">
+    <value>区域已存在</value>
+  </data>
+  <data name="CreateParkAreaPrompt" xml:space="preserve">
+    <value>创建车场区提示</value>
+  </data>
+  <data name="AreaName" xml:space="preserve">
+    <value>区域名称</value>
+  </data>
+  <data name="PleaseEnterAreaName" xml:space="preserve">
+    <value>请输入区域名称</value>
+  </data>
+  <data name="ShowAreaLot" xml:space="preserve">
+    <value>显示区域</value>
+  </data>
+  <data name="PleaseEnterShowAreaLot" xml:space="preserve">
+    <value>请输入显示区域</value>
+  </data>
+  <data name="TempCarFullCanIn" xml:space="preserve">
+    <value>临时车满</value>
+  </data>
+  <data name="PleaseEnterTempCarFullCanIn" xml:space="preserve">
+    <value>请在</value>
+  </data>
+  <data name="UpateUser" xml:space="preserve">
+    <value>更新用户</value>
+  </data>
+  <data name="PleaseEnterUpateUser" xml:space="preserve">
+    <value>请输入更新用户</value>
+  </data>
+  <data name="UsedCars" xml:space="preserve">
+    <value>使用车位</value>
+  </data>
+  <data name="PleaseEnterUsedCars" xml:space="preserve">
+    <value>请输入使用车位</value>
+  </data>
+  <data name="ParkAreaInfo" xml:space="preserve">
+    <value>区域信息</value>
+  </data>
+  <data name="CreateNewParkArea" xml:space="preserve">
+    <value>创建新的车场区域</value>
+  </data>
+  <data name="UpdateParkAreaInfo" xml:space="preserve">
+    <value>更新区域信息</value>
+  </data>
+  <data name="DeleteParkAreaPrompt" xml:space="preserve">
+    <value>删除区域提示</value>
+  </data>
+  <data name="SelectDeleteParkArea" xml:space="preserve">
+    <value>选择Deletete Park区域</value>
+  </data>
+  <data name="DeleteParkArea" xml:space="preserve">
+    <value>Deletete Park区域</value>
+  </data>
+  <data name="SureWantToDeleteParkArea" xml:space="preserve">
+    <value>当然想删除区域</value>
+  </data>
+  <data name="ParkAreaManagement" xml:space="preserve">
+    <value>区域管理</value>
+  </data>
+  <data name="ParkAreaManagementDesc" xml:space="preserve">
+    <value>区域管理详情</value>
+  </data>
+  <data name="ParkWayManagement" xml:space="preserve">
+    <value>车道管理</value>
+  </data>
+  <data name="DeviceManagement" xml:space="preserve">
+    <value>设备管理</value>
+  </data>
+  <data name="UserSettings" xml:space="preserve">
+    <value>人员设置</value>
+  </data>
+  <data name="ParkWaySettings" xml:space="preserve">
+    <value>车道设置</value>
+  </data>
+  <data name="OpenGateReason" xml:space="preserve">
+    <value>开闸原因</value>
+  </data>
+  <data name="OpenGateRecord" xml:space="preserve">
+    <value>开闸记录</value>
+  </data>
+  <data name="HandOverRecord" xml:space="preserve">
+    <value>交班记录</value>
+  </data>
+  <data name="SimpleFee" xml:space="preserve">
+    <value>简单计费</value>
+  </data>
+  <data name="SectionFee" xml:space="preserve">
+    <value>分段计费</value>
+  </data>
+  <data name="CalendarSettings" xml:space="preserve">
+    <value>日历设置</value>
+  </data>
+  <data name="TemporaryCar" xml:space="preserve">
+    <value>临时车辆</value>
+  </data>
+  <data name="LongTermRentalCar" xml:space="preserve">
+    <value>长租车辆</value>
+  </data>
+  <data name="RechargeCar" xml:space="preserve">
+    <value>储值车辆</value>
+  </data>
+  <data name="FreeCar" xml:space="preserve">
+    <value>免费车辆</value>
+  </data>
+  <data name="BlackCar" xml:space="preserve">
+    <value>黑名单车</value>
+  </data>
+  <data name="CarConvert" xml:space="preserve">
+    <value>车牌转换</value>
+  </data>
+  <data name="CarTypeSettings" xml:space="preserve">
+    <value>车型设置</value>
+  </data>
+  <data name="ParkingOutRecord" xml:space="preserve">
+    <value>出场车辆</value>
+  </data>
+  <data name="ParkingArrears" xml:space="preserve">
+    <value>欠费车辆</value>
+  </data>
+  <data name="ParkingAbnormal" xml:space="preserve">
+    <value>异常车辆</value>
+  </data>
+  <data name="CarVisitor" xml:space="preserve">
+    <value>访客登记</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>汇总统计</value>
+  </data>
+  <data name="OrderRecord" xml:space="preserve">
+    <value>订单记录</value>
+  </data>
+  <data name="OrderRefundRecord" xml:space="preserve">
+    <value>退款记录</value>
+  </data>
+  <data name="ExtensionRecord" xml:space="preserve">
+    <value>延期记录</value>
+  </data>
+  <data name="RechargeRecord" xml:space="preserve">
+    <value>储值记录</value>
+  </data>
+  <data name="PermissionConfiguration" xml:space="preserve">
+    <value>权限配置</value>
+  </data>
+  <data name="CodeGeneration" xml:space="preserve">
+    <value>代码生成</value>
+  </data>
+  <data name="SystemSettings" xml:space="preserve">
+    <value>系统设置</value>
+  </data>
+  <data name="CarOutCountRequired" xml:space="preserve">
+    <value>需要汽车计数</value>
+  </data>
+  <data name="CashRequired" xml:space="preserve">
+    <value>需要现金支付</value>
+  </data>
+  <data name="ChuzhiRequired" xml:space="preserve">
+    <value>储值卡充值不能为空</value>
+  </data>
+  <data name="ChuzhikaRequired" xml:space="preserve">
+    <value>储值卡扣费不能为空</value>
+  </data>
+  <data name="DiscountRequired" xml:space="preserve">
+    <value>优惠金额不能为空</value>
+  </data>
+  <data name="NeedPayRequired" xml:space="preserve">
+    <value>应付金额不能为空</value>
+  </data>
+  <data name="PaidRequired" xml:space="preserve">
+    <value>实际支付不能为空</value>
+  </data>
+  <data name="PpRequired" xml:space="preserve">
+    <value>需要P云支付</value>
+  </data>
+  <data name="YuekaRequired" xml:space="preserve">
+    <value>月卡延期费用不能为空</value>
+  </data>
+  <data name="UpdateSumPrompt" xml:space="preserve">
+    <value>更新总和提示</value>
+  </data>
+  <data name="SumExists" xml:space="preserve">
+    <value>总和存在</value>
+  </data>
+  <data name="CreateSumPrompt" xml:space="preserve">
+    <value>创建总和提示</value>
+  </data>
+  <data name="PleaseEnterCarOutCount" xml:space="preserve">
+    <value>请输入汽车计数</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>现金支付</value>
+  </data>
+  <data name="PleaseEnterCash" xml:space="preserve">
+    <value>请输入现金支付</value>
+  </data>
+  <data name="Chuzhi" xml:space="preserve">
+    <value>储值卡充值</value>
+  </data>
+  <data name="PleaseEnterChuzhi" xml:space="preserve">
+    <value>请输入储值卡充值</value>
+  </data>
+  <data name="Chuzhika" xml:space="preserve">
+    <value>储值卡扣费</value>
+  </data>
+  <data name="PleaseEnterChuzhika" xml:space="preserve">
+    <value>请输入储值卡扣费</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>优惠金额</value>
+  </data>
+  <data name="PleaseEnterDiscount" xml:space="preserve">
+    <value>请输入折扣</value>
+  </data>
+  <data name="PleaseEnterNeedPay" xml:space="preserve">
+    <value>请输入应付金额</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>实际支付</value>
+  </data>
+  <data name="PleaseEnterPaid" xml:space="preserve">
+    <value>请输入实际支付</value>
+  </data>
+  <data name="Pp" xml:space="preserve">
+    <value>P云支付</value>
+  </data>
+  <data name="PleaseEnterPp" xml:space="preserve">
+    <value>请输入P云支付</value>
+  </data>
+  <data name="Yueka" xml:space="preserve">
+    <value>月卡延期费用</value>
+  </data>
+  <data name="PleaseEnterYueka" xml:space="preserve">
+    <value>请输入月卡延期费用</value>
+  </data>
+  <data name="SumInfo" xml:space="preserve">
+    <value>总和信息</value>
+  </data>
+  <data name="CreateNewSum" xml:space="preserve">
+    <value>创建新的总和</value>
+  </data>
+  <data name="UpdateSumInfo" xml:space="preserve">
+    <value>更新总和信息</value>
+  </data>
+  <data name="DeleteSumPrompt" xml:space="preserve">
+    <value>删除总和提示</value>
+  </data>
+  <data name="SelectDeleteSum" xml:space="preserve">
+    <value>选择“删除总和”</value>
+  </data>
+  <data name="DeleteSum" xml:space="preserve">
+    <value>删除总和</value>
+  </data>
+  <data name="SureWantToDeleteSum" xml:space="preserve">
+    <value>确定要删除总和</value>
+  </data>
+  <data name="SumManagement" xml:space="preserve">
+    <value>总和管理</value>
+  </data>
+  <data name="SumManagementDesc" xml:space="preserve">
+    <value>总和管理</value>
+  </data>
+  <data name="Dt" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="BuyerRequired" xml:space="preserve">
+    <value>购买者需要</value>
+  </data>
+  <data name="PayNameRequired" xml:space="preserve">
+    <value>需要付款名称</value>
+  </data>
+  <data name="PayMoneyRequired" xml:space="preserve">
+    <value>支付所需的钱</value>
+  </data>
+  <data name="PayStatusRequired" xml:space="preserve">
+    <value>所需的薪酬状态</value>
+  </data>
+  <data name="PayUrlRequired" xml:space="preserve">
+    <value>需要付费URL</value>
+  </data>
+  <data name="IsProfitSharingRequired" xml:space="preserve">
+    <value>是否需要利润共享</value>
+  </data>
+  <data name="RemarkRequired" xml:space="preserve">
+    <value>备注不能为空</value>
+  </data>
+  <data name="BuyNumberRequired" xml:space="preserve">
+    <value>购买号码所需的数字</value>
+  </data>
+  <data name="InvoiceRequired" xml:space="preserve">
+    <value>需要发票</value>
+  </data>
+  <data name="UpdateOrderPrompt" xml:space="preserve">
+    <value>更新订单提示</value>
+  </data>
+  <data name="OrderExists" xml:space="preserve">
+    <value>订单存在</value>
+  </data>
+  <data name="CreateOrderPrompt" xml:space="preserve">
+    <value>创建订单提示</value>
+  </data>
+  <data name="Buyer" xml:space="preserve">
+    <value>买方</value>
+  </data>
+  <data name="PayName" xml:space="preserve">
+    <value>付款名称</value>
+  </data>
+  <data name="PleaseEnterPayName" xml:space="preserve">
+    <value>请输入薪水名称</value>
+  </data>
+  <data name="PayMoney" xml:space="preserve">
+    <value>付钱</value>
+  </data>
+  <data name="PleaseEnterPayMoney" xml:space="preserve">
+    <value>请输入付款</value>
+  </data>
+  <data name="PayStatus" xml:space="preserve">
+    <value>薪酬状态</value>
+  </data>
+  <data name="PleaseEnterPayStatus" xml:space="preserve">
+    <value>请输入薪酬状态</value>
+  </data>
+  <data name="PayUrl" xml:space="preserve">
+    <value>支付URL</value>
+  </data>
+  <data name="PleaseEnterPayUrl" xml:space="preserve">
+    <value>请输入付费URL</value>
+  </data>
+  <data name="IsProfitSharing" xml:space="preserve">
+    <value>是利润分享</value>
+  </data>
+  <data name="PleaseEnterIsProfitSharing" xml:space="preserve">
+    <value>请输入是利润分享</value>
+  </data>
+  <data name="Remark" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="PleaseEnterRemark" xml:space="preserve">
+    <value>请输入备注</value>
+  </data>
+  <data name="BuyNumber" xml:space="preserve">
+    <value>购买号码</value>
+  </data>
+  <data name="PleaseEnterBuyNumber" xml:space="preserve">
+    <value>请输入购买号码</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>发票</value>
+  </data>
+  <data name="PleaseEnterInvoice" xml:space="preserve">
+    <value>请输入发票</value>
+  </data>
+  <data name="OrderInfo" xml:space="preserve">
+    <value>订购信息</value>
+  </data>
+  <data name="CreateNewOrder" xml:space="preserve">
+    <value>创建新订单</value>
+  </data>
+  <data name="UpdateOrderInfo" xml:space="preserve">
+    <value>更新订单信息</value>
+  </data>
+  <data name="DeleteOrderPrompt" xml:space="preserve">
+    <value>删除订单提示</value>
+  </data>
+  <data name="SelectDeleteOrder" xml:space="preserve">
+    <value>选择“删除订单”</value>
+  </data>
+  <data name="DeleteOrder" xml:space="preserve">
+    <value>删除订单</value>
+  </data>
+  <data name="SureWantToDeleteOrder" xml:space="preserve">
+    <value>确保要删除订单</value>
+  </data>
+  <data name="OrderManagement" xml:space="preserve">
+    <value>订单管理</value>
+  </data>
+  <data name="OrderManagementDesc" xml:space="preserve">
+    <value>订单管理DESC</value>
+  </data>
+  <data name="ExpireDate" xml:space="preserve">
+    <value>到期日期</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>结束时间</value>
+  </data>
+  <data name="ReasonRequired" xml:space="preserve">
+    <value>需要原因</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>原因</value>
+  </data>
+  <data name="AmountMoneyRequired" xml:space="preserve">
+    <value>需要金额</value>
+  </data>
+  <data name="AutoPayRequired" xml:space="preserve">
+    <value>需要自动工资</value>
+  </data>
+  <data name="AutoPayIdRequired" xml:space="preserve">
+    <value>需要自动付款ID</value>
+  </data>
+  <data name="CarColorRequired" xml:space="preserve">
+    <value>需要汽车颜色</value>
+  </data>
+  <data name="CardNoRequired" xml:space="preserve">
+    <value>车辆类型不能为空</value>
+  </data>
+  <data name="CarNoRequired" xml:space="preserve">
+    <value>车牌号码不能为空</value>
+  </data>
+  <data name="CarStatusRequired" xml:space="preserve">
+    <value>需要汽车状态</value>
+  </data>
+  <data name="DiscountMoneyRequired" xml:space="preserve">
+    <value>需要折扣资金</value>
+  </data>
+  <data name="InCpChangedRequired" xml:space="preserve">
+    <value>需要更改</value>
+  </data>
+  <data name="InImgRequired" xml:space="preserve">
+    <value>需要IMG</value>
+  </data>
+  <data name="InOperatorIdRequired" xml:space="preserve">
+    <value>在操作员ID中需要</value>
+  </data>
+  <data name="InTypeRequired" xml:space="preserve">
+    <value>在需要的类型中</value>
+  </data>
+  <data name="InWayIdRequired" xml:space="preserve">
+    <value>以ID的方式</value>
+  </data>
+  <data name="MonthToTempNumberRequired" xml:space="preserve">
+    <value>需要一个月到临时号</value>
+  </data>
+  <data name="OpenTypeRequired" xml:space="preserve">
+    <value>需要开放类型</value>
+  </data>
+  <data name="OrderIdRequired" xml:space="preserve">
+    <value>停车编号不能为空</value>
+  </data>
+  <data name="OriginCardNoRequired" xml:space="preserve">
+    <value>原始车辆类型不能为空</value>
+  </data>
+  <data name="PaidMoneyRequired" xml:space="preserve">
+    <value>需要付款</value>
+  </data>
+  <data name="PlateIdRequired" xml:space="preserve">
+    <value>需要板ID</value>
+  </data>
+  <data name="RecStatusRequired" xml:space="preserve">
+    <value>需要恢复状态</value>
+  </data>
+  <data name="UpdateParkingInRecordPrompt" xml:space="preserve">
+    <value>在记录提示中更新停车</value>
+  </data>
+  <data name="ParkingInRecordExists" xml:space="preserve">
+    <value>存在记录的停车位</value>
+  </data>
+  <data name="CreateParkingInRecordPrompt" xml:space="preserve">
+    <value>在记录及时创建停车位</value>
+  </data>
+  <data name="AmountMoney" xml:space="preserve">
+    <value>金额</value>
+  </data>
+  <data name="PleaseEnterAmountMoney" xml:space="preserve">
+    <value>请输入金额</value>
+  </data>
+  <data name="AutoPay" xml:space="preserve">
+    <value>自动付款</value>
+  </data>
+  <data name="PleaseEnterAutoPay" xml:space="preserve">
+    <value>请输入自动付款</value>
+  </data>
+  <data name="AutoPayId" xml:space="preserve">
+    <value>自动付款ID</value>
+  </data>
+  <data name="PleaseEnterAutoPayId" xml:space="preserve">
+    <value>请输入自动付款ID</value>
+  </data>
+  <data name="CarColor" xml:space="preserve">
+    <value>车身颜色</value>
+  </data>
+  <data name="PleaseEnterCarColor" xml:space="preserve">
+    <value>请输入汽车颜色</value>
+  </data>
+  <data name="CardNo" xml:space="preserve">
+    <value>车辆类型</value>
+  </data>
+  <data name="PleaseEnterCardNo" xml:space="preserve">
+    <value>请输入车辆类型</value>
+  </data>
+  <data name="CarNo" xml:space="preserve">
+    <value>车牌号码</value>
+  </data>
+  <data name="PleaseEnterCarNo" xml:space="preserve">
+    <value>请输入车牌号码</value>
+  </data>
+  <data name="CarStatus" xml:space="preserve">
+    <value>汽车状况</value>
+  </data>
+  <data name="PleaseEnterCarStatus" xml:space="preserve">
+    <value>请输入汽车状态</value>
+  </data>
+  <data name="DiscountMoney" xml:space="preserve">
+    <value>折扣金钱</value>
+  </data>
+  <data name="PleaseEnterDiscountMoney" xml:space="preserve">
+    <value>请输入折扣资金</value>
+  </data>
+  <data name="InCpChanged" xml:space="preserve">
+    <value>发生了变化</value>
+  </data>
+  <data name="PleaseEnterInCpChanged" xml:space="preserve">
+    <value>请输入是否需要更改</value>
+  </data>
+  <data name="InImg" xml:space="preserve">
+    <value>在IMG中</value>
+  </data>
+  <data name="PleaseEnterInImg" xml:space="preserve">
+    <value>请输入IMG</value>
+  </data>
+  <data name="InOperatorId" xml:space="preserve">
+    <value>在操作员ID中</value>
+  </data>
+  <data name="PleaseEnterInOperatorId" xml:space="preserve">
+    <value>请输入操作员ID</value>
+  </data>
+  <data name="InType" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="PleaseEnterInType" xml:space="preserve">
+    <value>请输入类型</value>
+  </data>
+  <data name="InWayId" xml:space="preserve">
+    <value>在Way ID中</value>
+  </data>
+  <data name="PleaseEnterInWayId" xml:space="preserve">
+    <value>请输入ID</value>
+  </data>
+  <data name="MonthToTempNumber" xml:space="preserve">
+    <value>临时数</value>
+  </data>
+  <data name="PleaseEnterMonthToTempNumber" xml:space="preserve">
+    <value>请输入一个月到临时号码</value>
+  </data>
+  <data name="OpenType" xml:space="preserve">
+    <value>打开类型</value>
+  </data>
+  <data name="PleaseEnterOpenType" xml:space="preserve">
+    <value>请输入打开类型</value>
+  </data>
+  <data name="OrderId" xml:space="preserve">
+    <value>停车编号</value>
+  </data>
+  <data name="PleaseEnterOrderId" xml:space="preserve">
+    <value>请输入停车编号</value>
+  </data>
+  <data name="OriginCardNo" xml:space="preserve">
+    <value>原始车辆类型</value>
+  </data>
+  <data name="PleaseEnterOriginCardNo" xml:space="preserve">
+    <value>请输入原始车辆类型</value>
+  </data>
+  <data name="PaidMoney" xml:space="preserve">
+    <value>支付金额</value>
+  </data>
+  <data name="PleaseEnterPaidMoney" xml:space="preserve">
+    <value>请输入付款</value>
+  </data>
+  <data name="PlateId" xml:space="preserve">
+    <value>板ID</value>
+  </data>
+  <data name="PleaseEnterPlateId" xml:space="preserve">
+    <value>请输入板ID</value>
+  </data>
+  <data name="RecStatus" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="PleaseEnterRecStatus" xml:space="preserve">
+    <value>请输入状态</value>
+  </data>
+  <data name="ParkingInRecordInfo" xml:space="preserve">
+    <value>记录信息中的停车</value>
+  </data>
+  <data name="CreateNewParkingInRecord" xml:space="preserve">
+    <value>创建记录的新停车</value>
+  </data>
+  <data name="UpdateParkingInRecordInfo" xml:space="preserve">
+    <value>在记录信息中更新停车</value>
+  </data>
+  <data name="DeleteParkingInRecordPrompt" xml:space="preserve">
+    <value>记录下删除停车位</value>
+  </data>
+  <data name="SelectDeleteParkingInRecord" xml:space="preserve">
+    <value>在记录中选择“删除停车”</value>
+  </data>
+  <data name="DeleteParkingInRecord" xml:space="preserve">
+    <value>记录中的删除停车场</value>
+  </data>
+  <data name="SureWantToDeleteParkingInRecord" xml:space="preserve">
+    <value>当然想删除记录中的停车位</value>
+  </data>
+  <data name="ParkingInRecordManagement" xml:space="preserve">
+    <value>记录管理中的停车</value>
+  </data>
+  <data name="ParkingInRecordManagementDesc" xml:space="preserve">
+    <value>在记录管理中停车DESC</value>
+  </data>
+  <data name="CalculateOutTime" xml:space="preserve">
+    <value>计算时间</value>
+  </data>
+  <data name="CardChangeTime" xml:space="preserve">
+    <value>卡更改时间</value>
+  </data>
+  <data name="InTime" xml:space="preserve">
+    <value>及时</value>
+  </data>
+  <data name="UpdateDt" xml:space="preserve">
+    <value>更新日期</value>
+  </data>
+  <data name="InAndOutRecords" xml:space="preserve">
+    <value>进出记录</value>
+  </data>
+  <data name="ChargeTypeRequired" xml:space="preserve">
+    <value>需要充电类型</value>
+  </data>
+  <data name="InCarColorRequired" xml:space="preserve">
+    <value>需要汽车颜色</value>
+  </data>
+  <data name="InCarTypeRequired" xml:space="preserve">
+    <value>需要汽车类型</value>
+  </data>
+  <data name="InRemarkRequired" xml:space="preserve">
+    <value>需要说明</value>
+  </data>
+  <data name="OutCarColorRequired" xml:space="preserve">
+    <value>需要汽车颜色</value>
+  </data>
+  <data name="OutCarTypeRequired" xml:space="preserve">
+    <value>需要汽车类型</value>
+  </data>
+  <data name="OutCpChangedRequired" xml:space="preserve">
+    <value>需要更改CP</value>
+  </data>
+  <data name="OutImgRequired" xml:space="preserve">
+    <value>需要IMG</value>
+  </data>
+  <data name="OutOperatorIdRequired" xml:space="preserve">
+    <value>需要运算符ID</value>
+  </data>
+  <data name="OutTypeRequired" xml:space="preserve">
+    <value>所需的输出类型</value>
+  </data>
+  <data name="OutWayIdRequired" xml:space="preserve">
+    <value>需要ID ID</value>
+  </data>
+  <data name="UpdateParkingOutRecordPrompt" xml:space="preserve">
+    <value>更新停车记录提示</value>
+  </data>
+  <data name="ParkingOutRecordExists" xml:space="preserve">
+    <value>存在停车记录</value>
+  </data>
+  <data name="CreateParkingOutRecordPrompt" xml:space="preserve">
+    <value>创建停车记录提示</value>
+  </data>
+  <data name="ChargeType" xml:space="preserve">
+    <value>充电类型</value>
+  </data>
+  <data name="PleaseEnterChargeType" xml:space="preserve">
+    <value>请输入收费类型</value>
+  </data>
+  <data name="InCarColor" xml:space="preserve">
+    <value>在汽车颜色中</value>
+  </data>
+  <data name="PleaseEnterInCarColor" xml:space="preserve">
+    <value>请输入汽车颜色</value>
+  </data>
+  <data name="InCarType" xml:space="preserve">
+    <value>在汽车类型中</value>
+  </data>
+  <data name="PleaseEnterInCarType" xml:space="preserve">
+    <value>请输入汽车类型</value>
+  </data>
+  <data name="InRemark" xml:space="preserve">
+    <value>在讲话中</value>
+  </data>
+  <data name="PleaseEnterInRemark" xml:space="preserve">
+    <value>请输入发言</value>
+  </data>
+  <data name="OutCarColor" xml:space="preserve">
+    <value>车辆出场颜色</value>
+  </data>
+  <data name="PleaseEnterOutCarColor" xml:space="preserve">
+    <value>请输入汽车颜色</value>
+  </data>
+  <data name="OutCarType" xml:space="preserve">
+    <value>淘汰汽车类型</value>
+  </data>
+  <data name="PleaseEnterOutCarType" xml:space="preserve">
+    <value>请输入汽车类型</value>
+  </data>
+  <data name="OutCpChanged" xml:space="preserve">
+    <value>CP更改了</value>
+  </data>
+  <data name="PleaseEnterOutCpChanged" xml:space="preserve">
+    <value>请输入CP更改</value>
+  </data>
+  <data name="OutImg" xml:space="preserve">
+    <value>出场图片</value>
+  </data>
+  <data name="PleaseEnterOutImg" xml:space="preserve">
+    <value>请输入IMG</value>
+  </data>
+  <data name="OutOperatorId" xml:space="preserve">
+    <value>输出操作员ID</value>
+  </data>
+  <data name="PleaseEnterOutOperatorId" xml:space="preserve">
+    <value>请输入操作员ID</value>
+  </data>
+  <data name="OutType" xml:space="preserve">
+    <value>输出类型</value>
+  </data>
+  <data name="PleaseEnterOutType" xml:space="preserve">
+    <value>请输入类型</value>
+  </data>
+  <data name="OutWayId" xml:space="preserve">
+    <value>出口ID</value>
+  </data>
+  <data name="PleaseEnterOutWayId" xml:space="preserve">
+    <value>请输入方式ID</value>
+  </data>
+  <data name="ParkingOutRecordInfo" xml:space="preserve">
+    <value>停车记录信息</value>
+  </data>
+  <data name="CreateNewParkingOutRecord" xml:space="preserve">
+    <value>创建新的停车记录</value>
+  </data>
+  <data name="UpdateParkingOutRecordInfo" xml:space="preserve">
+    <value>更新停车记录信息</value>
+  </data>
+  <data name="DeleteParkingOutRecordPrompt" xml:space="preserve">
+    <value>删除停车记录提示</value>
+  </data>
+  <data name="SelectDeleteParkingOutRecord" xml:space="preserve">
+    <value>选择Deletete停车记录</value>
+  </data>
+  <data name="DeleteParkingOutRecord" xml:space="preserve">
+    <value>删除停车记录</value>
+  </data>
+  <data name="SureWantToDeleteParkingOutRecord" xml:space="preserve">
+    <value>当然想删除停车记录</value>
+  </data>
+  <data name="ParkingOutRecordManagement" xml:space="preserve">
+    <value>停车记录管理</value>
+  </data>
+  <data name="ParkingOutRecordManagementDesc" xml:space="preserve">
+    <value>停车记录管理DESC</value>
+  </data>
+  <data name="OutTime" xml:space="preserve">
+    <value>时间</value>
+  </data>
+  <data name="CarOutIdRequired" xml:space="preserve">
+    <value>需要汽车ID</value>
+  </data>
+  <data name="FeeRequired" xml:space="preserve">
+    <value>需要费用</value>
+  </data>
+  <data name="OutRemarkRequired" xml:space="preserve">
+    <value>需要备注</value>
+  </data>
+  <data name="UpdateParkingArrearsPrompt" xml:space="preserve">
+    <value>更新停车欠款提示</value>
+  </data>
+  <data name="ParkingArrearsExists" xml:space="preserve">
+    <value>存在停车欠款</value>
+  </data>
+  <data name="CreateParkingArrearsPrompt" xml:space="preserve">
+    <value>创建停车欠款提示</value>
+  </data>
+  <data name="CarOutId" xml:space="preserve">
+    <value>汽车外ID</value>
+  </data>
+  <data name="PleaseEnterCarOutId" xml:space="preserve">
+    <value>请输入ID</value>
+  </data>
+  <data name="Fee" xml:space="preserve">
+    <value>费用</value>
+  </data>
+  <data name="PleaseEnterFee" xml:space="preserve">
+    <value>请输入费用</value>
+  </data>
+  <data name="OutRemark" xml:space="preserve">
+    <value>说话</value>
+  </data>
+  <data name="PleaseEnterOutRemark" xml:space="preserve">
+    <value>请输入备注</value>
+  </data>
+  <data name="ParkingArrearsInfo" xml:space="preserve">
+    <value>停车欠款信息</value>
+  </data>
+  <data name="CreateNewParkingArrears" xml:space="preserve">
+    <value>创建新的停车欠款</value>
+  </data>
+  <data name="UpdateParkingArrearsInfo" xml:space="preserve">
+    <value>更新停车欠款信息</value>
+  </data>
+  <data name="DeleteParkingArrearsPrompt" xml:space="preserve">
+    <value>删除停车欠款提示</value>
+  </data>
+  <data name="SelectDeleteParkingArrears" xml:space="preserve">
+    <value>选择“删除停车欠款”</value>
+  </data>
+  <data name="DeleteParkingArrears" xml:space="preserve">
+    <value>删除停车欠款</value>
+  </data>
+  <data name="SureWantToDeleteParkingArrears" xml:space="preserve">
+    <value>当然想删除停车欠款</value>
+  </data>
+  <data name="ParkingArrearsManagement" xml:space="preserve">
+    <value>停车欠款管理</value>
+  </data>
+  <data name="ParkingArrearsManagementDesc" xml:space="preserve">
+    <value>停车欠款管理DESC</value>
+  </data>
+  <data name="UpdateParkingAbnormalPrompt" xml:space="preserve">
+    <value>更新停车异常提示</value>
+  </data>
+  <data name="ParkingAbnormalExists" xml:space="preserve">
+    <value>停车异常存在</value>
+  </data>
+  <data name="CreateParkingAbnormalPrompt" xml:space="preserve">
+    <value>创建停车异常提示</value>
+  </data>
+  <data name="ParkingAbnormalInfo" xml:space="preserve">
+    <value>停车异常信息</value>
+  </data>
+  <data name="CreateNewParkingAbnormal" xml:space="preserve">
+    <value>创建新的停车异常</value>
+  </data>
+  <data name="UpdateParkingAbnormalInfo" xml:space="preserve">
+    <value>更新停车异常信息</value>
+  </data>
+  <data name="DeleteParkingAbnormalPrompt" xml:space="preserve">
+    <value>删除停车异常提示</value>
+  </data>
+  <data name="SelectDeleteParkingAbnormal" xml:space="preserve">
+    <value>选择删除停车异常</value>
+  </data>
+  <data name="DeleteParkingAbnormal" xml:space="preserve">
+    <value>删除停车场异常</value>
+  </data>
+  <data name="SureWantToDeleteParkingAbnormal" xml:space="preserve">
+    <value>当然想删除停车异常</value>
+  </data>
+  <data name="ParkingAbnormalManagement" xml:space="preserve">
+    <value>停车异常管理</value>
+  </data>
+  <data name="ParkingAbnormalManagementDesc" xml:space="preserve">
+    <value>停车异常管理DESC</value>
+  </data>
+  <data name="ClientRequired" xml:space="preserve">
+    <value>需要客户端类型</value>
+  </data>
+  <data name="TrueNameRequired" xml:space="preserve">
+    <value>需要真实姓名</value>
+  </data>
+  <data name="VisitorHouseRequired" xml:space="preserve">
+    <value>访问客户不能为空</value>
+  </data>
+  <data name="UpdateCarVisitorPrompt" xml:space="preserve">
+    <value>更新汽车访问者提示</value>
+  </data>
+  <data name="CarVisitorExists" xml:space="preserve">
+    <value>汽车访问者存在</value>
+  </data>
+  <data name="CreateCarVisitorPrompt" xml:space="preserve">
+    <value>创建汽车访问者提示</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>客户端类型</value>
+  </data>
+  <data name="PleaseEnterClient" xml:space="preserve">
+    <value>请输入客户端类型</value>
+  </data>
+  <data name="TrueName" xml:space="preserve">
+    <value>真实姓名</value>
+  </data>
+  <data name="PleaseEnterTrueName" xml:space="preserve">
+    <value>请输入真实姓名</value>
+  </data>
+  <data name="VisitorHouse" xml:space="preserve">
+    <value>访问客户</value>
+  </data>
+  <data name="PleaseEnterVisitorHouse" xml:space="preserve">
+    <value>请输入访问客户</value>
+  </data>
+  <data name="CarVisitorInfo" xml:space="preserve">
+    <value>汽车访问者信息</value>
+  </data>
+  <data name="CreateNewCarVisitor" xml:space="preserve">
+    <value>创建新的汽车访问者</value>
+  </data>
+  <data name="UpdateCarVisitorInfo" xml:space="preserve">
+    <value>更新汽车访问者信息</value>
+  </data>
+  <data name="DeleteCarVisitorPrompt" xml:space="preserve">
+    <value>删除汽车访问者提示</value>
+  </data>
+  <data name="SelectDeleteCarVisitor" xml:space="preserve">
+    <value>选择Deletete汽车访问者</value>
+  </data>
+  <data name="DeleteCarVisitor" xml:space="preserve">
+    <value>删除汽车访问者</value>
+  </data>
+  <data name="SureWantToDeleteCarVisitor" xml:space="preserve">
+    <value>当然想删除汽车访问者</value>
+  </data>
+  <data name="CarVisitorManagement" xml:space="preserve">
+    <value>汽车访问者管理</value>
+  </data>
+  <data name="CarVisitorManagementDesc" xml:space="preserve">
+    <value>汽车访问者管理DESC</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>结束日期</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>开始日期</value>
+  </data>
+  <data name="UpdateParkSettingCardPrompt" xml:space="preserve">
+    <value>更新车道通行车辆类型提示</value>
+  </data>
+  <data name="ParkSettingCardExists" xml:space="preserve">
+    <value>车道通行车辆类型已存在</value>
+  </data>
+  <data name="CreateParkSettingCardPrompt" xml:space="preserve">
+    <value>创建车道通行车辆类型提示</value>
+  </data>
+  <data name="ParkSettingCardInfo" xml:space="preserve">
+    <value>车道通行车辆类型信息</value>
+  </data>
+  <data name="CreateNewParkSettingCard" xml:space="preserve">
+    <value>创建新的车道通行车辆类型</value>
+  </data>
+  <data name="UpdateParkSettingCardInfo" xml:space="preserve">
+    <value>更新车道通行车辆类型信息</value>
+  </data>
+  <data name="DeleteParkSettingCardPrompt" xml:space="preserve">
+    <value>删除车道通行车辆类型提示</value>
+  </data>
+  <data name="SelectDeleteParkSettingCard" xml:space="preserve">
+    <value>选择Deletete Park设置卡</value>
+  </data>
+  <data name="DeleteParkSettingCard" xml:space="preserve">
+    <value>删除车道通行车辆类型</value>
+  </data>
+  <data name="SureWantToDeleteParkSettingCard" xml:space="preserve">
+    <value>确定删除车道通行车辆类型</value>
+  </data>
+  <data name="ParkSettingCardManagement" xml:space="preserve">
+    <value>车道通行车辆类型管理</value>
+  </data>
+  <data name="ParkSettingCardManagementDesc" xml:space="preserve">
+    <value>车道通行车辆类型管理详情</value>
+  </data>
+  <data name="FreeDescRequired" xml:space="preserve">
+    <value>需要免费的DESC</value>
+  </data>
+  <data name="UserAddrRequired" xml:space="preserve">
+    <value>需要用户addr</value>
+  </data>
+  <data name="UserPhoneRequired" xml:space="preserve">
+    <value>需要用户电话</value>
+  </data>
+  <data name="UserTypeRequired" xml:space="preserve">
+    <value>所需的用户类型</value>
+  </data>
+  <data name="WxOpenIdRequired" xml:space="preserve">
+    <value>需要打开ID</value>
+  </data>
+  <data name="UpdateCarFreePrompt" xml:space="preserve">
+    <value>更新汽车免费提示</value>
+  </data>
+  <data name="CarFreeExists" xml:space="preserve">
+    <value>存在自由汽车</value>
+  </data>
+  <data name="CreateCarFreePrompt" xml:space="preserve">
+    <value>创建免费汽车提示</value>
+  </data>
+  <data name="FreeDesc" xml:space="preserve">
+    <value>免费降落</value>
+  </data>
+  <data name="PleaseEnterFreeDesc" xml:space="preserve">
+    <value>请输入免费的desc</value>
+  </data>
+  <data name="UserAddr" xml:space="preserve">
+    <value>用户addr</value>
+  </data>
+  <data name="PleaseEnterUserAddr" xml:space="preserve">
+    <value>请输入用户addr</value>
+  </data>
+  <data name="UserPhone" xml:space="preserve">
+    <value>用户电话</value>
+  </data>
+  <data name="PleaseEnterUserPhone" xml:space="preserve">
+    <value>请输入用户电话</value>
+  </data>
+  <data name="UserType" xml:space="preserve">
+    <value>用户类型</value>
+  </data>
+  <data name="PleaseEnterUserType" xml:space="preserve">
+    <value>请输入用户类型</value>
+  </data>
+  <data name="WxOpenId" xml:space="preserve">
+    <value>WX打开ID</value>
+  </data>
+  <data name="PleaseEnterWxOpenId" xml:space="preserve">
+    <value>请输入WX Open ID</value>
+  </data>
+  <data name="CarFreeInfo" xml:space="preserve">
+    <value>汽车免费信息</value>
+  </data>
+  <data name="CreateNewCarFree" xml:space="preserve">
+    <value>免费创建新车</value>
+  </data>
+  <data name="UpdateCarFreeInfo" xml:space="preserve">
+    <value>更新汽车免费信息</value>
+  </data>
+  <data name="DeleteCarFreePrompt" xml:space="preserve">
+    <value>删除免费汽车提示</value>
+  </data>
+  <data name="SelectDeleteCarFree" xml:space="preserve">
+    <value>免费选择Deletete汽车</value>
+  </data>
+  <data name="DeleteCarFree" xml:space="preserve">
+    <value>免费删除汽车</value>
+  </data>
+  <data name="SureWantToDeleteCarFree" xml:space="preserve">
+    <value>当然想免费删除汽车</value>
+  </data>
+  <data name="CarFreeManagement" xml:space="preserve">
+    <value>自由管理</value>
+  </data>
+  <data name="CarFreeManagementDesc" xml:space="preserve">
+    <value>汽车免费管理DESC</value>
+  </data>
+  <data name="FromTime" xml:space="preserve">
+    <value>从时间开始</value>
+  </data>
+  <data name="UpdateBlackCarPrompt" xml:space="preserve">
+    <value>更新黑色汽车提示</value>
+  </data>
+  <data name="BlackCarExists" xml:space="preserve">
+    <value>黑色汽车存在</value>
+  </data>
+  <data name="CreateBlackCarPrompt" xml:space="preserve">
+    <value>创建黑色汽车提示</value>
+  </data>
+  <data name="BlackCarInfo" xml:space="preserve">
+    <value>黑色汽车信息</value>
+  </data>
+  <data name="CreateNewBlackCar" xml:space="preserve">
+    <value>创建新的黑色汽车</value>
+  </data>
+  <data name="UpdateBlackCarInfo" xml:space="preserve">
+    <value>更新黑色汽车信息</value>
+  </data>
+  <data name="DeleteBlackCarPrompt" xml:space="preserve">
+    <value>删除黑色汽车提示</value>
+  </data>
+  <data name="SelectDeleteBlackCar" xml:space="preserve">
+    <value>选择Deletete黑色汽车</value>
+  </data>
+  <data name="DeleteBlackCar" xml:space="preserve">
+    <value>删除黑色汽车</value>
+  </data>
+  <data name="SureWantToDeleteBlackCar" xml:space="preserve">
+    <value>当然想删除黑色汽车</value>
+  </data>
+  <data name="BlackCarManagement" xml:space="preserve">
+    <value>黑色汽车管理</value>
+  </data>
+  <data name="BlackCarManagementDesc" xml:space="preserve">
+    <value>黑色汽车管理DESC</value>
+  </data>
+  <data name="ConvertCarNoRequired" xml:space="preserve">
+    <value>转换车牌号码不能为空</value>
+  </data>
+  <data name="UpdateCarConvertPrompt" xml:space="preserve">
+    <value>更新汽车转换提示</value>
+  </data>
+  <data name="CarConvertExists" xml:space="preserve">
+    <value>汽车转换存在</value>
+  </data>
+  <data name="CreateCarConvertPrompt" xml:space="preserve">
+    <value>创建汽车转换提示</value>
+  </data>
+  <data name="ConvertCarNo" xml:space="preserve">
+    <value>转换车牌号码</value>
+  </data>
+  <data name="PleaseEnterConvertCarNo" xml:space="preserve">
+    <value>请输入convert绕汽车没有</value>
+  </data>
+  <data name="CarConvertInfo" xml:space="preserve">
+    <value>汽车转换信息</value>
+  </data>
+  <data name="CreateNewCarConvert" xml:space="preserve">
+    <value>创建新车转换</value>
+  </data>
+  <data name="UpdateCarConvertInfo" xml:space="preserve">
+    <value>更新汽车转换信息</value>
+  </data>
+  <data name="DeleteCarConvertPrompt" xml:space="preserve">
+    <value>删除汽车转换提示</value>
+  </data>
+  <data name="SelectDeleteCarConvert" xml:space="preserve">
+    <value>选择Deletete Car Convert</value>
+  </data>
+  <data name="DeleteCarConvert" xml:space="preserve">
+    <value>删除汽车转换</value>
+  </data>
+  <data name="SureWantToDeleteCarConvert" xml:space="preserve">
+    <value>当然想删除汽车转换</value>
+  </data>
+  <data name="CarConvertManagement" xml:space="preserve">
+    <value>汽车转换管理</value>
+  </data>
+  <data name="CarConvertManagementDesc" xml:space="preserve">
+    <value>汽车转换管理desc</value>
+  </data>
+  <data name="CarTypeNameRequired" xml:space="preserve">
+    <value>需要汽车类型名称</value>
+  </data>
+  <data name="HeightRequired" xml:space="preserve">
+    <value>需要高度</value>
+  </data>
+  <data name="WidthRequired" xml:space="preserve">
+    <value>需要宽度</value>
+  </data>
+  <data name="UpdateCarTypeParaPrompt" xml:space="preserve">
+    <value>更新汽车类型PARA提示</value>
+  </data>
+  <data name="CarTypeParaExists" xml:space="preserve">
+    <value>存在汽车类型Para</value>
+  </data>
+  <data name="CreateCarTypeParaPrompt" xml:space="preserve">
+    <value>创建汽车类型Para提示</value>
+  </data>
+  <data name="CarTypeName" xml:space="preserve">
+    <value>汽车类型名称</value>
+  </data>
+  <data name="PleaseEnterCarTypeName" xml:space="preserve">
+    <value>请输入汽车类型名称</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>高度</value>
+  </data>
+  <data name="PleaseEnterHeight" xml:space="preserve">
+    <value>请输入高度</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>宽度</value>
+  </data>
+  <data name="PleaseEnterWidth" xml:space="preserve">
+    <value>请输入宽度</value>
+  </data>
+  <data name="CarTypeParaInfo" xml:space="preserve">
+    <value>汽车类型PARA信息</value>
+  </data>
+  <data name="CreateNewCarTypePara" xml:space="preserve">
+    <value>创建新的汽车类型Para</value>
+  </data>
+  <data name="UpdateCarTypeParaInfo" xml:space="preserve">
+    <value>更新汽车类型PARA信息</value>
+  </data>
+  <data name="DeleteCarTypeParaPrompt" xml:space="preserve">
+    <value>删除汽车类型PARA提示</value>
+  </data>
+  <data name="SelectDeleteCarTypePara" xml:space="preserve">
+    <value>选择Deletete Car类型Para</value>
+  </data>
+  <data name="DeleteCarTypePara" xml:space="preserve">
+    <value>删除汽车类型Para</value>
+  </data>
+  <data name="SureWantToDeleteCarTypePara" xml:space="preserve">
+    <value>当然想删除汽车类型Para</value>
+  </data>
+  <data name="CarTypeParaManagement" xml:space="preserve">
+    <value>汽车类型PARA管理</value>
+  </data>
+  <data name="CarTypeParaManagementDesc" xml:space="preserve">
+    <value>汽车类型PARA管理DESC</value>
+  </data>
+  <data name="CalendarNameRequired" xml:space="preserve">
+    <value>日历名称不能为空</value>
+  </data>
+  <data name="IsHolidayRequired" xml:space="preserve">
+    <value>是否为节假日不能为空</value>
+  </data>
+  <data name="UpdateCalendarPrompt" xml:space="preserve">
+    <value>更新日历提示符</value>
+  </data>
+  <data name="CalendarExists" xml:space="preserve">
+    <value>存在日历</value>
+  </data>
+  <data name="CreateCalendarPrompt" xml:space="preserve">
+    <value>创建日历提示符</value>
+  </data>
+  <data name="CalendarName" xml:space="preserve">
+    <value>日历名称</value>
+  </data>
+  <data name="PleaseEnterCalendarName" xml:space="preserve">
+    <value>请输入日历名称</value>
+  </data>
+  <data name="IsHoliday" xml:space="preserve">
+    <value>是否为节假日</value>
+  </data>
+  <data name="PleaseEnterIsHoliday" xml:space="preserve">
+    <value>请输入是否为节假日</value>
+  </data>
+  <data name="CalendarInfo" xml:space="preserve">
+    <value>日历信息</value>
+  </data>
+  <data name="CreateNewCalendar" xml:space="preserve">
+    <value>创建新日历</value>
+  </data>
+  <data name="UpdateCalendarInfo" xml:space="preserve">
+    <value>更新日历信息</value>
+  </data>
+  <data name="DeleteCalendarPrompt" xml:space="preserve">
+    <value>删除日历提示符</value>
+  </data>
+  <data name="SelectDeleteCalendar" xml:space="preserve">
+    <value>选择删除日历</value>
+  </data>
+  <data name="DeleteCalendar" xml:space="preserve">
+    <value>删除日历</value>
+  </data>
+  <data name="SureWantToDeleteCalendar" xml:space="preserve">
+    <value>确保要删除日历</value>
+  </data>
+  <data name="CalendarManagement" xml:space="preserve">
+    <value>日历管理</value>
+  </data>
+  <data name="CalendarManagementDesc" xml:space="preserve">
+    <value>根据国家规定设置节假日和工作日，默认周末为节假日，按节假日规则收费</value>
+  </data>
+  <data name="ParkingDate" xml:space="preserve">
+    <value>停车日期</value>
+  </data>
+  <data name="FeeRuleDataRequired" xml:space="preserve">
+    <value>费用规则内容不能为空</value>
+  </data>
+  <data name="FeeRuleNameRequired" xml:space="preserve">
+    <value>需要费用规则名称</value>
+  </data>
+  <data name="FeeRuleTypeRequired" xml:space="preserve">
+    <value>需要的费用规则类型</value>
+  </data>
+  <data name="FeeRuleData" xml:space="preserve">
+    <value>费用规则内容</value>
+  </data>
+  <data name="PleaseEnterFeeRuleData" xml:space="preserve">
+    <value>请输入费用规则数据</value>
+  </data>
+  <data name="FeeRuleName" xml:space="preserve">
+    <value>费用规则名称</value>
+  </data>
+  <data name="PleaseEnterFeeRuleName" xml:space="preserve">
+    <value>请输入费用规则名称</value>
+  </data>
+  <data name="FeeRuleType" xml:space="preserve">
+    <value>费用规则类型</value>
+  </data>
+  <data name="PleaseEnterFeeRuleType" xml:space="preserve">
+    <value>请输入费用规则类型</value>
+  </data>
+  <data name="ImageUrlRequired" xml:space="preserve">
+    <value>需要图像URL</value>
+  </data>
+  <data name="WayIdRequired" xml:space="preserve">
+    <value>需要ID</value>
+  </data>
+  <data name="UpdateOpenGateRecordPrompt" xml:space="preserve">
+    <value>更新打开门记录提示</value>
+  </data>
+  <data name="OpenGateRecordExists" xml:space="preserve">
+    <value>存在开门记录</value>
+  </data>
+  <data name="CreateOpenGateRecordPrompt" xml:space="preserve">
+    <value>创建开放门记录提示</value>
+  </data>
+  <data name="ImageUrl" xml:space="preserve">
+    <value>图像URL</value>
+  </data>
+  <data name="PleaseEnterImageUrl" xml:space="preserve">
+    <value>请输入图像URL</value>
+  </data>
+  <data name="WayId" xml:space="preserve">
+    <value>方式ID</value>
+  </data>
+  <data name="PleaseEnterWayId" xml:space="preserve">
+    <value>请输入方式ID</value>
+  </data>
+  <data name="OpenGateRecordInfo" xml:space="preserve">
+    <value>开放登机记录信息</value>
+  </data>
+  <data name="CreateNewOpenGateRecord" xml:space="preserve">
+    <value>创建新的开放登机记录</value>
+  </data>
+  <data name="UpdateOpenGateRecordInfo" xml:space="preserve">
+    <value>更新打开的门记录信息</value>
+  </data>
+  <data name="DeleteOpenGateRecordPrompt" xml:space="preserve">
+    <value>删除开放登机记录提示</value>
+  </data>
+  <data name="SelectDeleteOpenGateRecord" xml:space="preserve">
+    <value>选择Deletete Open Gate Record</value>
+  </data>
+  <data name="DeleteOpenGateRecord" xml:space="preserve">
+    <value>删除开放门记录</value>
+  </data>
+  <data name="SureWantToDeleteOpenGateRecord" xml:space="preserve">
+    <value>确保要删除开放式门记录</value>
+  </data>
+  <data name="OpenGateRecordManagement" xml:space="preserve">
+    <value>开门记录管理</value>
+  </data>
+  <data name="OpenGateRecordManagementDesc" xml:space="preserve">
+    <value>开放登机记录管理DESC</value>
+  </data>
+  <data name="UserIdRequired" xml:space="preserve">
+    <value>需要用户ID</value>
+  </data>
+  <data name="OrderNoRequired" xml:space="preserve">
+    <value>订购不需要</value>
+  </data>
+  <data name="UpdateUserWayPrompt" xml:space="preserve">
+    <value>更新用户方式提示</value>
+  </data>
+  <data name="UserWayExists" xml:space="preserve">
+    <value>用户方式存在</value>
+  </data>
+  <data name="CreateUserWayPrompt" xml:space="preserve">
+    <value>创建用户方式提示</value>
+  </data>
+  <data name="UserId" xml:space="preserve">
+    <value>用户身份</value>
+  </data>
+  <data name="PleaseEnterUserId" xml:space="preserve">
+    <value>请输入用户ID</value>
+  </data>
+  <data name="OrderNo" xml:space="preserve">
+    <value>订购号</value>
+  </data>
+  <data name="PleaseEnterOrderNo" xml:space="preserve">
+    <value>请输入订单</value>
+  </data>
+  <data name="UserWayInfo" xml:space="preserve">
+    <value>用户方式信息</value>
+  </data>
+  <data name="CreateNewUserWay" xml:space="preserve">
+    <value>创建新用户方式</value>
+  </data>
+  <data name="UpdateUserWayInfo" xml:space="preserve">
+    <value>更新用户方式信息</value>
+  </data>
+  <data name="DeleteUserWayPrompt" xml:space="preserve">
+    <value>删除用户方式提示</value>
+  </data>
+  <data name="SelectDeleteUserWay" xml:space="preserve">
+    <value>选择删除用户方式</value>
+  </data>
+  <data name="DeleteUserWay" xml:space="preserve">
+    <value>删除用户方式</value>
+  </data>
+  <data name="SureWantToDeleteUserWay" xml:space="preserve">
+    <value>确保要删除用户方式</value>
+  </data>
+  <data name="UserWayManagement" xml:space="preserve">
+    <value>用户方式管理</value>
+  </data>
+  <data name="UserWayManagementDesc" xml:space="preserve">
+    <value>用户方式管理DESC</value>
+  </data>
+  <data name="AbCarRequired" xml:space="preserve">
+    <value>需要AB汽车</value>
+  </data>
+  <data name="ArrearsCarRequired" xml:space="preserve">
+    <value>需要拖车</value>
+  </data>
+  <data name="CashFeeRequired" xml:space="preserve">
+    <value>需要现金费</value>
+  </data>
+  <data name="EtcfeeRequired" xml:space="preserve">
+    <value>ETCFEE需要</value>
+  </data>
+  <data name="InCarRequired" xml:space="preserve">
+    <value>在需要的汽车中</value>
+  </data>
+  <data name="IsFinishedRequired" xml:space="preserve">
+    <value>已完成</value>
+  </data>
+  <data name="OutCarRequired" xml:space="preserve">
+    <value>需要汽车</value>
+  </data>
+  <data name="PhoneFeeRequired" xml:space="preserve">
+    <value>需要电话费</value>
+  </data>
+  <data name="TotalFeeRequired" xml:space="preserve">
+    <value>需要总费用</value>
+  </data>
+  <data name="ValueCardFeeRequired" xml:space="preserve">
+    <value>需要价值卡费</value>
+  </data>
+  <data name="UpdateHandOverPrompt" xml:space="preserve">
+    <value>更新提示</value>
+  </data>
+  <data name="HandOverExists" xml:space="preserve">
+    <value>掌握了</value>
+  </data>
+  <data name="CreateHandOverPrompt" xml:space="preserve">
+    <value>创建提示</value>
+  </data>
+  <data name="AbCar" xml:space="preserve">
+    <value>AB车</value>
+  </data>
+  <data name="PleaseEnterAbCar" xml:space="preserve">
+    <value>请输入AB车</value>
+  </data>
+  <data name="ArrearsCar" xml:space="preserve">
+    <value>拖车</value>
+  </data>
+  <data name="PleaseEnterArrearsCar" xml:space="preserve">
+    <value>请输入欠款车</value>
+  </data>
+  <data name="CashFee" xml:space="preserve">
+    <value>现金费</value>
+  </data>
+  <data name="PleaseEnterCashFee" xml:space="preserve">
+    <value>请输入现金费</value>
+  </data>
+  <data name="Etcfee" xml:space="preserve">
+    <value>ETCFEE</value>
+  </data>
+  <data name="PleaseEnterEtcfee" xml:space="preserve">
+    <value>请输入ETCFEE</value>
+  </data>
+  <data name="InCar" xml:space="preserve">
+    <value>在车里</value>
+  </data>
+  <data name="PleaseEnterInCar" xml:space="preserve">
+    <value>请进入汽车</value>
+  </data>
+  <data name="IsFinished" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="PleaseEnterIsFinished" xml:space="preserve">
+    <value>请输入完成</value>
+  </data>
+  <data name="OutCar" xml:space="preserve">
+    <value>出场车辆</value>
+  </data>
+  <data name="PleaseEnterOutCar" xml:space="preserve">
+    <value>请输出汽车</value>
+  </data>
+  <data name="PhoneFee" xml:space="preserve">
+    <value>电话费</value>
+  </data>
+  <data name="PleaseEnterPhoneFee" xml:space="preserve">
+    <value>请输入电话费</value>
+  </data>
+  <data name="TotalFee" xml:space="preserve">
+    <value>总费用</value>
+  </data>
+  <data name="PleaseEnterTotalFee" xml:space="preserve">
+    <value>请输入总费用</value>
+  </data>
+  <data name="ValueCardFee" xml:space="preserve">
+    <value>价值卡费</value>
+  </data>
+  <data name="PleaseEnterValueCardFee" xml:space="preserve">
+    <value>请输入价值卡费</value>
+  </data>
+  <data name="HandOverInfo" xml:space="preserve">
+    <value>移交信息</value>
+  </data>
+  <data name="CreateNewHandOver" xml:space="preserve">
+    <value>创造新的手</value>
+  </data>
+  <data name="UpdateHandOverInfo" xml:space="preserve">
+    <value>更新信息</value>
+  </data>
+  <data name="DeleteHandOverPrompt" xml:space="preserve">
+    <value>删除提示</value>
+  </data>
+  <data name="SelectDeleteHandOver" xml:space="preserve">
+    <value>选择DeleteTe Hand</value>
+  </data>
+  <data name="DeleteHandOver" xml:space="preserve">
+    <value>删除手</value>
+  </data>
+  <data name="SureWantToDeleteHandOver" xml:space="preserve">
+    <value>当然想删除手</value>
+  </data>
+  <data name="HandOverManagement" xml:space="preserve">
+    <value>移交管理</value>
+  </data>
+  <data name="HandOverManagementDesc" xml:space="preserve">
+    <value>移交管理DESC</value>
+  </data>
+  <data name="IsOutRequired" xml:space="preserve">
+    <value>不需要</value>
+  </data>
+  <data name="UpdateOpenGateReasonPrompt" xml:space="preserve">
+    <value>更新开放式门原因提示</value>
+  </data>
+  <data name="OpenGateReasonExists" xml:space="preserve">
+    <value>存在开口原因</value>
+  </data>
+  <data name="CreateOpenGateReasonPrompt" xml:space="preserve">
+    <value>创建开放式门推理提示</value>
+  </data>
+  <data name="IsOut" xml:space="preserve">
+    <value>不在</value>
+  </data>
+  <data name="PleaseEnterIsOut" xml:space="preserve">
+    <value>请输入</value>
+  </data>
+  <data name="OpenGateReasonInfo" xml:space="preserve">
+    <value>开门原因信息</value>
+  </data>
+  <data name="CreateNewOpenGateReason" xml:space="preserve">
+    <value>创建新的开门原因</value>
+  </data>
+  <data name="UpdateOpenGateReasonInfo" xml:space="preserve">
+    <value>更新开放门原因信息信息</value>
+  </data>
+  <data name="DeleteOpenGateReasonPrompt" xml:space="preserve">
+    <value>删除开放式门推理提示</value>
+  </data>
+  <data name="SelectDeleteOpenGateReason" xml:space="preserve">
+    <value>选择DELETETE OPEN GATE原因</value>
+  </data>
+  <data name="DeleteOpenGateReason" xml:space="preserve">
+    <value>删除开放大门原因</value>
+  </data>
+  <data name="SureWantToDeleteOpenGateReason" xml:space="preserve">
+    <value>当然想删除开放式大门原因</value>
+  </data>
+  <data name="OpenGateReasonManagement" xml:space="preserve">
+    <value>开门理由管理</value>
+  </data>
+  <data name="OpenGateReasonManagementDesc" xml:space="preserve">
+    <value>开门理由管理DESC</value>
+  </data>
+  <data name="AllowCloseGateRequired" xml:space="preserve">
+    <value>允许需要关闭的大门</value>
+  </data>
+  <data name="Camera0Required" xml:space="preserve">
+    <value>需要相机0</value>
+  </data>
+  <data name="Camera0TypeRequired" xml:space="preserve">
+    <value>需要摄像机0类型</value>
+  </data>
+  <data name="Camera1Required" xml:space="preserve">
+    <value>需要相机1</value>
+  </data>
+  <data name="Camera1TypeRequired" xml:space="preserve">
+    <value>摄像头1类型所需</value>
+  </data>
+  <data name="Camera485Required" xml:space="preserve">
+    <value>相机485</value>
+  </data>
+  <data name="CameraDoubleFilterRequired" xml:space="preserve">
+    <value>需要摄像机双过滤器</value>
+  </data>
+  <data name="CameraIoRequired" xml:space="preserve">
+    <value>相机IO需要</value>
+  </data>
+  <data name="CameraKeyRequired" xml:space="preserve">
+    <value>需要相机密钥</value>
+  </data>
+  <data name="CameraRecomeFilterRequired" xml:space="preserve">
+    <value>需要相机重型过滤器</value>
+  </data>
+  <data name="CardCameraIpRequired" xml:space="preserve">
+    <value>需要卡摄像头IP</value>
+  </data>
+  <data name="CardCameraSnRequired" xml:space="preserve">
+    <value>卡相机SN需要</value>
+  </data>
+  <data name="CardCameraTypeRequired" xml:space="preserve">
+    <value>需要卡摄像头类型</value>
+  </data>
+  <data name="CardPortRequired" xml:space="preserve">
+    <value>需要卡端口</value>
+  </data>
+  <data name="CardIpRequired" xml:space="preserve">
+    <value>需要卡IP</value>
+  </data>
+  <data name="CardSnRequired" xml:space="preserve">
+    <value>卡SN需要</value>
+  </data>
+  <data name="CardTypeRequired" xml:space="preserve">
+    <value>需要卡类型</value>
+  </data>
+  <data name="DevStatusRequired" xml:space="preserve">
+    <value>需要开发状态</value>
+  </data>
+  <data name="HasCardRequired" xml:space="preserve">
+    <value>需要卡</value>
+  </data>
+  <data name="HasCarmeraRequired" xml:space="preserve">
+    <value>需要Carmera</value>
+  </data>
+  <data name="LedDisplayRequired" xml:space="preserve">
+    <value>需要LED显示</value>
+  </data>
+  <data name="LedIpRequired" xml:space="preserve">
+    <value>LED IP所需</value>
+  </data>
+  <data name="LedTypeRequired" xml:space="preserve">
+    <value>所需的LED类型</value>
+  </data>
+  <data name="QrCodeRequired" xml:space="preserve">
+    <value>需要QR码</value>
+  </data>
+  <data name="SetDisplayRequired" xml:space="preserve">
+    <value>需要设置显示</value>
+  </data>
+  <data name="SetVoiceRequired" xml:space="preserve">
+    <value>需要设置声音</value>
+  </data>
+  <data name="TwoGateRequired" xml:space="preserve">
+    <value>需要两个门</value>
+  </data>
+  <data name="UpdateParkDevicePrompt" xml:space="preserve">
+    <value>更新设备提示</value>
+  </data>
+  <data name="ParkDeviceExists" xml:space="preserve">
+    <value>设备已存在</value>
+  </data>
+  <data name="CreateParkDevicePrompt" xml:space="preserve">
+    <value>创建设备提示</value>
+  </data>
+  <data name="AllowCloseGate" xml:space="preserve">
+    <value>允许关闭门</value>
+  </data>
+  <data name="PleaseEnterAllowCloseGate" xml:space="preserve">
+    <value>请输入允许关闭门</value>
+  </data>
+  <data name="Camera0" xml:space="preserve">
+    <value>相机0</value>
+  </data>
+  <data name="PleaseEnterCamera0" xml:space="preserve">
+    <value>请输入Camera0</value>
+  </data>
+  <data name="Camera0Type" xml:space="preserve">
+    <value>相机0类型</value>
+  </data>
+  <data name="PleaseEnterCamera0Type" xml:space="preserve">
+    <value>请输入Camera0类型</value>
+  </data>
+  <data name="Camera1" xml:space="preserve">
+    <value>相机1</value>
+  </data>
+  <data name="PleaseEnterCamera1" xml:space="preserve">
+    <value>请输入Camera1</value>
+  </data>
+  <data name="Camera1Type" xml:space="preserve">
+    <value>相机1类型</value>
+  </data>
+  <data name="PleaseEnterCamera1Type" xml:space="preserve">
+    <value>请输入Camera1类型</value>
+  </data>
+  <data name="Camera485" xml:space="preserve">
+    <value>相机485</value>
+  </data>
+  <data name="PleaseEnterCamera485" xml:space="preserve">
+    <value>请输入Camera485</value>
+  </data>
+  <data name="CameraDoubleFilter" xml:space="preserve">
+    <value>相机双滤波器</value>
+  </data>
+  <data name="PleaseEnterCameraDoubleFilter" xml:space="preserve">
+    <value>请输入相机双过滤器</value>
+  </data>
+  <data name="CameraIo" xml:space="preserve">
+    <value>相机IO</value>
+  </data>
+  <data name="PleaseEnterCameraIo" xml:space="preserve">
+    <value>请输入相机IO</value>
+  </data>
+  <data name="CameraKey" xml:space="preserve">
+    <value>相机钥匙</value>
+  </data>
+  <data name="PleaseEnterCameraKey" xml:space="preserve">
+    <value>请输入相机密钥</value>
+  </data>
+  <data name="CameraRecomeFilter" xml:space="preserve">
+    <value>相机重新筛选过滤器</value>
+  </data>
+  <data name="PleaseEnterCameraRecomeFilter" xml:space="preserve">
+    <value>请输入相机重新筛选过滤器</value>
+  </data>
+  <data name="CardCameraIp" xml:space="preserve">
+    <value>卡摄像头IP</value>
+  </data>
+  <data name="PleaseEnterCardCameraIp" xml:space="preserve">
+    <value>请输入卡相机IP</value>
+  </data>
+  <data name="CardCameraSn" xml:space="preserve">
+    <value>卡相机SN</value>
+  </data>
+  <data name="PleaseEnterCardCameraSn" xml:space="preserve">
+    <value>请输入卡相机SN</value>
+  </data>
+  <data name="CardCameraType" xml:space="preserve">
+    <value>卡相机类型</value>
+  </data>
+  <data name="PleaseEnterCardCameraType" xml:space="preserve">
+    <value>请输入卡相机类型</value>
+  </data>
+  <data name="CardPort" xml:space="preserve">
+    <value>卡端口</value>
+  </data>
+  <data name="PleaseEnterCardPort" xml:space="preserve">
+    <value>请输入卡端口</value>
+  </data>
+  <data name="CardIp" xml:space="preserve">
+    <value>卡IP</value>
+  </data>
+  <data name="PleaseEnterCardIp" xml:space="preserve">
+    <value>请输入卡IP</value>
+  </data>
+  <data name="CardSn" xml:space="preserve">
+    <value>卡SN</value>
+  </data>
+  <data name="PleaseEnterCardSn" xml:space="preserve">
+    <value>请输入卡SN</value>
+  </data>
+  <data name="CardType" xml:space="preserve">
+    <value>卡类型</value>
+  </data>
+  <data name="PleaseEnterCardType" xml:space="preserve">
+    <value>请输入卡类型</value>
+  </data>
+  <data name="DevStatus" xml:space="preserve">
+    <value>开发状态</value>
+  </data>
+  <data name="PleaseEnterDevStatus" xml:space="preserve">
+    <value>请输入DEV状态</value>
+  </data>
+  <data name="HasCard" xml:space="preserve">
+    <value>有卡</value>
+  </data>
+  <data name="PleaseEnterHasCard" xml:space="preserve">
+    <value>请输入有卡</value>
+  </data>
+  <data name="HasCarmera" xml:space="preserve">
+    <value>有Carmera</value>
+  </data>
+  <data name="PleaseEnterHasCarmera" xml:space="preserve">
+    <value>请输入有carmera</value>
+  </data>
+  <data name="LedDisplay" xml:space="preserve">
+    <value>LED显示</value>
+  </data>
+  <data name="PleaseEnterLedDisplay" xml:space="preserve">
+    <value>请输入LED显示</value>
+  </data>
+  <data name="LedIp" xml:space="preserve">
+    <value>LED IP</value>
+  </data>
+  <data name="PleaseEnterLedIp" xml:space="preserve">
+    <value>请输入LED IP</value>
+  </data>
+  <data name="LedType" xml:space="preserve">
+    <value>LED类型</value>
+  </data>
+  <data name="PleaseEnterLedType" xml:space="preserve">
+    <value>请输入LED类型</value>
+  </data>
+  <data name="QrCode" xml:space="preserve">
+    <value>二维码</value>
+  </data>
+  <data name="PleaseEnterQrCode" xml:space="preserve">
+    <value>请输入QR码</value>
+  </data>
+  <data name="SetDisplay" xml:space="preserve">
+    <value>设置显示</value>
+  </data>
+  <data name="PleaseEnterSetDisplay" xml:space="preserve">
+    <value>请输入设置显示</value>
+  </data>
+  <data name="SetVoice" xml:space="preserve">
+    <value>设置声音</value>
+  </data>
+  <data name="PleaseEnterSetVoice" xml:space="preserve">
+    <value>请输入设定的声音</value>
+  </data>
+  <data name="TwoGate" xml:space="preserve">
+    <value>两个门</value>
+  </data>
+  <data name="PleaseEnterTwoGate" xml:space="preserve">
+    <value>请输入两个大门</value>
+  </data>
+  <data name="ParkDeviceInfo" xml:space="preserve">
+    <value>设备信息</value>
+  </data>
+  <data name="CreateNewParkDevice" xml:space="preserve">
+    <value>创建新的车场设备</value>
+  </data>
+  <data name="UpdateParkDeviceInfo" xml:space="preserve">
+    <value>更新设备信息</value>
+  </data>
+  <data name="DeleteParkDevicePrompt" xml:space="preserve">
+    <value>删除设备提示</value>
+  </data>
+  <data name="SelectDeleteParkDevice" xml:space="preserve">
+    <value>选择Deletete Park设备</value>
+  </data>
+  <data name="DeleteParkDevice" xml:space="preserve">
+    <value>删除设备</value>
+  </data>
+  <data name="SureWantToDeleteParkDevice" xml:space="preserve">
+    <value>当然想删除设备</value>
+  </data>
+  <data name="ParkDeviceManagement" xml:space="preserve">
+    <value>设备管理</value>
+  </data>
+  <data name="ParkDeviceManagementDesc" xml:space="preserve">
+    <value>配置停车场设备信息，系统会根据车道管理里面的车道类型加载相机或刷卡设备</value>
+  </data>
+  <data name="TableAlreadyExists" xml:space="preserve">
+    <value>表'{0}'已经存在</value>
+  </data>
+  <data name="RoleIdRequired" xml:space="preserve">
+    <value>需要角色ID</value>
+  </data>
+  <data name="RoleRemarkRequired" xml:space="preserve">
+    <value>角色备注不能为空</value>
+  </data>
+  <data name="RoleExists" xml:space="preserve">
+    <value>角色已存在</value>
+  </data>
+  <data name="RoleId" xml:space="preserve">
+    <value>角色编号</value>
+  </data>
+  <data name="PleaseEnterRoleId" xml:space="preserve">
+    <value>请输入角色编号</value>
+  </data>
+  <data name="PleaseEnterRoleName" xml:space="preserve">
+    <value>请输入角色名称</value>
+  </data>
+  <data name="RoleRemark" xml:space="preserve">
+    <value>角色备注</value>
+  </data>
+  <data name="PleaseEnterRoleRemark" xml:space="preserve">
+    <value>请输入角色备注</value>
+  </data>
+  <data name="RoleInfo" xml:space="preserve">
+    <value>角色信息</value>
+  </data>
+  <data name="AbnormalSettingRequired" xml:space="preserve">
+    <value>需要异常设置</value>
+  </data>
+  <data name="AutoMatchRequired" xml:space="preserve">
+    <value>需要自动匹配</value>
+  </data>
+  <data name="CarUpperLimitRequired" xml:space="preserve">
+    <value>汽车上限需要</value>
+  </data>
+  <data name="CarUpperLimitProcessRequired" xml:space="preserve">
+    <value>需要汽车上限过程</value>
+  </data>
+  <data name="ChangeTempCarRequired" xml:space="preserve">
+    <value>需要更改临时车</value>
+  </data>
+  <data name="DefaultCardIdRequired" xml:space="preserve">
+    <value>需要默认卡ID</value>
+  </data>
+  <data name="DelayBySpaceRequired" xml:space="preserve">
+    <value>需要延迟所需的空间</value>
+  </data>
+  <data name="DelayTimeRequired" xml:space="preserve">
+    <value>需要延迟时间</value>
+  </data>
+  <data name="EntryWayWaittingCarRequired" xml:space="preserve">
+    <value>需要进入车辆</value>
+  </data>
+  <data name="FreeTimeRequired" xml:space="preserve">
+    <value>需要空闲时间</value>
+  </data>
+  <data name="IsNeedReasonRequired" xml:space="preserve">
+    <value>是否需要理由</value>
+  </data>
+  <data name="IsSelfEntryRequired" xml:space="preserve">
+    <value>是否手动登记</value>
+  </data>
+  <data name="LeaveDateRequired" xml:space="preserve">
+    <value>休假日期</value>
+  </data>
+  <data name="MotorbikeDefaultCardRequired" xml:space="preserve">
+    <value>需要摩托车默认卡</value>
+  </data>
+  <data name="MulSpaceRequired" xml:space="preserve">
+    <value>需要MUL空间</value>
+  </data>
+  <data name="MulSpaceExpiredRequired" xml:space="preserve">
+    <value>MUL空间已过期</value>
+  </data>
+  <data name="OneLotMoreCarEnterRequired" xml:space="preserve">
+    <value>需要更多的汽车进入</value>
+  </data>
+  <data name="OneLotMoreCarTempCarRequired" xml:space="preserve">
+    <value>需要更多的汽车临时车</value>
+  </data>
+  <data name="ParkingFullRequired" xml:space="preserve">
+    <value>需要全面停车</value>
+  </data>
+  <data name="ResCanOpenTimeRequired" xml:space="preserve">
+    <value>Res可以开放时间需要</value>
+  </data>
+  <data name="ShowTodayIncomeRequired" xml:space="preserve">
+    <value>显示今天的收入需要</value>
+  </data>
+  <data name="TempCarManagerRequired" xml:space="preserve">
+    <value>需要临时汽车经理</value>
+  </data>
+  <data name="UnlicensedModelRequired" xml:space="preserve">
+    <value>需要未经许可的模型</value>
+  </data>
+  <data name="UnsaveInAbnormalRequired" xml:space="preserve">
+    <value>需要异常</value>
+  </data>
+  <data name="UnsaveManualAbnormalRequired" xml:space="preserve">
+    <value>需要手动异常</value>
+  </data>
+  <data name="UnsaveOutAbnormalRequired" xml:space="preserve">
+    <value>需要异常不足</value>
+  </data>
+  <data name="ValueCardDeductionRequired" xml:space="preserve">
+    <value>需要扣除价值卡</value>
+  </data>
+  <data name="UpdateParkSettingPrompt" xml:space="preserve">
+    <value>更新车场设置提示</value>
+  </data>
+  <data name="ParkSettingExists" xml:space="preserve">
+    <value>存在车道设置</value>
+  </data>
+  <data name="CreateParkSettingPrompt" xml:space="preserve">
+    <value>创建车场设置提示</value>
+  </data>
+  <data name="AbnormalSetting" xml:space="preserve">
+    <value>异常设置</value>
+  </data>
+  <data name="PleaseEnterAbnormalSetting" xml:space="preserve">
+    <value>请输入异常设置</value>
+  </data>
+  <data name="AutoMatch" xml:space="preserve">
+    <value>自动匹配</value>
+  </data>
+  <data name="PleaseEnterAutoMatch" xml:space="preserve">
+    <value>请输入自动比赛</value>
+  </data>
+  <data name="CarUpperLimit" xml:space="preserve">
+    <value>汽车上限</value>
+  </data>
+  <data name="PleaseEnterCarUpperLimit" xml:space="preserve">
+    <value>请输入汽车上限</value>
+  </data>
+  <data name="CarUpperLimitProcess" xml:space="preserve">
+    <value>汽车上限过程</value>
+  </data>
+  <data name="PleaseEnterCarUpperLimitProcess" xml:space="preserve">
+    <value>请输入汽车上限过程</value>
+  </data>
+  <data name="ChangeTempCar" xml:space="preserve">
+    <value>更改临时车</value>
+  </data>
+  <data name="PleaseEnterChangeTempCar" xml:space="preserve">
+    <value>请输入更改临时车</value>
+  </data>
+  <data name="DefaultCardId" xml:space="preserve">
+    <value>默认卡ID</value>
+  </data>
+  <data name="PleaseEnterDefaultCardId" xml:space="preserve">
+    <value>请输入默认卡ID</value>
+  </data>
+  <data name="DelayBySpace" xml:space="preserve">
+    <value>延迟空间</value>
+  </data>
+  <data name="PleaseEnterDelayBySpace" xml:space="preserve">
+    <value>请按空间输入延迟</value>
+  </data>
+  <data name="DelayTime" xml:space="preserve">
+    <value>延迟时间</value>
+  </data>
+  <data name="PleaseEnterDelayTime" xml:space="preserve">
+    <value>请输入延迟时间</value>
+  </data>
+  <data name="EntryWayWaittingCar" xml:space="preserve">
+    <value>进入车辆​​车</value>
+  </data>
+  <data name="PleaseEnterEntryWayWaittingCar" xml:space="preserve">
+    <value>请输入入门方式</value>
+  </data>
+  <data name="FreeTime" xml:space="preserve">
+    <value>空闲时间</value>
+  </data>
+  <data name="PleaseEnterFreeTime" xml:space="preserve">
+    <value>请输入空闲时间</value>
+  </data>
+  <data name="IsNeedReason" xml:space="preserve">
+    <value>是需要原因</value>
+  </data>
+  <data name="PleaseEnterIsNeedReason" xml:space="preserve">
+    <value>请输入需要原因</value>
+  </data>
+  <data name="IsSelfEntry" xml:space="preserve">
+    <value>是否手动登记</value>
+  </data>
+  <data name="PleaseEnterIsSelfEntry" xml:space="preserve">
+    <value>请输入是否手动登记</value>
+  </data>
+  <data name="LeaveDate" xml:space="preserve">
+    <value>离开日期</value>
+  </data>
+  <data name="PleaseEnterLeaveDate" xml:space="preserve">
+    <value>请输入休假日期</value>
+  </data>
+  <data name="MotorbikeDefaultCard" xml:space="preserve">
+    <value>摩托车默认卡</value>
+  </data>
+  <data name="PleaseEnterMotorbikeDefaultCard" xml:space="preserve">
+    <value>请输入摩托车默认卡</value>
+  </data>
+  <data name="MulSpace" xml:space="preserve">
+    <value>mul空间</value>
+  </data>
+  <data name="PleaseEnterMulSpace" xml:space="preserve">
+    <value>请输入MUL空间</value>
+  </data>
+  <data name="MulSpaceExpired" xml:space="preserve">
+    <value>MUL空间过期</value>
+  </data>
+  <data name="PleaseEnterMulSpaceExpired" xml:space="preserve">
+    <value>请输入MUL空间已过期</value>
+  </data>
+  <data name="OneLotMoreCarEnter" xml:space="preserve">
+    <value>更多的汽车进入</value>
+  </data>
+  <data name="PleaseEnterOneLotMoreCarEnter" xml:space="preserve">
+    <value>请输入更多汽车输入</value>
+  </data>
+  <data name="OneLotMoreCarTempCar" xml:space="preserve">
+    <value>还有更多汽车临时车</value>
+  </data>
+  <data name="PleaseEnterOneLotMoreCarTempCar" xml:space="preserve">
+    <value>请输入更多的汽车速度车</value>
+  </data>
+  <data name="ParkingFull" xml:space="preserve">
+    <value>停车装满</value>
+  </data>
+  <data name="PleaseEnterParkingFull" xml:space="preserve">
+    <value>请进入停车场</value>
+  </data>
+  <data name="ResCanOpenTime" xml:space="preserve">
+    <value>Res可以开放时间</value>
+  </data>
+  <data name="PleaseEnterResCanOpenTime" xml:space="preserve">
+    <value>请输入Res可以开放时间</value>
+  </data>
+  <data name="ShowTodayIncome" xml:space="preserve">
+    <value>显示今天的收入</value>
+  </data>
+  <data name="PleaseEnterShowTodayIncome" xml:space="preserve">
+    <value>请输入今天的收入</value>
+  </data>
+  <data name="TempCarManager" xml:space="preserve">
+    <value>临时汽车经理</value>
+  </data>
+  <data name="PleaseEnterTempCarManager" xml:space="preserve">
+    <value>请输入临时车经理</value>
+  </data>
+  <data name="UnlicensedModel" xml:space="preserve">
+    <value>未经许可的模型</value>
+  </data>
+  <data name="PleaseEnterUnlicensedModel" xml:space="preserve">
+    <value>请输入无执照的模型</value>
+  </data>
+  <data name="UnsaveInAbnormal" xml:space="preserve">
+    <value>异常不足</value>
+  </data>
+  <data name="PleaseEnterUnsaveInAbnormal" xml:space="preserve">
+    <value>请在异常中输入Unsave</value>
+  </data>
+  <data name="UnsaveManualAbnormal" xml:space="preserve">
+    <value>失败的手动异常</value>
+  </data>
+  <data name="PleaseEnterUnsaveManualAbnormal" xml:space="preserve">
+    <value>请输入不符合的手册异常</value>
+  </data>
+  <data name="UnsaveOutAbnormal" xml:space="preserve">
+    <value>异常无法分解</value>
+  </data>
+  <data name="PleaseEnterUnsaveOutAbnormal" xml:space="preserve">
+    <value>请输入异常</value>
+  </data>
+  <data name="ValueCardDeduction" xml:space="preserve">
+    <value>扣除价值卡</value>
+  </data>
+  <data name="PleaseEnterValueCardDeduction" xml:space="preserve">
+    <value>请输入扣除价值卡</value>
+  </data>
+  <data name="ParkSettingInfo" xml:space="preserve">
+    <value>车道设置信息</value>
+  </data>
+  <data name="CreateNewParkSetting" xml:space="preserve">
+    <value>创建新的车场设置</value>
+  </data>
+  <data name="UpdateParkSettingInfo" xml:space="preserve">
+    <value>更新车场设置信息</value>
+  </data>
+  <data name="DeleteParkSettingPrompt" xml:space="preserve">
+    <value>删除车场设置提示</value>
+  </data>
+  <data name="SelectDeleteParkSetting" xml:space="preserve">
+    <value>选择Deletete Park设置</value>
+  </data>
+  <data name="DeleteParkSetting" xml:space="preserve">
+    <value>删除车场设置</value>
+  </data>
+  <data name="SureWantToDeleteParkSetting" xml:space="preserve">
+    <value>确定想删除车场设置</value>
+  </data>
+  <data name="ParkSettingManagement" xml:space="preserve">
+    <value>车道设置管理</value>
+  </data>
+  <data name="ParkSettingManagementDesc" xml:space="preserve">
+    <value>车场设置管理详情</value>
+  </data>
+  <data name="FieldAlreadyExists" xml:space="preserve">
+    <value>字段'{0}'已经存在</value>
+  </data>
+  <data name="AbnormalCar" xml:space="preserve">
+    <value>异常车辆</value>
+  </data>
+  <data name="FuzzyMatching" xml:space="preserve">
+    <value>模糊匹配</value>
+  </data>
+  <data name="EndHourRequired" xml:space="preserve">
+    <value>需要结束时</value>
+  </data>
+  <data name="EndMinuteRequired" xml:space="preserve">
+    <value>需要结束分钟</value>
+  </data>
+  <data name="StartHourRequired" xml:space="preserve">
+    <value>需要开始小时</value>
+  </data>
+  <data name="StartMinuteRequired" xml:space="preserve">
+    <value>需要开始分钟</value>
+  </data>
+  <data name="VolumeRequired" xml:space="preserve">
+    <value>所需的音量</value>
+  </data>
+  <data name="UpdateParkWayVoicePrompt" xml:space="preserve">
+    <value>更新车道的语音提示</value>
+  </data>
+  <data name="ParkWayVoiceExists" xml:space="preserve">
+    <value>车道声音存在</value>
+  </data>
+  <data name="CreateParkWayVoicePrompt" xml:space="preserve">
+    <value>创建Park Way语音提示</value>
+  </data>
+  <data name="EndHour" xml:space="preserve">
+    <value>结束小时</value>
+  </data>
+  <data name="PleaseEnterEndHour" xml:space="preserve">
+    <value>请输入结束小时</value>
+  </data>
+  <data name="EndMinute" xml:space="preserve">
+    <value>结局</value>
+  </data>
+  <data name="PleaseEnterEndMinute" xml:space="preserve">
+    <value>请输入结束分钟</value>
+  </data>
+  <data name="StartHour" xml:space="preserve">
+    <value>开始小时</value>
+  </data>
+  <data name="PleaseEnterStartHour" xml:space="preserve">
+    <value>请输入开始小时</value>
+  </data>
+  <data name="StartMinute" xml:space="preserve">
+    <value>开始分钟</value>
+  </data>
+  <data name="PleaseEnterStartMinute" xml:space="preserve">
+    <value>请输入开始分钟</value>
+  </data>
+  <data name="Volume" xml:space="preserve">
+    <value>体积</value>
+  </data>
+  <data name="PleaseEnterVolume" xml:space="preserve">
+    <value>请输入卷</value>
+  </data>
+  <data name="ParkWayVoiceInfo" xml:space="preserve">
+    <value>车道语音信息</value>
+  </data>
+  <data name="CreateNewParkWayVoice" xml:space="preserve">
+    <value>创建新的车道音量</value>
+  </data>
+  <data name="UpdateParkWayVoiceInfo" xml:space="preserve">
+    <value>更新车道方式语音信息</value>
+  </data>
+  <data name="DeleteParkWayVoicePrompt" xml:space="preserve">
+    <value>删除车道语音提示</value>
+  </data>
+  <data name="SelectDeleteParkWayVoice" xml:space="preserve">
+    <value>选择Deletete Park方式声音</value>
+  </data>
+  <data name="DeleteParkWayVoice" xml:space="preserve">
+    <value>Deletete Park Way声音</value>
+  </data>
+  <data name="SureWantToDeleteParkWayVoice" xml:space="preserve">
+    <value>确定删除车道语言</value>
+  </data>
+  <data name="ParkWayVoiceManagement" xml:space="preserve">
+    <value>车道语音管理</value>
+  </data>
+  <data name="ParkWayVoiceManagementDesc" xml:space="preserve">
+    <value>车道语音管理详情</value>
+  </data>
+  <data name="LastUpdateDate" xml:space="preserve">
+    <value>最后更新日期</value>
+  </data>
+  <data name="AmountRequired" xml:space="preserve">
+    <value>需要的金额</value>
+  </data>
+  <data name="AreaIdRequired" xml:space="preserve">
+    <value>需要区域ID</value>
+  </data>
+  <data name="CarInIdRequired" xml:space="preserve">
+    <value>需要ID的汽车</value>
+  </data>
+  <data name="CarNoColorRequired" xml:space="preserve">
+    <value>汽车无需颜色</value>
+  </data>
+  <data name="CarNoTypeRequired" xml:space="preserve">
+    <value>汽车无需类型</value>
+  </data>
+  <data name="CarTypeIdRequired" xml:space="preserve">
+    <value>需要汽车类型ID</value>
+  </data>
+  <data name="ChangedCarNoRequired" xml:space="preserve">
+    <value>换车不需要</value>
+  </data>
+  <data name="DisplayRequired" xml:space="preserve">
+    <value>需要显示</value>
+  </data>
+  <data name="InImageRequired" xml:space="preserve">
+    <value>在图像中</value>
+  </data>
+  <data name="IsAllowEnterRequired" xml:space="preserve">
+    <value>允许输入所需的</value>
+  </data>
+  <data name="IsCsConfirmRequired" xml:space="preserve">
+    <value>CS确认需要</value>
+  </data>
+  <data name="IsNeedAysnRequired" xml:space="preserve">
+    <value>需要AYSN需要吗</value>
+  </data>
+  <data name="IsPaidRequired" xml:space="preserve">
+    <value>需要支付</value>
+  </data>
+  <data name="LastCarNoRequired" xml:space="preserve">
+    <value>最后一辆汽车不需要</value>
+  </data>
+  <data name="SpecialCarRequired" xml:space="preserve">
+    <value>需要特殊的汽车</value>
+  </data>
+  <data name="TriggerFlagRequired" xml:space="preserve">
+    <value>需要触发标志</value>
+  </data>
+  <data name="VideoCallRequired" xml:space="preserve">
+    <value>需要视频通话</value>
+  </data>
+  <data name="VideoCallQrcodeRequired" xml:space="preserve">
+    <value>视频通话qrcode需要</value>
+  </data>
+  <data name="VoiceRequired" xml:space="preserve">
+    <value>需要声音</value>
+  </data>
+  <data name="WaitPayRequired" xml:space="preserve">
+    <value>需要等待薪水</value>
+  </data>
+  <data name="WaittingCarNoRequired" xml:space="preserve">
+    <value>瓦汽车不需要</value>
+  </data>
+  <data name="WaittingCarNoColorRequired" xml:space="preserve">
+    <value>瓦汽车无需颜色</value>
+  </data>
+  <data name="WaittingCarNoTypeRequired" xml:space="preserve">
+    <value>WAITTING汽车无需类型</value>
+  </data>
+  <data name="WaittingImgRequired" xml:space="preserve">
+    <value>需要IMG</value>
+  </data>
+  <data name="WaittingPlateIdRequired" xml:space="preserve">
+    <value>需要瓦板ID</value>
+  </data>
+  <data name="WayCarTypeRequired" xml:space="preserve">
+    <value>需要汽车类型</value>
+  </data>
+  <data name="WayConnectRequired" xml:space="preserve">
+    <value>需要连接的方式</value>
+  </data>
+  <data name="WayNameRequired" xml:space="preserve">
+    <value>需要的名称</value>
+  </data>
+  <data name="WayNoRequired" xml:space="preserve">
+    <value>不需要的方式</value>
+  </data>
+  <data name="WayStatusRequired" xml:space="preserve">
+    <value>需要状态</value>
+  </data>
+  <data name="WayTypeRequired" xml:space="preserve">
+    <value>所需的方式类型</value>
+  </data>
+  <data name="UpdateParkWayPrompt" xml:space="preserve">
+    <value>更新车道的提示</value>
+  </data>
+  <data name="ParkWayExists" xml:space="preserve">
+    <value>车道已存在</value>
+  </data>
+  <data name="CreateParkWayPrompt" xml:space="preserve">
+    <value>创建车道提示</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="PleaseEnterAmount" xml:space="preserve">
+    <value>请输入金额</value>
+  </data>
+  <data name="AreaId" xml:space="preserve">
+    <value>区域ID</value>
+  </data>
+  <data name="PleaseEnterAreaId" xml:space="preserve">
+    <value>请输入区域ID</value>
+  </data>
+  <data name="CarInId" xml:space="preserve">
+    <value>ID中的汽车</value>
+  </data>
+  <data name="PleaseEnterCarInId" xml:space="preserve">
+    <value>请在ID中输入汽车</value>
+  </data>
+  <data name="CarNoColor" xml:space="preserve">
+    <value>汽车没有颜色</value>
+  </data>
+  <data name="PleaseEnterCarNoColor" xml:space="preserve">
+    <value>请进入汽车没有颜色</value>
+  </data>
+  <data name="CarNoType" xml:space="preserve">
+    <value>汽车没有类型</value>
+  </data>
+  <data name="PleaseEnterCarNoType" xml:space="preserve">
+    <value>请输入没有类型的汽车</value>
+  </data>
+  <data name="CarTypeId" xml:space="preserve">
+    <value>汽车类型ID</value>
+  </data>
+  <data name="PleaseEnterCarTypeId" xml:space="preserve">
+    <value>请输入汽车类型ID</value>
+  </data>
+  <data name="ChangedCarNo" xml:space="preserve">
+    <value>更换了汽车</value>
+  </data>
+  <data name="PleaseEnterChangedCarNo" xml:space="preserve">
+    <value>请输入更改的汽车不</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>展示</value>
+  </data>
+  <data name="PleaseEnterDisplay" xml:space="preserve">
+    <value>请输入显示</value>
+  </data>
+  <data name="InImage" xml:space="preserve">
+    <value>在图像中</value>
+  </data>
+  <data name="PleaseEnterInImage" xml:space="preserve">
+    <value>请输入图像</value>
+  </data>
+  <data name="IsAllowEnter" xml:space="preserve">
+    <value>允许输入</value>
+  </data>
+  <data name="PleaseEnterIsAllowEnter" xml:space="preserve">
+    <value>请输入允许输入</value>
+  </data>
+  <data name="IsCsConfirm" xml:space="preserve">
+    <value>是CS确认</value>
+  </data>
+  <data name="PleaseEnterIsCsConfirm" xml:space="preserve">
+    <value>请输入CS确认</value>
+  </data>
+  <data name="IsNeedAysn" xml:space="preserve">
+    <value>需要艾恩</value>
+  </data>
+  <data name="PleaseEnterIsNeedAysn" xml:space="preserve">
+    <value>请输入需要ayysn</value>
+  </data>
+  <data name="IsPaid" xml:space="preserve">
+    <value>已付款</value>
+  </data>
+  <data name="PleaseEnterIsPaid" xml:space="preserve">
+    <value>请输入付款</value>
+  </data>
+  <data name="LastCarNo" xml:space="preserve">
+    <value>最后一辆车</value>
+  </data>
+  <data name="PleaseEnterLastCarNo" xml:space="preserve">
+    <value>请输入最后一辆车</value>
+  </data>
+  <data name="SpecialCar" xml:space="preserve">
+    <value>特殊汽车</value>
+  </data>
+  <data name="PleaseEnterSpecialCar" xml:space="preserve">
+    <value>请输入特殊汽车</value>
+  </data>
+  <data name="TriggerFlag" xml:space="preserve">
+    <value>触发标志</value>
+  </data>
+  <data name="PleaseEnterTriggerFlag" xml:space="preserve">
+    <value>请输入触发标志</value>
+  </data>
+  <data name="VideoCall" xml:space="preserve">
+    <value>视频电话</value>
+  </data>
+  <data name="PleaseEnterVideoCall" xml:space="preserve">
+    <value>请输入视频通话</value>
+  </data>
+  <data name="VideoCallQrcode" xml:space="preserve">
+    <value>视频呼叫QRCODE</value>
+  </data>
+  <data name="PleaseEnterVideoCallQrcode" xml:space="preserve">
+    <value>请输入视频通话qrcode</value>
+  </data>
+  <data name="Voice" xml:space="preserve">
+    <value>嗓音</value>
+  </data>
+  <data name="PleaseEnterVoice" xml:space="preserve">
+    <value>请输入声音</value>
+  </data>
+  <data name="WaitPay" xml:space="preserve">
+    <value>等待付费</value>
+  </data>
+  <data name="PleaseEnterWaitPay" xml:space="preserve">
+    <value>请输入等待薪水</value>
+  </data>
+  <data name="WaittingCarNo" xml:space="preserve">
+    <value>瓦尔汽车没有</value>
+  </data>
+  <data name="PleaseEnterWaittingCarNo" xml:space="preserve">
+    <value>请输入WATITTING CAR NO</value>
+  </data>
+  <data name="WaittingCarNoColor" xml:space="preserve">
+    <value>瓦汽车没有颜色</value>
+  </data>
+  <data name="PleaseEnterWaittingCarNoColor" xml:space="preserve">
+    <value>请输入WATITTING CAR没有颜色</value>
+  </data>
+  <data name="WaittingCarNoType" xml:space="preserve">
+    <value>瓦汽车没有类型</value>
+  </data>
+  <data name="PleaseEnterWaittingCarNoType" xml:space="preserve">
+    <value>请输入WATITTING CAR没有类型</value>
+  </data>
+  <data name="WaittingImg" xml:space="preserve">
+    <value>waiting img</value>
+  </data>
+  <data name="PleaseEnterWaittingImg" xml:space="preserve">
+    <value>请输入wating img</value>
+  </data>
+  <data name="WaittingPlateId" xml:space="preserve">
+    <value>瓦板ID</value>
+  </data>
+  <data name="PleaseEnterWaittingPlateId" xml:space="preserve">
+    <value>请输入瓦板ID</value>
+  </data>
+  <data name="WayCarType" xml:space="preserve">
+    <value>汽车类型</value>
+  </data>
+  <data name="PleaseEnterWayCarType" xml:space="preserve">
+    <value>请输入汽车类型</value>
+  </data>
+  <data name="WayConnect" xml:space="preserve">
+    <value>方式连接</value>
+  </data>
+  <data name="PleaseEnterWayConnect" xml:space="preserve">
+    <value>请输入方式连接</value>
+  </data>
+  <data name="WayName" xml:space="preserve">
+    <value>方式名称</value>
+  </data>
+  <data name="PleaseEnterWayName" xml:space="preserve">
+    <value>请输入方式名称</value>
+  </data>
+  <data name="WayNo" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="PleaseEnterWayNo" xml:space="preserve">
+    <value>请输入不</value>
+  </data>
+  <data name="WayStatus" xml:space="preserve">
+    <value>方式状态</value>
+  </data>
+  <data name="PleaseEnterWayStatus" xml:space="preserve">
+    <value>请输入状态</value>
+  </data>
+  <data name="WayType" xml:space="preserve">
+    <value>方式类型</value>
+  </data>
+  <data name="PleaseEnterWayType" xml:space="preserve">
+    <value>请输入方式类型</value>
+  </data>
+  <data name="ParkWayInfo" xml:space="preserve">
+    <value>车道信息</value>
+  </data>
+  <data name="CreateNewParkWay" xml:space="preserve">
+    <value>创建新的车道</value>
+  </data>
+  <data name="UpdateParkWayInfo" xml:space="preserve">
+    <value>更新车道信息</value>
+  </data>
+  <data name="DeleteParkWayPrompt" xml:space="preserve">
+    <value>删除车道提示</value>
+  </data>
+  <data name="SelectDeleteParkWay" xml:space="preserve">
+    <value>选择Deletete Park方式</value>
+  </data>
+  <data name="DeleteParkWay" xml:space="preserve">
+    <value>Deletete Park Way</value>
+  </data>
+  <data name="SureWantToDeleteParkWay" xml:space="preserve">
+    <value>确定删除车道</value>
+  </data>
+  <data name="ParkWayManagementDesc" xml:space="preserve">
+    <value>车道管理详情</value>
+  </data>
+  <data name="LastCarTime" xml:space="preserve">
+    <value>最后一辆车时间</value>
+  </data>
+  <data name="VideoCallTime" xml:space="preserve">
+    <value>视频通话时间</value>
+  </data>
+  <data name="WaittingTime" xml:space="preserve">
+    <value>有时间</value>
+  </data>
+  <data name="CardIdRequired" xml:space="preserve">
+    <value>需要卡ID</value>
+  </data>
+  <data name="IsConfirmRequired" xml:space="preserve">
+    <value>被确认</value>
+  </data>
+  <data name="UpdateParkWayCardPrompt" xml:space="preserve">
+    <value>更新Park Way卡提示</value>
+  </data>
+  <data name="ParkWayCardExists" xml:space="preserve">
+    <value>车道通行车辆类型已存在</value>
+  </data>
+  <data name="CreateParkWayCardPrompt" xml:space="preserve">
+    <value>创建Park Way卡提示</value>
+  </data>
+  <data name="CardId" xml:space="preserve">
+    <value>卡ID</value>
+  </data>
+  <data name="PleaseEnterCardId" xml:space="preserve">
+    <value>请输入卡ID</value>
+  </data>
+  <data name="IsConfirm" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="PleaseEnterIsConfirm" xml:space="preserve">
+    <value>请输入已确认</value>
+  </data>
+  <data name="ParkWayCardInfo" xml:space="preserve">
+    <value>车道通行车辆类型信息</value>
+  </data>
+  <data name="CreateNewParkWayCard" xml:space="preserve">
+    <value>创建新的车道通行车辆类型</value>
+  </data>
+  <data name="UpdateParkWayCardInfo" xml:space="preserve">
+    <value>更新Park Way卡信息信息</value>
+  </data>
+  <data name="DeleteParkWayCardPrompt" xml:space="preserve">
+    <value>删除车道通行车辆类型提示</value>
+  </data>
+  <data name="SelectDeleteParkWayCard" xml:space="preserve">
+    <value>选择Deletete Park Way卡</value>
+  </data>
+  <data name="DeleteParkWayCard" xml:space="preserve">
+    <value>DERETETE PARK WAY卡</value>
+  </data>
+  <data name="SureWantToDeleteParkWayCard" xml:space="preserve">
+    <value>确定删除车道通行车辆类型</value>
+  </data>
+  <data name="ParkWayCardManagement" xml:space="preserve">
+    <value>车道通行车辆类型管理</value>
+  </data>
+  <data name="ParkWayCardManagementDesc" xml:space="preserve">
+    <value>车道通行车辆类型管理详情</value>
+  </data>
+  <data name="BlankingTimeRequired" xml:space="preserve">
+    <value>所需的空白时间</value>
+  </data>
+  <data name="NextWayIdRequired" xml:space="preserve">
+    <value>需要下一步ID</value>
+  </data>
+  <data name="PreWayIdRequired" xml:space="preserve">
+    <value>需要ID</value>
+  </data>
+  <data name="UpdateParkWayGroupPrompt" xml:space="preserve">
+    <value>更新车道分组提示</value>
+  </data>
+  <data name="ParkWayGroupExists" xml:space="preserve">
+    <value>存在车道分组</value>
+  </data>
+  <data name="CreateParkWayGroupPrompt" xml:space="preserve">
+    <value>创建车道分组提示</value>
+  </data>
+  <data name="BlankingTime" xml:space="preserve">
+    <value>空白的时间</value>
+  </data>
+  <data name="PleaseEnterBlankingTime" xml:space="preserve">
+    <value>请输入空白时间</value>
+  </data>
+  <data name="NextWayId" xml:space="preserve">
+    <value>下一步ID</value>
+  </data>
+  <data name="PleaseEnterNextWayId" xml:space="preserve">
+    <value>请输入下一步ID</value>
+  </data>
+  <data name="PreWayId" xml:space="preserve">
+    <value>pre Way ID</value>
+  </data>
+  <data name="PleaseEnterPreWayId" xml:space="preserve">
+    <value>请输入Pre Way ID</value>
+  </data>
+  <data name="ParkWayGroupInfo" xml:space="preserve">
+    <value>车道分组信息</value>
+  </data>
+  <data name="CreateNewParkWayGroup" xml:space="preserve">
+    <value>创建新的车道分组</value>
+  </data>
+  <data name="UpdateParkWayGroupInfo" xml:space="preserve">
+    <value>更新车道分组信息</value>
+  </data>
+  <data name="DeleteParkWayGroupPrompt" xml:space="preserve">
+    <value>删除车道分组提示</value>
+  </data>
+  <data name="SelectDeleteParkWayGroup" xml:space="preserve">
+    <value>选择Deletete Park Way小组</value>
+  </data>
+  <data name="DeleteParkWayGroup" xml:space="preserve">
+    <value>Deletete Park Way小组</value>
+  </data>
+  <data name="SureWantToDeleteParkWayGroup" xml:space="preserve">
+    <value>确定删除车道分组</value>
+  </data>
+  <data name="ParkWayGroupManagement" xml:space="preserve">
+    <value>车道分组管理</value>
+  </data>
+  <data name="ParkWayGroupManagementDesc" xml:space="preserve">
+    <value>Park Way Group Management desc</value>
+  </data>
+  <data name="StopEndHourRequired" xml:space="preserve">
+    <value>需要停止结束小时</value>
+  </data>
+  <data name="StopEndMinuteRequired" xml:space="preserve">
+    <value>需要停止结束分钟</value>
+  </data>
+  <data name="StopStartHourRequired" xml:space="preserve">
+    <value>停止开始小时</value>
+  </data>
+  <data name="StopStartMinuteRequired" xml:space="preserve">
+    <value>停止开始分钟</value>
+  </data>
+  <data name="WeeksRequired" xml:space="preserve">
+    <value>需要几周</value>
+  </data>
+  <data name="UpdateParkWayStopTimePrompt" xml:space="preserve">
+    <value>更新车道禁行时段提示</value>
+  </data>
+  <data name="ParkWayStopTimeExists" xml:space="preserve">
+    <value>车道禁行时段已存在</value>
+  </data>
+  <data name="CreateParkWayStopTimePrompt" xml:space="preserve">
+    <value>创建车道禁行时段提示</value>
+  </data>
+  <data name="StopEndHour" xml:space="preserve">
+    <value>停止结束时</value>
+  </data>
+  <data name="PleaseEnterStopEndHour" xml:space="preserve">
+    <value>请输入停止末日</value>
+  </data>
+  <data name="StopEndMinute" xml:space="preserve">
+    <value>停止结局</value>
+  </data>
+  <data name="PleaseEnterStopEndMinute" xml:space="preserve">
+    <value>请输入停止结束分钟</value>
+  </data>
+  <data name="StopStartHour" xml:space="preserve">
+    <value>停止开始小时</value>
+  </data>
+  <data name="PleaseEnterStopStartHour" xml:space="preserve">
+    <value>请输入停止开始小时</value>
+  </data>
+  <data name="StopStartMinute" xml:space="preserve">
+    <value>停止开始分钟</value>
+  </data>
+  <data name="PleaseEnterStopStartMinute" xml:space="preserve">
+    <value>请输入停止开始分钟</value>
+  </data>
+  <data name="Weeks" xml:space="preserve">
+    <value>几周</value>
+  </data>
+  <data name="PleaseEnterWeeks" xml:space="preserve">
+    <value>请输入几周</value>
+  </data>
+  <data name="ParkWayStopTimeInfo" xml:space="preserve">
+    <value>车道禁行时段信息</value>
+  </data>
+  <data name="CreateNewParkWayStopTime" xml:space="preserve">
+    <value>创建新的车道禁行时段</value>
+  </data>
+  <data name="UpdateParkWayStopTimeInfo" xml:space="preserve">
+    <value>更新车道停止时间信息</value>
+  </data>
+  <data name="DeleteParkWayStopTimePrompt" xml:space="preserve">
+    <value>删除车道禁行时段提示</value>
+  </data>
+  <data name="SelectDeleteParkWayStopTime" xml:space="preserve">
+    <value>选择Deletete Park Way停止时间</value>
+  </data>
+  <data name="DeleteParkWayStopTime" xml:space="preserve">
+    <value>Deletete Park Way停止时间</value>
+  </data>
+  <data name="SureWantToDeleteParkWayStopTime" xml:space="preserve">
+    <value>确定删除车道禁行时段</value>
+  </data>
+  <data name="ParkWayStopTimeManagement" xml:space="preserve">
+    <value>车道进行时段管理</value>
+  </data>
+  <data name="ParkWayStopTimeManagementDesc" xml:space="preserve">
+    <value>车道禁行时段管理详情</value>
+  </data>
+  <data name="UpdateTime" xml:space="preserve">
+    <value>更新时间</value>
+  </data>
+  <data name="SummaryDesc" xml:space="preserve">
+    <value>停车场收入汇总数据</value>
+  </data>
+  <data name="CarOutCount" xml:space="preserve">
+    <value>出场车辆数</value>
+  </data>
+  <data name="NeedPay" xml:space="preserve">
+    <value>应付金额</value>
+  </data>
+  <data name="IncpChangedRequired" xml:space="preserve">
+    <value>INCP需要更改</value>
+  </data>
+  <data name="IncpChanged" xml:space="preserve">
+    <value>INCP改变了</value>
+  </data>
+  <data name="PleaseEnterIncpChanged" xml:space="preserve">
+    <value>请输入INCP更改</value>
+  </data>
+  <data name="CarIdRequired" xml:space="preserve">
+    <value>需要汽车ID</value>
+  </data>
+  <data name="OpKindRequired" xml:space="preserve">
+    <value>需要运算</value>
+  </data>
+  <data name="OpMoneyRequired" xml:space="preserve">
+    <value>需要货币</value>
+  </data>
+  <data name="OpNoRequired" xml:space="preserve">
+    <value>OP不需要</value>
+  </data>
+  <data name="UpdateDelayCardActionPrompt" xml:space="preserve">
+    <value>更新延迟卡操作提示</value>
+  </data>
+  <data name="DelayCardActionExists" xml:space="preserve">
+    <value>存在延迟卡动作</value>
+  </data>
+  <data name="CreateDelayCardActionPrompt" xml:space="preserve">
+    <value>创建延迟卡操作提示</value>
+  </data>
+  <data name="CarId" xml:space="preserve">
+    <value>汽车ID</value>
+  </data>
+  <data name="PleaseEnterCarId" xml:space="preserve">
+    <value>请输入汽车ID</value>
+  </data>
+  <data name="OpKind" xml:space="preserve">
+    <value>OP种类</value>
+  </data>
+  <data name="PleaseEnterOpKind" xml:space="preserve">
+    <value>请输入OP类型</value>
+  </data>
+  <data name="OpMoney" xml:space="preserve">
+    <value>OP钱</value>
+  </data>
+  <data name="PleaseEnterOpMoney" xml:space="preserve">
+    <value>请输入OP钱</value>
+  </data>
+  <data name="OpNo" xml:space="preserve">
+    <value>OP</value>
+  </data>
+  <data name="PleaseEnterOpNo" xml:space="preserve">
+    <value>请输入op no</value>
+  </data>
+  <data name="DelayCardActionInfo" xml:space="preserve">
+    <value>延迟卡动作信息</value>
+  </data>
+  <data name="CreateNewDelayCardAction" xml:space="preserve">
+    <value>创建新的延迟卡动作</value>
+  </data>
+  <data name="UpdateDelayCardActionInfo" xml:space="preserve">
+    <value>更新延迟卡操作信息</value>
+  </data>
+  <data name="DeleteDelayCardActionPrompt" xml:space="preserve">
+    <value>删除延迟卡操作提示</value>
+  </data>
+  <data name="SelectDeleteDelayCardAction" xml:space="preserve">
+    <value>选择Deletete延迟卡动作</value>
+  </data>
+  <data name="DeleteDelayCardAction" xml:space="preserve">
+    <value>删除延迟卡动作</value>
+  </data>
+  <data name="SureWantToDeleteDelayCardAction" xml:space="preserve">
+    <value>确保要删除延迟卡操作</value>
+  </data>
+  <data name="DelayCardActionManagement" xml:space="preserve">
+    <value>延迟卡动作管理</value>
+  </data>
+  <data name="DelayCardActionManagementDesc" xml:space="preserve">
+    <value>延迟卡动作管理DESC</value>
+  </data>
+  <data name="OpDate" xml:space="preserve">
+    <value>OP日期</value>
+  </data>
+  <data name="ValidEnd" xml:space="preserve">
+    <value>有效的结尾</value>
+  </data>
+  <data name="ValidFrom" xml:space="preserve">
+    <value>有效</value>
+  </data>
+  <data name="UpdateValueCardActionPrompt" xml:space="preserve">
+    <value>更新值卡操作提示</value>
+  </data>
+  <data name="ValueCardActionExists" xml:space="preserve">
+    <value>存在价值卡动作</value>
+  </data>
+  <data name="CreateValueCardActionPrompt" xml:space="preserve">
+    <value>创建价值卡动作提示</value>
+  </data>
+  <data name="ValueCardActionInfo" xml:space="preserve">
+    <value>价值卡动作信息</value>
+  </data>
+  <data name="CreateNewValueCardAction" xml:space="preserve">
+    <value>创建新的价值卡动作</value>
+  </data>
+  <data name="UpdateValueCardActionInfo" xml:space="preserve">
+    <value>更新价值卡操作信息</value>
+  </data>
+  <data name="DeleteValueCardActionPrompt" xml:space="preserve">
+    <value>删除价值卡动作提示</value>
+  </data>
+  <data name="SelectDeleteValueCardAction" xml:space="preserve">
+    <value>选择Deletete Value卡动作</value>
+  </data>
+  <data name="DeleteValueCardAction" xml:space="preserve">
+    <value>删除价值卡动作</value>
+  </data>
+  <data name="SureWantToDeleteValueCardAction" xml:space="preserve">
+    <value>确保要删除价值卡动作</value>
+  </data>
+  <data name="ValueCardActionManagement" xml:space="preserve">
+    <value>价值卡动作管理</value>
+  </data>
+  <data name="ValueCardActionManagementDesc" xml:space="preserve">
+    <value>价值卡动作管理DESC</value>
+  </data>
+  <data name="DelayRecord" xml:space="preserve">
+    <value>延期记录</value>
+  </data>
+  <data name="ValueRecord" xml:space="preserve">
+    <value>储值记录</value>
+  </data>
+  <data name="CardNameRequired" xml:space="preserve">
+    <value>需要卡名称</value>
+  </data>
+  <data name="CarSpaceRequired" xml:space="preserve">
+    <value>需要汽车空间</value>
+  </data>
+  <data name="ExpireCardRequired" xml:space="preserve">
+    <value>需要卡</value>
+  </data>
+  <data name="InCheckRequired" xml:space="preserve">
+    <value>需要检查</value>
+  </data>
+  <data name="MonthToTempDiscountRequired" xml:space="preserve">
+    <value>需要一个月才能折扣</value>
+  </data>
+  <data name="TotalCarRequired" xml:space="preserve">
+    <value>总车程</value>
+  </data>
+  <data name="UpdateLongTermRentalCardTypePrompt" xml:space="preserve">
+    <value>更新长期出租卡类型提示</value>
+  </data>
+  <data name="LongTermRentalCardTypeExists" xml:space="preserve">
+    <value>存在长期租赁卡类型</value>
+  </data>
+  <data name="CreateLongTermRentalCardTypePrompt" xml:space="preserve">
+    <value>创建长期出租卡类型提示</value>
+  </data>
+  <data name="CardName" xml:space="preserve">
+    <value>卡名称</value>
+  </data>
+  <data name="PleaseEnterCardName" xml:space="preserve">
+    <value>请输入卡名称</value>
+  </data>
+  <data name="CarSpace" xml:space="preserve">
+    <value>汽车空间</value>
+  </data>
+  <data name="PleaseEnterCarSpace" xml:space="preserve">
+    <value>请进入汽车空间</value>
+  </data>
+  <data name="ExpireCard" xml:space="preserve">
+    <value>到期卡</value>
+  </data>
+  <data name="PleaseEnterExpireCard" xml:space="preserve">
+    <value>请输入到期卡</value>
+  </data>
+  <data name="InCheck" xml:space="preserve">
+    <value>在检查中</value>
+  </data>
+  <data name="PleaseEnterInCheck" xml:space="preserve">
+    <value>请输入检查</value>
+  </data>
+  <data name="MonthToTempDiscount" xml:space="preserve">
+    <value>临时折扣的月份</value>
+  </data>
+  <data name="PleaseEnterMonthToTempDiscount" xml:space="preserve">
+    <value>请输入月份折扣</value>
+  </data>
+  <data name="TotalCar" xml:space="preserve">
+    <value>总计车辆</value>
+  </data>
+  <data name="PleaseEnterTotalCar" xml:space="preserve">
+    <value>请输入总车</value>
+  </data>
+  <data name="LongTermRentalCardTypeInfo" xml:space="preserve">
+    <value>长期出租卡类型信息</value>
+  </data>
+  <data name="CreateNewLongTermRentalCardType" xml:space="preserve">
+    <value>创建新的长期出租卡类型</value>
+  </data>
+  <data name="UpdateLongTermRentalCardTypeInfo" xml:space="preserve">
+    <value>更新长期出租卡类型信息</value>
+  </data>
+  <data name="DeleteLongTermRentalCardTypePrompt" xml:space="preserve">
+    <value>删除长期出租卡类型提示</value>
+  </data>
+  <data name="SelectDeleteLongTermRentalCardType" xml:space="preserve">
+    <value>选择删除长期租赁卡类型</value>
+  </data>
+  <data name="DeleteLongTermRentalCardType" xml:space="preserve">
+    <value>删除长期出租卡类型</value>
+  </data>
+  <data name="SureWantToDeleteLongTermRentalCardType" xml:space="preserve">
+    <value>当然想删除长期租赁卡类型</value>
+  </data>
+  <data name="LongTermRentalCardTypeManagement" xml:space="preserve">
+    <value>长期出租卡类型管理</value>
+  </data>
+  <data name="LongTermRentalCardTypeManagementDesc" xml:space="preserve">
+    <value>长期出租卡类型管理DESC</value>
+  </data>
+  <data name="UpdateValueCardTypePrompt" xml:space="preserve">
+    <value>更新值卡类型提示</value>
+  </data>
+  <data name="ValueCardTypeExists" xml:space="preserve">
+    <value>存在价值卡类型</value>
+  </data>
+  <data name="CreateValueCardTypePrompt" xml:space="preserve">
+    <value>创建价值卡类型提示</value>
+  </data>
+  <data name="ValueCardTypeInfo" xml:space="preserve">
+    <value>价值卡类型信息</value>
+  </data>
+  <data name="CreateNewValueCardType" xml:space="preserve">
+    <value>创建新价值卡类型</value>
+  </data>
+  <data name="UpdateValueCardTypeInfo" xml:space="preserve">
+    <value>更新价值卡类型信息信息</value>
+  </data>
+  <data name="DeleteValueCardTypePrompt" xml:space="preserve">
+    <value>删除价值卡类型提示</value>
+  </data>
+  <data name="SelectDeleteValueCardType" xml:space="preserve">
+    <value>选择“删除价值卡”类型</value>
+  </data>
+  <data name="DeleteValueCardType" xml:space="preserve">
+    <value>删除价值卡类型</value>
+  </data>
+  <data name="SureWantToDeleteValueCardType" xml:space="preserve">
+    <value>确保要删除价值卡类型</value>
+  </data>
+  <data name="ValueCardTypeManagement" xml:space="preserve">
+    <value>价值卡类型管理</value>
+  </data>
+  <data name="ValueCardTypeManagementDesc" xml:space="preserve">
+    <value>价值卡类型管理DESC</value>
+  </data>
+  <data name="BalanceRequired" xml:space="preserve">
+    <value>需要余额</value>
+  </data>
+  <data name="CarCodeRequired" xml:space="preserve">
+    <value>需要汽车代码</value>
+  </data>
+  <data name="CardRequired" xml:space="preserve">
+    <value>需要卡</value>
+  </data>
+  <data name="DepositRequired" xml:space="preserve">
+    <value>需要存款</value>
+  </data>
+  <data name="ParkSpaceRequired" xml:space="preserve">
+    <value>需要公园空间</value>
+  </data>
+  <data name="ParkSpaceTypeRequired" xml:space="preserve">
+    <value>需要公园空间类型</value>
+  </data>
+  <data name="SpaceNameRequired" xml:space="preserve">
+    <value>需要空间名称</value>
+  </data>
+  <data name="UserRemarkRequired" xml:space="preserve">
+    <value>用户备注不能为空</value>
+  </data>
+  <data name="UserTelRequired" xml:space="preserve">
+    <value>需要用户电话</value>
+  </data>
+  <data name="UpdateLongTermRentalCarPrompt" xml:space="preserve">
+    <value>更新长期租车提示</value>
+  </data>
+  <data name="LongTermRentalCarExists" xml:space="preserve">
+    <value>长期租车存在</value>
+  </data>
+  <data name="CreateLongTermRentalCarPrompt" xml:space="preserve">
+    <value>创建长期租车提示</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>平衡</value>
+  </data>
+  <data name="PleaseEnterBalance" xml:space="preserve">
+    <value>请输入余额</value>
+  </data>
+  <data name="CarCode" xml:space="preserve">
+    <value>汽车代码</value>
+  </data>
+  <data name="PleaseEnterCarCode" xml:space="preserve">
+    <value>请输入汽车代码</value>
+  </data>
+  <data name="Card" xml:space="preserve">
+    <value>卡片</value>
+  </data>
+  <data name="PleaseEnterCard" xml:space="preserve">
+    <value>请输入卡</value>
+  </data>
+  <data name="Deposit" xml:space="preserve">
+    <value>订金</value>
+  </data>
+  <data name="PleaseEnterDeposit" xml:space="preserve">
+    <value>请输入存款</value>
+  </data>
+  <data name="ParkSpace" xml:space="preserve">
+    <value>公园空间</value>
+  </data>
+  <data name="PleaseEnterParkSpace" xml:space="preserve">
+    <value>请进入公园空间</value>
+  </data>
+  <data name="ParkSpaceType" xml:space="preserve">
+    <value>公园空间类型</value>
+  </data>
+  <data name="PleaseEnterParkSpaceType" xml:space="preserve">
+    <value>请输入公园空间类型</value>
+  </data>
+  <data name="SpaceName" xml:space="preserve">
+    <value>空间名称</value>
+  </data>
+  <data name="PleaseEnterSpaceName" xml:space="preserve">
+    <value>请输入空间名称</value>
+  </data>
+  <data name="UserRemark" xml:space="preserve">
+    <value>用户评论</value>
+  </data>
+  <data name="PleaseEnterUserRemark" xml:space="preserve">
+    <value>请输入用户备注</value>
+  </data>
+  <data name="UserTel" xml:space="preserve">
+    <value>用户电话</value>
+  </data>
+  <data name="PleaseEnterUserTel" xml:space="preserve">
+    <value>请输入用户电话</value>
+  </data>
+  <data name="LongTermRentalCarInfo" xml:space="preserve">
+    <value>长期租车信息</value>
+  </data>
+  <data name="CreateNewLongTermRentalCar" xml:space="preserve">
+    <value>创建新的长期租车</value>
+  </data>
+  <data name="UpdateLongTermRentalCarInfo" xml:space="preserve">
+    <value>更新长期租车信息</value>
+  </data>
+  <data name="DeleteLongTermRentalCarPrompt" xml:space="preserve">
+    <value>删除长期租车提示</value>
+  </data>
+  <data name="SelectDeleteLongTermRentalCar" xml:space="preserve">
+    <value>选择删除长期租车</value>
+  </data>
+  <data name="DeleteLongTermRentalCar" xml:space="preserve">
+    <value>删除长期租车</value>
+  </data>
+  <data name="SureWantToDeleteLongTermRentalCar" xml:space="preserve">
+    <value>当然想删除长期租车</value>
+  </data>
+  <data name="LongTermRentalCarManagement" xml:space="preserve">
+    <value>长期租车管理</value>
+  </data>
+  <data name="LongTermRentalCarManagementDesc" xml:space="preserve">
+    <value>长期租车管理DESC</value>
+  </data>
+  <data name="UpdateValueCarPrompt" xml:space="preserve">
+    <value>更新价值车提示</value>
+  </data>
+  <data name="ValueCarExists" xml:space="preserve">
+    <value>有价值汽车</value>
+  </data>
+  <data name="CreateValueCarPrompt" xml:space="preserve">
+    <value>创建价值汽车提示</value>
+  </data>
+  <data name="ValueCarInfo" xml:space="preserve">
+    <value>价值汽车信息</value>
+  </data>
+  <data name="CreateNewValueCar" xml:space="preserve">
+    <value>创建新价值汽车</value>
+  </data>
+  <data name="UpdateValueCarInfo" xml:space="preserve">
+    <value>更新价值汽车信息</value>
+  </data>
+  <data name="DeleteValueCarPrompt" xml:space="preserve">
+    <value>删除价值汽车提示</value>
+  </data>
+  <data name="SelectDeleteValueCar" xml:space="preserve">
+    <value>选择“删除价值车”</value>
+  </data>
+  <data name="DeleteValueCar" xml:space="preserve">
+    <value>删除价值汽车</value>
+  </data>
+  <data name="SureWantToDeleteValueCar" xml:space="preserve">
+    <value>当然想删除价值汽车</value>
+  </data>
+  <data name="ValueCarManagement" xml:space="preserve">
+    <value>价值汽车管理</value>
+  </data>
+  <data name="ValueCarManagementDesc" xml:space="preserve">
+    <value>价值汽车管理DESC</value>
+  </data>
+  <data name="ValueType" xml:space="preserve">
+    <value>储值类型</value>
+  </data>
+  <data name="LongTermRentalType" xml:space="preserve">
+    <value>长租类型</value>
+  </data>
+  <data name="FeeRuleFlagRequired" xml:space="preserve">
+    <value>需要费用标志</value>
+  </data>
+  <data name="FeeRuleIdRequired" xml:space="preserve">
+    <value>需要费用ID</value>
+  </data>
+  <data name="InWayRequired" xml:space="preserve">
+    <value>需要的方式</value>
+  </data>
+  <data name="OutWayRequired" xml:space="preserve">
+    <value>需要的方式</value>
+  </data>
+  <data name="OvertimeFeeRuleRequired" xml:space="preserve">
+    <value>超时付费规则不能为空</value>
+  </data>
+  <data name="OvertimeTypeRequired" xml:space="preserve">
+    <value>超时类型不能为空</value>
+  </data>
+  <data name="ParkingFeeRuleRequired" xml:space="preserve">
+    <value>需要停车费规则</value>
+  </data>
+  <data name="ParkingTimeRequired" xml:space="preserve">
+    <value>请选择停车时间</value>
+  </data>
+  <data name="SectionNameRequired" xml:space="preserve">
+    <value>分段标识不能为空</value>
+  </data>
+  <data name="UpdateFeeRuleSectionPrompt" xml:space="preserve">
+    <value>更新分段计费规则提示</value>
+  </data>
+  <data name="FeeRuleSectionExists" xml:space="preserve">
+    <value>分段计费已存在</value>
+  </data>
+  <data name="CreateFeeRuleSectionPrompt" xml:space="preserve">
+    <value>创建分段计费规则提示</value>
+  </data>
+  <data name="FeeRuleFlag" xml:space="preserve">
+    <value>费用标志</value>
+  </data>
+  <data name="PleaseEnterFeeRuleFlag" xml:space="preserve">
+    <value>请输入费用标志</value>
+  </data>
+  <data name="FeeRuleId" xml:space="preserve">
+    <value>费用规则编号</value>
+  </data>
+  <data name="PleaseEnterFeeRuleId" xml:space="preserve">
+    <value>请输入费用规则编号</value>
+  </data>
+  <data name="InWay" xml:space="preserve">
+    <value>入口车道</value>
+  </data>
+  <data name="PleaseEnterInWay" xml:space="preserve">
+    <value>请输入</value>
+  </data>
+  <data name="OutWay" xml:space="preserve">
+    <value>出口车道</value>
+  </data>
+  <data name="PleaseEnterOutWay" xml:space="preserve">
+    <value>请输入方式</value>
+  </data>
+  <data name="OvertimeFeeRule" xml:space="preserve">
+    <value>超时付费规则</value>
+  </data>
+  <data name="PleaseEnterOvertimeFeeRule" xml:space="preserve">
+    <value>请输入超时付费规则</value>
+  </data>
+  <data name="OvertimeType" xml:space="preserve">
+    <value>超时类型</value>
+  </data>
+  <data name="PleaseEnterOvertimeType" xml:space="preserve">
+    <value>请输入超时类型</value>
+  </data>
+  <data name="ParkingFeeRule" xml:space="preserve">
+    <value>停车费规则</value>
+  </data>
+  <data name="PleaseEnterParkingFeeRule" xml:space="preserve">
+    <value>请输入停车费规则</value>
+  </data>
+  <data name="ParkingTime" xml:space="preserve">
+    <value>停车时间</value>
+  </data>
+  <data name="PleaseEnterParkingTime" xml:space="preserve">
+    <value>请输入停车时间</value>
+  </data>
+  <data name="SectionName" xml:space="preserve">
+    <value>分段标识</value>
+  </data>
+  <data name="PleaseEnterSectionName" xml:space="preserve">
+    <value>请输入分段标识</value>
+  </data>
+  <data name="FeeRuleSectionInfo" xml:space="preserve">
+    <value>分段计费规则信息</value>
+  </data>
+  <data name="CreateNewFeeRuleSection" xml:space="preserve">
+    <value>创建新的分段计费规则</value>
+  </data>
+  <data name="UpdateFeeRuleSectionInfo" xml:space="preserve">
+    <value>更新分段计费规则信息</value>
+  </data>
+  <data name="DeleteFeeRuleSectionPrompt" xml:space="preserve">
+    <value>删除分段计费规则提示</value>
+  </data>
+  <data name="SelectDeleteFeeRuleSection" xml:space="preserve">
+    <value>选择需要删除分段收费规则</value>
+  </data>
+  <data name="DeleteFeeRuleSection" xml:space="preserve">
+    <value>删除分段计费规则</value>
+  </data>
+  <data name="SureWantToDeleteFeeRuleSection" xml:space="preserve">
+    <value>确定想删除分段计费规则</value>
+  </data>
+  <data name="FeeRuleSectionManagement" xml:space="preserve">
+    <value>分段计费规则管理</value>
+  </data>
+  <data name="FeeRuleSectionManagementDesc" xml:space="preserve">
+    <value>分段计费规则关联详情</value>
+  </data>
+  <data name="SimpleFeeDesc" xml:space="preserve">
+    <value>配置停车场的收费规则，请先配置简单计费规则，如为场中场收费规则，请额外配置分段收费</value>
+  </data>
+  <data name="DateType" xml:space="preserve">
+    <value>日期类型</value>
+  </data>
+  <data name="WorkingDays" xml:space="preserve">
+    <value>工作日</value>
+  </data>
+  <data name="Holidays" xml:space="preserve">
+    <value>节假日</value>
+  </data>
+  <data name="PleaseSelectParkingTime" xml:space="preserve">
+    <value>请选择停车时间</value>
+  </data>
+  <data name="SectionFeeDesc" xml:space="preserve">
+    <value>分段收费主要用于场中场收费方式，设置每一个入口到出口的规则，从而累加计算费用</value>
+  </data>
+  <data name="LicensePlateRecognition" xml:space="preserve">
+    <value>车牌识别</value>
+  </data>
+  <data name="CardSwipeDevice" xml:space="preserve">
+    <value>刷卡设备</value>
+  </data>
+  <data name="ParkSettingsDesc" xml:space="preserve">
+    <value>对停车场整体的相关参数进行设置</value>
+  </data>
+  <data name="ParkWaySettingsDesc" xml:space="preserve">
+    <value>车道设置详情</value>
+  </data>
+  <data name="CarVisitorDesc" xml:space="preserve">
+    <value>查看访客自助登记车辆信息</value>
+  </data>
+  <data name="SupportFuzzyQuery" xml:space="preserve">
+    <value>支持模糊查询</value>
+  </data>
+  <data name="RegistrationTime" xml:space="preserve">
+    <value>登记时间</value>
+  </data>
+  <data name="ReasonForVisit" xml:space="preserve">
+    <value>来访事由</value>
+  </data>
+  <data name="VisitPerson" xml:space="preserve">
+    <value>访问对象</value>
+  </data>
+  <data name="ContactNumber" xml:space="preserve">
+    <value>联系电话</value>
+  </data>
+  <data name="ExportExcel" xml:space="preserve">
+    <value>导出 Excel</value>
+  </data>
+  <data name="PleaseSelectStartDate" xml:space="preserve">
+    <value>请选择开始日期</value>
+  </data>
+  <data name="PleaseSelectEndDate" xml:space="preserve">
+    <value>请选择结束日期</value>
+  </data>
+  <data name="ParkingAbnormalDesc" xml:space="preserve">
+    <value>系统自动清理超过 90 天的记录</value>
+  </data>
+  <data name="InParkTime" xml:space="preserve">
+    <value>入场时间</value>
+  </data>
+  <data name="OutParkTime" xml:space="preserve">
+    <value>出场时间</value>
+  </data>
+  <data name="RemarkInfo" xml:space="preserve">
+    <value>备注信息</value>
+  </data>
+  <data name="PassingLane" xml:space="preserve">
+    <value>通行车道</value>
+  </data>
+  <data name="DetectionTime" xml:space="preserve">
+    <value>检测时间</value>
+  </data>
+  <data name="TotalAbnormalCars" xml:space="preserve">
+    <value>总计异常车辆</value>
+  </data>
+  <data name="ManualExitCars" xml:space="preserve">
+    <value>手动出场车辆</value>
+  </data>
+  <data name="CarsWithNoEntryRecord" xml:space="preserve">
+    <value>无入场记录车辆</value>
+  </data>
+  <data name="CarsWithNoExitRecord" xml:space="preserve">
+    <value>无出场记录车辆</value>
+  </data>
+  <data name="AbnormalDetails" xml:space="preserve">
+    <value>异常详情</value>
+  </data>
+  <data name="ExceptionType" xml:space="preserve">
+    <value>异常类型</value>
+  </data>
+  <data name="CarBrand" xml:space="preserve">
+    <value>车辆品牌</value>
+  </data>
+  <data name="InParkRemark" xml:space="preserve">
+    <value>入场备注</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>详情</value>
+  </data>
+  <data name="ParkingArrearsDesc" xml:space="preserve">
+    <value>查看当前欠费车辆信息，欠费车辆信息会在补缴费用以后清除</value>
+  </data>
+  <data name="ArrearAmount" xml:space="preserve">
+    <value>欠费金额</value>
+  </data>
+  <data name="ActualAmountPaid" xml:space="preserve">
+    <value>实付金额</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>总计金额</value>
+  </data>
+  <data name="InParkWay" xml:space="preserve">
+    <value>入场方式</value>
+  </data>
+  <data name="ParkingDuration" xml:space="preserve">
+    <value>停车长</value>
+  </data>
+  <data name="InParkWayId" xml:space="preserve">
+    <value>入场车道</value>
+  </data>
+  <data name="ParkingInRecordDesc" xml:space="preserve">
+    <value>查看场内车辆信息，超过设定期限未离场的车辆将被自动转为异常车辆</value>
+  </data>
+  <data name="UnitDay" xml:space="preserve">
+    <value>单位：天</value>
+  </data>
+  <data name="OwnerAddress" xml:space="preserve">
+    <value>车主地址</value>
+  </data>
+  <data name="TotalParkingSpaces" xml:space="preserve">
+    <value>总计车位</value>
+  </data>
+  <data name="RemainingParkingSpaces" xml:space="preserve">
+    <value>剩余车位</value>
+  </data>
+  <data name="RegisteringACar" xml:space="preserve">
+    <value>登记车辆</value>
+  </data>
+  <data name="CarParkedMoreThanSevenDays" xml:space="preserve">
+    <value>停车时长超过7天车辆</value>
+  </data>
+</root>

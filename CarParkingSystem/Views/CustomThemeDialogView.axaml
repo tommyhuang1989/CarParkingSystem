@@ -1,0 +1,31 @@
+<UserControl x:Class="CarParkingSystem.Views.CustomThemeDialogView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:suki="https://github.com/kikipoulet/SukiUI"
+			 xmlns:vmTheme="using:CarParkingSystem.ViewModels.Theming"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             x:DataType="vmTheme:CustomThemeDialogViewModel"
+             mc:Ignorable="d">
+    <suki:GroupBox Header="{i18n:I18n {x:Static lang:Language.CreateCustomTheme}}">
+		<Grid RowDefinitions="*,*,*,Auto,*" ColumnDefinitions="*,*" Margin="20" ShowGridLines="False" HorizontalAlignment="Center">
+			<TextBlock Grid.Row="0" Grid.Column="0" Text="{i18n:I18n {x:Static lang:Language.ColorName}}" VerticalAlignment="Center"/>
+			<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding DisplayName}" Height="50" Width="150"/>
+
+			<TextBlock Grid.Row="1" Grid.Column="0" Text="{i18n:I18n {x:Static lang:Language.PrimaryColor}}" VerticalAlignment="Center"/>
+			<ColorPicker Grid.Row="1" Grid.Column="1" Color="{Binding PrimaryColor}" Margin="0,10,0,10"/>
+
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="{i18n:I18n {x:Static lang:Language.AccentColor}}" VerticalAlignment="Center"/>
+			<ColorPicker Grid.Row="2" Grid.Column="1" Color="{Binding AccentColor}" />
+			
+			<TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Message}" Foreground="Red" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="0,10"/>
+			
+			<Button Grid.Row="4" Grid.Column="0" Margin="10,5,10,0" Command="{Binding TryCreateThemeCommand}" Content="{i18n:I18n {x:Static lang:Language.Create}}" Width="150"/>
+			<Button Grid.Row="4" Grid.Column="1" Margin="10,5,10,0" Command="{Binding CloseDialogCommand}" Content="{i18n:I18n {x:Static lang:Language.Close}}" Width="150"/>
+		</Grid>
+    </suki:GroupBox>
+</UserControl>

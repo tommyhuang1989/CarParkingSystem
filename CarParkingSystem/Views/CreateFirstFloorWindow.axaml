@@ -1,0 +1,35 @@
+<suki:SukiWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:suki="https://github.com/kikipoulet/SukiUI"
+		xmlns:vm="using:CarParkingSystem.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+		Width="600" Height="450"
+        x:Class="CarParkingSystem.Views.CreateFirstFloorWindow"
+        Title="CreateFirstFloorWindow"
+		x:DataType="vm:CreateFirstFloorWindowViewModel">
+	<Grid RowDefinitions="*,*,*,Auto,*" ColumnDefinitions="*,4*" ShowGridLines="False" Margin="20">
+		<TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">
+			<Run Text="*" Foreground="Red"/>
+			<Run Text="项目名："/>
+		</TextBlock>
+		<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ProjectName}" Watermark="请输入表名" VerticalAlignment="Center" IsReadOnly="True"/>
+		
+		<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
+			<Run Text="*" Foreground="Red"/>
+			<Run Text="类名："/>
+		</TextBlock>
+		<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ClassName}" Watermark="请输入类名" VerticalAlignment="Center"/>
+		
+		<TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">
+			<Run Text="*" Foreground="Red"/>
+			<Run Text="一级菜单名："/>
+		</TextBlock>
+		<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding DisplayName}" Watermark="请输入一级菜单名" VerticalAlignment="Center"/>
+		
+		<TextBlock Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Message}" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="30,10"/>
+		
+		<Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Width="100" Content="保存" Command="{Binding SaveCommand}"/>
+	</Grid>
+</suki:SukiWindow>

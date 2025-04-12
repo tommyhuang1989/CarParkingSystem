@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="https://github.com/kikipoulet/SukiUI"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+			 xmlns:vm="using:CarParkingSystem.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CarParkingSystem.ValueCarMenuView"
+			 x:DataType="vm:ValueCarMenuViewModel">
+	<UserControl.Styles>
+		<Style Selector="TabControl">
+			<Setter Property="SelectedItem" Value="{Binding ActivePage}" />
+			<Setter Property="ItemsSource" Value="{Binding ParkTabPages}" />
+			<Setter Property="ItemTemplate">
+				<DataTemplate x:DataType="vm:ValueCarTabViewModel">
+					<TextBlock Text="{i18n:I18n {Binding DisplayName}}" />
+				</DataTemplate>
+			</Setter>
+			<Setter Property="ContentTemplate">
+				<DataTemplate x:DataType="vm:ValueCarMenuViewModel">
+					<TransitioningContentControl Content="{Binding ActivePage}"/>
+				</DataTemplate>
+			</Setter>
+			<!--<Style x:DataType="tabControl:TabViewModel" Selector="^ TabItem">
+				<Setter Property="IsEnabled" Value="{Binding IsEnabled}" />
+			</Style>-->
+		</Style>
+	</UserControl.Styles>
+	<suki:GlassCard>
+		<!--<suki:GroupBox Header="Standard Tab Control">-->
+			<TabControl />
+		<!--</suki:GroupBox>-->
+	</suki:GlassCard>
+</UserControl>

@@ -1,0 +1,286 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="https://github.com/kikipoulet/SukiUI"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+			 xmlns:vm="using:CarParkingSystem.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CarParkingSystem.ParkSettingView"
+			 x:DataType="vm:ParkSettingViewModel">
+
+	<ScrollViewer MaxHeight="650">
+		<StackPanel Spacing="5" Margin="0, 0, 20, 0">
+			<!--异常车辆-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.AbnormalSetting}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding AbnormalSetting}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterAbnormalSetting}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding AbnormalSettingValidationMessage}" IsVisible="{Binding AbnormalSettingValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--模糊匹配-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.AutoMatch}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding AutoMatch}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterAutoMatch}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding AutoMatchValidationMessage}" IsVisible="{Binding AutoMatchValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--车位上限-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.CarUpperLimit}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding CarUpperLimit}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterCarUpperLimit}}"  suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding CarUpperLimitValidationMessage}" IsVisible="{Binding CarUpperLimitValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--9.车位上限处理-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.CarUpperLimitProcess}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding CarUpperLimitProcess}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterCarUpperLimitProcess}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding CarUpperLimitProcessValidationMessage}" IsVisible="{Binding CarUpperLimitProcessValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--有效登记车变成临时车辆管理，0表示自动处理，1表示手动确认
+-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.ChangeTempCar}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding ChangeTempCar}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterChangeTempCar}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding ChangeTempCarValidationMessage}" IsVisible="{Binding ChangeTempCarValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--默认车辆类型-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.DefaultCardId}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding DefaultCardId}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterDefaultCardId}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding DefaultCardIdValidationMessage}" IsVisible="{Binding DefaultCardIdValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--间隔时间-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.DelayTime}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding DelayTime}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterDelayTime}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding DelayTimeValidationMessage}" IsVisible="{Binding DelayTimeValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--车位满后出口有车出去后处理入口正在等待的车，0=不处理（倒车或人工处理），1=系统自动处理-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.EntryWayWaittingCar}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding EntryWayWaittingCar}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterEntryWayWaittingCar}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding EntryWayWaittingCarValidationMessage}" IsVisible="{Binding EntryWayWaittingCarValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--免费时长-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.FreeTime}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding FreeTime}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterFreeTime}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding FreeTimeValidationMessage}" IsVisible="{Binding FreeTimeValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--开闸是否需要填写原因-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.IsNeedReason}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding IsNeedReason}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterIsNeedReason}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding IsNeedReasonValidationMessage}" IsVisible="{Binding IsNeedReasonValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--是否手动登记-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.IsSelfEntry}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding IsSelfEntry}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterIsSelfEntry}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding IsSelfEntryValidationMessage}" IsVisible="{Binding IsSelfEntryValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--支付后离场时间-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.LeaveDate}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding LeaveDate}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterLeaveDate}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding LeaveDateValidationMessage}" IsVisible="{Binding LeaveDateValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--非机动车默认类型-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.MotorbikeDefaultCard}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding MotorbikeDefaultCard}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterMotorbikeDefaultCard}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding MotorbikeDefaultCardValidationMessage}" IsVisible="{Binding MotorbikeDefaultCardValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--一位多车卡类-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.MulSpace}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding MulSpace}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterMulSpace}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding MulSpaceValidationMessage}" IsVisible="{Binding MulSpaceValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--多位多车过期：0＝过期车辆，1＝车位减少1个-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.MulSpaceExpired}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding MulSpaceExpired}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterMulSpaceExpired}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding MulSpaceExpiredValidationMessage}" IsVisible="{Binding MulSpaceExpiredValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--一位多车入场处理-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.OneLotMoreCarEnter}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding OneLotMoreCarEnter}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterOneLotMoreCarEnter}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding OneLotMoreCarEnterValidationMessage}" IsVisible="{Binding OneLotMoreCarEnterValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--一位多车以临时车处理-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.OneLotMoreCarTempCar}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding OneLotMoreCarTempCar}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterOneLotMoreCarTempCar}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding OneLotMoreCarTempCarValidationMessage}" IsVisible="{Binding OneLotMoreCarTempCarValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--车位已满处理-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.ParkingFull}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding ParkingFull}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterParkingFull}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding ParkingFullValidationMessage}" IsVisible="{Binding ParkingFullValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--在同一个机动车道重复识别车牌，时间内直接开闸
+-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.ResCanOpenTime}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding ResCanOpenTime}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterResCanOpenTime}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding ResCanOpenTimeValidationMessage}" IsVisible="{Binding ResCanOpenTimeValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--显示今天收入-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.ShowTodayIncome}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding ShowTodayIncome}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterShowTodayIncome}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding ShowTodayIncomeValidationMessage}" IsVisible="{Binding ShowTodayIncomeValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--临时车辆管理，0表示自动处理，1表示手动确认-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.TempCarManager}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding TempCarManager}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterTempCarManager}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding TempCarManagerValidationMessage}" IsVisible="{Binding TempCarManagerValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--无牌车触发模式-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.UnlicensedModel}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding UnlicensedModel}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterUnlicensedModel}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding UnlicensedModelValidationMessage}" IsVisible="{Binding UnlicensedModelValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--无入场记录-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.UnsaveInAbnormal}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding UnsaveInAbnormal}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterUnsaveInAbnormal}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding UnsaveInAbnormalValidationMessage}" IsVisible="{Binding UnsaveInAbnormalValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--手动出场记录异常-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.UnsaveManualAbnormal}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding UnsaveManualAbnormal}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterUnsaveManualAbnormal}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding UnsaveManualAbnormalValidationMessage}" IsVisible="{Binding UnsaveManualAbnormalValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--无出场记录-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.UnsaveOutAbnormal}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding UnsaveOutAbnormal}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterUnsaveOutAbnormal}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding UnsaveOutAbnormalValidationMessage}" IsVisible="{Binding UnsaveOutAbnormalValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<!--储值卡扣费规则：0－仅供本车使用；1＝车主多车共享余额-->
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.ValueCardDeduction}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding ValueCardDeduction}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterValueCardDeduction}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding ValueCardDeductionValidationMessage}" IsVisible="{Binding ValueCardDeductionValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Orientation="Horizontal">
+					<TextBlock Text="{Binding UpdateInfo}" Foreground="Red" HorizontalAlignment="Left" Margin="0,10"/>
+					<Button Content="{i18n:I18n {x:Static lang:Language.Save}}" Command="{Binding SaveCommand}" MinWidth="180" HorizontalAlignment="Left" Margin="5,40,0,10"/>
+				</StackPanel>
+			</Grid>
+		</StackPanel>
+	</ScrollViewer>
+</UserControl>

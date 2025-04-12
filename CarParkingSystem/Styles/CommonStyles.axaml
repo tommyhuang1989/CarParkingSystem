@@ -1,0 +1,16 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- Add Controls for Previewer Here -->
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+	<!-- 覆盖默认错误模板（设置透明或空样式） -->
+	<Style Selector="DataValidationErrors">
+		<Setter Property="ErrorTemplate">
+			<DataTemplate></DataTemplate>
+		</Setter>
+	</Style>
+</Styles>

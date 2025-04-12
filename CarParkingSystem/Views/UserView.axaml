@@ -1,0 +1,355 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="https://github.com/kikipoulet/SukiUI"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+			 xmlns:vm="using:CarParkingSystem.ViewModels"
+			 xmlns:control="using:CarParkingSystem.Controls"
+			 xmlns:model="using:CarParkingSystem.Models"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="860"
+             x:Class="CarParkingSystem.UserView"
+			 x:DataType="vm:UserViewModel">
+
+	<Panel>
+		<StackPanel Classes="HeaderContent">
+			<!--页面标题-->
+			<DockPanel Margin="20,20,20,0">
+				<StackPanel>
+					<TextBlock DockPanel.Dock="Left" Text="{i18n:I18n {x:Static lang:Language.UserManagement}}" FontSize="32" FontWeight="Bold" />
+					<TextBlock DockPanel.Dock="Left" Text="{i18n:I18n {x:Static lang:Language.UserManagementDesc}}" Margin="0,10"/>
+				</StackPanel>
+				<!--显示/隐藏 SearchBar 按钮-->
+				<Button DockPanel.Dock="Right" Classes="Rounded PathIconButton"
+						Width="24"
+						Height="24"
+					Margin="0,10,10,0" Padding="0"
+				  HorizontalAlignment="Right"
+				  VerticalAlignment="Top"
+						HorizontalContentAlignment="Center"
+						FontSize="12"
+						FontWeight="DemiBold" Command="{Binding ShowSearchBarCommand}" IsVisible="False">
+					<PathIcon Data="{x:Static suki:Icons.CircleInformation}" Classes.IsShowSearchBar="{Binding IsShowSearchBar}"  Classes.IsHideSearchBar="{Binding !IsShowSearchBar}" Classes="Manual">
+						<PathIcon.Styles>
+							<Style Selector="PathIcon.IsShowSearchBar">
+								<Setter Property="ToolTip.Tip" Value="隐藏搜索栏"/>
+								<Setter Property="ToolTip.Placement" Value="Top"/>
+							</Style>
+							<Style Selector="PathIcon.IsHideSearchBar">
+								<Setter Property="ToolTip.Tip" Value="显示搜索栏"/>
+								<Setter Property="ToolTip.Placement" Value="Top"/>
+							</Style>
+						</PathIcon.Styles>
+					</PathIcon>
+				</Button>
+			</DockPanel>
+
+			<!--搜索栏,  IsVisible="{Binding IsShowSearchBar}"-->
+			<suki:GlassCard x:Name="searchGlassCard" Classes="HeaderClassed" Margin="10,5" >
+				<Grid ColumnDefinitions="Auto,*,Auto,*,Auto,*,Auto,*" RowDefinitions="*,*" ShowGridLines="False">
+					<TextBox x:Name="txtSetWidth" Grid.Row="0" Grid.Column="1" MinWidth="180" Margin="0,0,30,0"/>
+					<TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{Binding Source={x:Static lang:Language.Username}, Converter={StaticResource i18nAppendConverter}, ConverterParameter=:}"/>
+					<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SearchUsername}" MinWidth="180" Margin="0,0,30,0"/>
+
+					<TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Text="{Binding Source={x:Static lang:Language.Email}, Converter={StaticResource i18nAppendConverter}, ConverterParameter=:}"/>
+					<TextBox Grid.Row="0" Grid.Column="3" Text="{Binding SearchEmail}"  MinWidth="180" Margin="0,0,30,0"/>
+
+					<TextBlock Grid.Row="0" Grid.Column="4" Text="{Binding Source={x:Static lang:Language.Phone}, Converter={StaticResource i18nAppendConverter}, ConverterParameter=:}" VerticalAlignment="Center"/>
+					<TextBox Grid.Row="0" Grid.Column="5" Text="{Binding SearchPhone}" MinWidth="180" Margin="0,0,30,0"/>
+
+					<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Source={x:Static lang:Language.StartDateTime}, Converter={StaticResource i18nAppendConverter}, ConverterParameter=:}" VerticalAlignment="Center"/>
+					<DatePicker Grid.Row="1" Grid.Column="1"  SelectedDate="{Binding SearchStartDateTime}" Width="{Binding #txtSetWidth.Bounds.Width, Mode=OneWay, Converter={StaticResource datePickerWidthConverter}}"
+					 Margin="5,0,0,0"/>
+
+					<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Source={x:Static lang:Language.EndDateTime}, Converter={StaticResource i18nAppendConverter}, ConverterParameter=:}" VerticalAlignment="Center" />
+					<DatePicker Grid.Row="1" Grid.Column="3" SelectedDate="{Binding SearchEndDateTime}"   Width="{Binding #txtSetWidth.Bounds.Width, Mode=OneWay, Converter={StaticResource datePickerWidthConverter}}" Margin="5,0,0,0"/>
+
+					<StackPanel  Grid.Row="1" Grid.Column="7" Spacing="10" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,30,0">
+						<Button Content="{i18n:I18n {x:Static lang:Language.Search}}" Classes="Flat Round" Classes.Delete="True"  Height="40" Command="{Binding SearchUserCommand}"  x:CompileBindings="False"/>
+						<Button Content="{i18n:I18n {x:Static lang:Language.Reset}}"  Classes="Flat Round" Height="40" HorizontalAlignment="Right" Command="{Binding ResetSearchCommand}" x:CompileBindings="False"/>
+					</StackPanel>
+				</Grid>
+			</suki:GlassCard>
+					
+			<suki:GlassCard Classes="HeaderClassed" Margin="10,5">
+				<StackPanel>
+					<!--增加和批量删除用户-->
+					<DockPanel>
+						<Button DockPanel.Dock="Right"  Classes="Flat Round" Classes.hasItems="{Binding Users.Count, Converter={StaticResource numToBoolConverter}}" Margin="0,0,0,0" Height="40" HorizontalAlignment="Right" Command="{Binding ExportCommand}" CommandParameter="{Binding $parent[Window]}" x:CompileBindings="False" Content="{i18n:I18n {x:Static lang:Language.ExportExcel}}"/>
+						<Button DockPanel.Dock="Right" Content="{i18n:I18n {x:Static lang:Language.Delete}}"  Classes="Flat Round" Classes.Delete="True"  Height="40" Margin="20,0" HorizontalAlignment="Right" Command="{Binding DeleteUserCommand}" CommandParameter="{Binding $parent[Window]}" x:CompileBindings="False"/>
+						<Button DockPanel.Dock="Right"  Margin="0,0,0,0" Content="{i18n:I18n {x:Static lang:Language.Add}}"  Classes="Flat Round" Height="40" HorizontalAlignment="Right" Command="{Binding AddCommand}" CommandParameter="{Binding $parent[Window]}" x:CompileBindings="False"/>
+					</DockPanel>
+		
+					<!--表格，显示数据-->
+					<Panel>
+					<DataGrid x:Name="dg" Margin="20,0,0,0" MinHeight="300" MaxHeight="480"
+							  ItemsSource="{Binding Users}"
+							  CanUserReorderColumns="True"
+							  CanUserResizeColumns="True"
+							  CanUserSortColumns="False"
+							  GridLinesVisibility="All"
+							  BorderThickness="1" 
+							  BorderBrush="Gray"
+							  VerticalScrollBarVisibility="Visible">
+						<!--<DataGrid.Styles>
+							<Style Selector="DataGridColumnHeader">
+								<Setter Property="Background" Value="Transparent" />
+								<Setter Property="HorizontalContentAlignment" Value="Center" />
+							</Style>
+						</DataGrid.Styles>-->
+						<DataGrid.Columns>
+							<!--全选复选框,Width="30"-->
+							<DataGridTemplateColumn Width="30">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate> 
+										<!--20250401, 在这里无法水平居中，占据太多空间-->
+										<!--<CheckBox Margin="40,0,0,0" IsThreeState="True" IsChecked="{Binding $parent[UserControl].DataContext.IsSelectedAll}" Command="{Binding $parent[UserControl].DataContext.SelectedAllCommand}" x:CompileBindings="False"/>-->
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<CheckBox HorizontalAlignment="Center" IsThreeState="False" IsChecked="{Binding IsSelected, Mode=TwoWay}" Command="{Binding SelectedCommand}"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+			
+							<!--修改按钮-->
+							<DataGridTemplateColumn Header="{i18n:I18n {x:Static lang:Language.Operate}}" Width="*">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Center">
+											<HyperlinkButton HorizontalAlignment="Center" VerticalAlignment="Center" Content="{i18n:I18n {x:Static lang:Language.Modify}}" Command="{Binding $parent[UserControl].DataContext.UpdateUserCommand}" CommandParameter="{Binding}" x:CompileBindings="False"/>
+										</TextBlock>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+
+							<!--其他字段属性-->
+
+							<!--Id-->
+							<DataGridTemplateColumn Width="*">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate>
+										<ToggleButton Content="{i18n:I18n {x:Static lang:Language.Id}}" Classes="DataGridHeader"  IsChecked="False" IsThreeState="False" Command="{Binding $parent[UserControl].DataContext.SortingCommand}" x:CompileBindings="False">
+											<ToggleButton.CommandParameter>
+												<MultiBinding Converter="{StaticResource listConverter}">
+													<Binding Source="Id"/>
+													<Binding Path="$self.IsChecked"/>
+												</MultiBinding>
+											</ToggleButton.CommandParameter>
+										</ToggleButton>
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Center" Text="{Binding Id, Mode=TwoWay}"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+							<!--Username-->
+							<DataGridTemplateColumn Width="*">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate>
+										<ToggleButton Content="{i18n:I18n {x:Static lang:Language.Username}}" Classes="DataGridHeader Right" IsChecked="False" IsThreeState="False" Command="{Binding $parent[UserControl].DataContext.SortingCommand}" x:CompileBindings="False">
+											<ToggleButton.CommandParameter>
+												<MultiBinding Converter="{StaticResource listConverter}">
+													<Binding Source="Username"/>
+													<Binding Path="$self.IsChecked"/>
+												</MultiBinding>
+											</ToggleButton.CommandParameter>
+										</ToggleButton>
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Left" Text="{Binding Username, Mode=TwoWay}"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+
+							<!--Password-->
+							<DataGridTemplateColumn Width="3*">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate>
+										<ToggleButton Content="{i18n:I18n {x:Static lang:Language.Password}}" Classes="DataGridHeader" IsChecked="False" IsThreeState="False" Command="{Binding $parent[UserControl].DataContext.SortingCommand}" x:CompileBindings="False">
+											<ToggleButton.CommandParameter>
+												<MultiBinding Converter="{StaticResource listConverter}">
+													<Binding Source="Password"/>
+													<Binding Path="$self.IsChecked"/>
+												</MultiBinding>
+											</ToggleButton.CommandParameter>
+										</ToggleButton>
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Left" Text="{Binding Password, Mode=TwoWay}" TextWrapping="Wrap"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+
+							<!--Email-->
+							<DataGridTemplateColumn Width="*">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate>
+										<ToggleButton Content="{i18n:I18n {x:Static lang:Language.Email}}" Classes="DataGridHeader" IsChecked="False" IsThreeState="False" Command="{Binding $parent[UserControl].DataContext.SortingCommand}" x:CompileBindings="False">
+											<ToggleButton.CommandParameter>
+												<MultiBinding Converter="{StaticResource listConverter}">
+													<Binding Source="Email"/>
+													<Binding Path="$self.IsChecked"/>
+												</MultiBinding>
+											</ToggleButton.CommandParameter>
+										</ToggleButton>
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Left" Text="{Binding Email, Mode=TwoWay}"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+
+							<!--Phone-->
+							<DataGridTemplateColumn Width="*">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate>
+										<ToggleButton Content="{i18n:I18n {x:Static lang:Language.Phone}}" Classes="DataGridHeader" IsChecked="False" IsThreeState="False" Command="{Binding $parent[UserControl].DataContext.SortingCommand}" x:CompileBindings="False">
+											<ToggleButton.CommandParameter>
+												<MultiBinding Converter="{StaticResource listConverter}">
+													<Binding Source="Phone"/>
+													<Binding Path="$self.IsChecked"/>
+												</MultiBinding>
+											</ToggleButton.CommandParameter>
+										</ToggleButton>
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Left" Text="{Binding Phone, Mode=TwoWay}"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+
+							<!--Status-->
+							<DataGridTemplateColumn Width="*">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate>
+										<ToggleButton Content="{i18n:I18n {x:Static lang:Language.Status}}" Classes="DataGridHeader" IsChecked="False" IsThreeState="False" Command="{Binding $parent[UserControl].DataContext.SortingCommand}" x:CompileBindings="False">
+											<ToggleButton.CommandParameter>
+												<MultiBinding Converter="{StaticResource listConverter}">
+													<Binding Source="Status"/>
+													<Binding Path="$self.IsChecked"/>
+												</MultiBinding>
+											</ToggleButton.CommandParameter>
+										</ToggleButton>
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Right" Text="{Binding Status, Mode=TwoWay}"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+
+							<!--CreatedAt-->
+							<DataGridTemplateColumn Width="1.5*">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate>
+										<ToggleButton Content="{i18n:I18n {x:Static lang:Language.CreatedDateTime}}" Classes="DataGridHeader" IsChecked="False" IsThreeState="False" Command="{Binding $parent[UserControl].DataContext.SortingCommand}" x:CompileBindings="False">
+											<ToggleButton.CommandParameter>
+												<MultiBinding Converter="{StaticResource listConverter}">
+													<Binding Source="CreatedAt"/>
+													<Binding Path="$self.IsChecked"/>
+												</MultiBinding>
+											</ToggleButton.CommandParameter>
+										</ToggleButton>
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Center" Text="{Binding CreatedAt, Mode=TwoWay}"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+
+							<!--UpdateAt-->
+							<DataGridTemplateColumn Width="1.5*">
+								<DataGridTemplateColumn.HeaderTemplate>
+									<DataTemplate>
+										<ToggleButton Classes="DataGridHeader" Theme="{StaticResource DataGridHeaderToggleButton}" Content="{i18n:I18n {x:Static lang:Language.UpdatedDateTime}}" IsChecked="False" IsThreeState="False" Command="{Binding $parent[UserControl].DataContext.SortingCommand}" x:CompileBindings="False">
+											<ToggleButton.CommandParameter>
+												<MultiBinding Converter="{StaticResource listConverter}">
+													<Binding Source="UpdatedAt"/>
+													<Binding Path="$self.IsChecked"/>
+												</MultiBinding>
+											</ToggleButton.CommandParameter>
+										</ToggleButton>
+									</DataTemplate>
+								</DataGridTemplateColumn.HeaderTemplate>
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate DataType="model:User">
+										<TextBlock HorizontalAlignment="Center" Text="{Binding UpdatedAt, Mode=TwoWay}"/>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+					
+						</DataGrid.Columns>
+						<DataGrid.ColumnHeaderTheme>
+							<ControlTheme TargetType="DataGridColumnHeader" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+								<ControlTheme.Children>
+									<Style Selector="^:nth-child(2)">
+										<Setter Property="HorizontalContentAlignment" Value="Center" />
+									</Style>
+									<Style Selector="^:nth-child(3)">
+										<Setter Property="HorizontalContentAlignment" Value="Center" />
+									</Style>
+									<Style Selector="^:nth-child(4)">
+										<Setter Property="HorizontalContentAlignment" Value="Left" />
+									</Style>
+									<Style Selector="^:nth-child(5)">
+										<Setter Property="HorizontalContentAlignment" Value="Left" />
+									</Style>
+									<Style Selector="^:nth-child(6)">
+										<Setter Property="HorizontalContentAlignment" Value="Left" />
+									</Style>
+									<Style Selector="^:nth-child(7)">
+										<Setter Property="HorizontalContentAlignment" Value="Left" />
+									</Style>
+									<Style Selector="^:nth-child(8)">
+										<Setter Property="HorizontalContentAlignment" Value="Right" />
+									</Style>
+									<Style Selector="^:nth-child(9)">
+										<Setter Property="HorizontalContentAlignment" Value="Center" />
+									</Style>
+									<Style Selector="^:nth-child(10)">
+										<Setter Property="HorizontalContentAlignment" Value="Center" />
+									</Style>
+								</ControlTheme.Children>
+							</ControlTheme>
+						</DataGrid.ColumnHeaderTheme>
+					</DataGrid>
+						<CheckBox IsThreeState="True" IsChecked="{Binding $parent[UserControl].DataContext.IsSelectedAll}" Command="{Binding $parent[UserControl].DataContext.SelectedAllCommand}" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,11"/>
+						</Panel>
+
+					<control:PagerBar 
+							FirstPageCommand="{Binding FirstPageCommand}"
+							PrevPageCommand="{Binding PrevPageCommand}"
+							NextPageCommand="{Binding NextPageCommand}"
+							LastPageCommand="{Binding LastPageCommand}"
+							GoToPageCommand="{Binding GoToPageCommand}"
+							SelectionChangedCommand="{Binding SelectionChangedCommand}"
+							AllCount="{Binding AllCount}"
+							PageCount="{Binding PageCount}"
+							CurrentPageIndex="{Binding CurrentPageIndex}"
+							CommandParameter="{Binding $self.IndexToGo}"
+							Margin="0,10,20,10"
+							x:CompileBindings="False"/>
+
+				</StackPanel>
+				
+				
+				</suki:GlassCard>
+			</StackPanel>
+		</Panel>
+</UserControl>

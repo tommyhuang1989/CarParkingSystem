@@ -1,0 +1,188 @@
+<suki:SukiWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:suki="https://github.com/kikipoulet/SukiUI"
+        xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+	    xmlns:vm="using:CarParkingSystem.ViewModels"
+		xmlns:i18n="https://codewf.com"
+		xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+		xmlns:cv="clr-namespace:CarParkingSystem.Converters;assembly=CarParkingSystem"
+		mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="550" Width="940" Height="550"
+        x:Class="CarParkingSystem.LoginWindow"
+        Title="LoginWindow"
+		CanMaximize="False"
+		CanMinimize="False"
+		IsTitleBarVisible="False"
+		WindowStartupLocation="CenterScreen"
+		x:DataType="vm:LoginWindowViewModel">
+	<suki:SukiWindow.Resources>
+		<cv:ImageConverter x:Key="imageConverter"/>
+	</suki:SukiWindow.Resources>
+
+	<suki:SukiWindow.Hosts>
+		<suki:SukiToastHost Manager="{Binding ToastManager}" Margin="0,0,20,20"/>
+		<suki:SukiDialogHost Manager="{Binding DialogManager}"/>
+	</suki:SukiWindow.Hosts>
+
+	<Panel>
+		<!--新的登录界面布局，20250228，tommy-->
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+
+			<Border
+                x:Name="HeaderBorder"
+                Grid.ColumnSpan="2"
+                Background="Transparent"/>
+
+			<Image
+                Grid.Row="1"
+                Margin="50"
+                Source="/Assets/Images/back.png" />
+
+			<DockPanel
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="15"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center">
+
+				<!--{i18n:I18n {x:Static lang:Language.LoginTitle}}-->
+				<TextBlock
+                    Margin="0,10,0,5"
+                    DockPanel.Dock="Top"
+                    FontSize="26"
+                    FontWeight="Bold"
+                    Text="{i18n:I18n {x:Static lang:Language.LoginTitle}}" />
+				<StackPanel DockPanel.Dock="Top">
+					<TextBox
+						Margin="0,12"
+						FontSize="14"
+						Width="450"
+						Height="40"
+						Text="{Binding Username}" Watermark="{i18n:I18n {x:Static lang:Language.InputUsername}}">
+					</TextBox>
+					<TextBlock
+						Margin="5,0,0,0"
+						FontSize="14"
+						Width="450"
+						Text="{Binding UsernameValidationMessage}" IsVisible="{Binding UsernameValidationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Foreground="Red"/>
+				</StackPanel>
+
+
+
+				<!--密码-->
+				<StackPanel DockPanel.Dock="Top">
+					<Grid Height="50" Margin="0,12,0,12">
+						<TextBox PasswordChar="*" Watermark="{i18n:I18n {x:Static lang:Language.InputPassword}}"
+							Margin="0,12"
+						FontSize="14"
+					Width="450"
+					Height="40" Text="{Binding Password}" RevealPassword="{Binding IsRevealPassword}"/>
+						<ToggleButton Width="30" Height="20" Padding="0" Margin="0,0,10,0" HorizontalAlignment="Right" Command="{Binding RevealPasswordCommand}" Classes="PathIconButton">
+							<PathIcon  Classes="Manual">
+								<PathIcon.Styles>
+									<Style Selector="PathIcon">
+										<Setter Property="Data" Value="{StaticResource eye_hide_regular}"/>
+									</Style>
+									<Style Selector="ToggleButton:checked>PathIcon">
+										<Setter Property="Data" Value="{StaticResource eye_show_regular}"/>
+									</Style>
+								</PathIcon.Styles>
+							</PathIcon>
+						</ToggleButton>
+					</Grid>
+					<TextBlock
+						Margin="5,0,0,0"
+						FontSize="14"
+						Width="450"
+						Text="{Binding PasswordValidationMessage}" IsVisible="{Binding PasswordValidationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Foreground="Red"/>
+				</StackPanel>
+				
+				<CheckBox
+                    Content="RememberMe"
+                    DockPanel.Dock="Top" Margin="0,0,0,5" IsVisible="False"/>
+				<Button
+                    Margin="0,12"
+                    Padding="5"
+					Height="40"
+					Classes="Flat Large"
+                    HorizontalAlignment="Stretch"
+                    DockPanel.Dock="Top"
+                    FontSize="14" Content="{i18n:I18n {x:Static lang:Language.LoginTitle}}" Command="{Binding LoginCommand}" 
+					HotKey="Enter"
+					>
+				</Button>
+
+				<!--邮箱登录 和 忘记密码 先隐藏-->
+				<DockPanel DockPanel.Dock="Top" Margin="0,10" IsVisible="False">
+					<TextBlock
+                        DockPanel.Dock="Right"
+                        FontWeight="Bold"
+                        Text="{i18n:I18n {x:Static lang:Language.ForgetPassword}}">
+					</TextBlock>
+					<TextBlock FontWeight="Bold" Text="{i18n:I18n {x:Static lang:Language.EmailActivation}}">
+					</TextBlock>
+				</DockPanel>
+				
+				<!--底部多语言选择列表-->
+				<ItemsControl Margin="0,0,0,0" ItemsSource="{Binding Languages}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel Orientation="Horizontal" />
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Button Command="{Binding $parent[Panel].DataContext.ChangeLanguageCommand}" x:CompileBindings="False"
+                                CommandParameter="{Binding}"
+                                 Classes="None PathIconButton" ToolTip.Tip="{Binding Name}">
+								<Image Source="{Binding DisplayName, Converter={StaticResource imageConverter}}"
+                                    Width="20"
+                                    Height="20"/>
+							</Button>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</DockPanel>
+		</Grid>
+
+		<!--右上角换肤按钮-->
+		<Button 
+				Classes="Rounded PathIconButton"
+				Width="24"
+				Height="24"
+			Margin="0,10,50,0" Padding="0"
+		  HorizontalAlignment="Right"
+		  VerticalAlignment="Top"
+				HorizontalContentAlignment="Center"
+				FontSize="12"
+				FontWeight="DemiBold" Command="{Binding MainVM.ToggleBaseThemeCommand}" ToolTip.Tip="{i18n:I18n {x:Static lang:Language.SwitchTheme}}">
+			<PathIcon Data="{StaticResource lightbulb_filament_regular}" Classes="Manual"/>
+		</Button>
+		
+		<!--右上角关闭按钮-->
+		<Button Name="ButtonClose"
+				Classes="Rounded PathIconButton"
+				Width="24"
+				Height="24"
+			Margin="0,10,10,0" Padding="0"
+		  HorizontalAlignment="Right"
+		  VerticalAlignment="Top"
+				HorizontalContentAlignment="Center"
+				FontSize="12"
+				FontWeight="DemiBold" Command="{Binding CloseCommand}">
+			<PathIcon Data="{x:Static suki:Icons.CircleOutlineClose}"  Classes="Manual">
+			</PathIcon>
+		</Button>
+	</Panel>
+
+</suki:SukiWindow>

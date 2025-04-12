@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:cv="using:CarParkingSystem.Converters">
+	
+	<!--<cv:ImageConvert x:Key="imageConvert"/>-->
+	<cv:ListConverter x:Key="listConverter"/>
+	<cv:IndexToGoConverter x:Key="indexToGoConverter"/>
+	<cv:NumToBoolConverter x:Key="numToBoolConverter"/>
+	<cv:I18nAppendConverter x:Key="i18nAppendConverter"/>
+	<cv:SukiBackgroundStyleConverter x:Key="sukiBackgroundStyleConverter"/>
+	<cv:ShowFirstMenuConverter x:Key="showFirstMenuConverter"/>
+	<cv:ShowHiddenPageConverter x:Key="showHiddenPageConverter"/>
+	<cv:CheckBoxStateConverter x:Key="checkBoxStateConverter"/>
+	<cv:DatePickerWidthConverter x:Key="datePickerWidthConverter"/>
+	<cv:DateTimeFormatConverter x:Key="dateTimeFormatConverter"/>
+</ResourceDictionary>

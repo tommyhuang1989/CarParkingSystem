@@ -1,0 +1,101 @@
+<suki:SukiWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:suki="https://github.com/kikipoulet/SukiUI"
+		xmlns:i18n="https://codewf.com"
+		xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+		xmlns:vm="using:CarParkingSystem.ViewModels"
+		xmlns:cv="using:CarParkingSystem.Converters"
+		xmlns:ap="using:CarParkingSystem.AttachedProperty"
+        mc:Ignorable="d" d:DesignWidth="580" d:DesignHeight="480"
+		Width="580" SizeToContent="Height"
+        x:Class="CarParkingSystem.UserActionWindow"
+        Title="{Binding Title}"
+		IsTitleBarVisible="False"
+		WindowStartupLocation="CenterOwner"
+				 CanMaximize="False"
+				 CanResize="False"
+		x:DataType="vm:UserActionWindowViewModel">
+	<suki:SukiWindow.Resources>
+		<cv:ActionPageTypeConverter x:Key="actionTypeConverter"/>
+	</suki:SukiWindow.Resources>
+	
+	<suki:SukiWindow.Hosts>
+		<Panel HorizontalAlignment="Center" VerticalAlignment="Center">
+			<suki:SukiToastHost Manager="{Binding ToastManager}" />
+		</Panel>
+		<suki:SukiDialogHost Manager="{Binding DialogManager}"/>
+	</suki:SukiWindow.Hosts>
+	
+	<Panel>
+		<StackPanel Spacing="5" Margin="20,30,20,30">
+			<TextBlock Text="{Binding Title}" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="10,20"/>
+			<!--Username-->
+			<Grid ColumnDefinitions="3*,5*,3*" IsVisible="{Binding IsAddUser}" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="*" Foreground="Red"/>
+					<Run Text="{i18n:I18n {x:Static lang:Language.Username}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding Username}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterUsername}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False"/>
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding UsernameValidationMessage}" IsVisible="{Binding UsernameValidationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center" Margin="10,0,0,0"/>
+			</Grid>
+			<!--Password-->
+			<Grid ColumnDefinitions="3*,5*,3*" IsVisible="{Binding IsAddUser}" ShowGridLines="False">
+				<TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="*" Foreground="Red"/>
+					<Run Text="{i18n:I18n {x:Static lang:Language.Password}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="2" Grid.Column="1"  Height="50" VerticalAlignment="Center" PasswordChar="*" Text="{Binding Password}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterPassword}}" suki:TextBoxExtensions.AddDeleteButton="True"/>
+				<TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding PasswordValidationMessage}" IsVisible="{Binding PasswordValidationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center" Margin="10,0,0,0"/>
+			</Grid>
+			
+			<!--Email-->
+			<Grid ColumnDefinitions="3*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="*" Foreground="Red"/>
+					<Run Text="{i18n:I18n {x:Static lang:Language.Email}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="3" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding Email}"  Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterEmail}}" suki:TextBoxExtensions.AddDeleteButton="True"/>
+				<TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding EmailValidationMessage}" IsVisible="{Binding EmailValidationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center" Margin="10,0,0,0"/>
+			</Grid>
+			
+			<!--Phone-->
+			<Grid ColumnDefinitions="3*,5*,3*" ShowGridLines="False">
+
+				<TextBlock Grid.Row="4"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<Run Text="*" Foreground="Red"/>
+					<Run Text="{i18n:I18n {x:Static lang:Language.Phone}}"/>
+				</TextBlock>
+				<!--<MaskedTextBox Grid.Row="4" Grid.Column="1"  Margin="10,0,10,0" VerticalAlignment="Center" Text="{Binding Phone}" Mask="000 0000 0000" suki:TextBoxExtensions.AddDeleteButton="True"/>-->
+				<TextBox Grid.Row="4" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding Phone}"  Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterPhone}}" suki:TextBoxExtensions.AddDeleteButton="True"/>
+				<TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding PhoneValidationMessage}" IsVisible="{Binding PhoneValidationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center" Margin="10,0,0,0"/>
+			</Grid>
+
+
+
+			<!--Add or Update Button-->
+			<Grid ColumnDefinitions="3*,5*,3*" ShowGridLines="False">
+				<StackPanel Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" >
+					<TextBlock Text="{Binding UpdateInfo}" Foreground="Red" HorizontalAlignment="Left" Margin="0,10"/>
+					<Button Content="{i18n:I18n {x:Static lang:Language.Add}}" Command="{Binding AddCommand}" Classes="Flat" Margin="5,0,0,30" Height="50" MinWidth="150"
+							IsVisible="{Binding IsAddUser}" HotKey="Enter"/>
+					<Button Content="{i18n:I18n {x:Static lang:Language.Update}}" Command="{Binding UpdateCommand}" Classes="Flat" Margin="5,0,0,30" Height="50" MinWidth="150" IsVisible="{Binding !IsAddUser}" HotKey="Enter"/>
+				</StackPanel>
+			</Grid>
+		</StackPanel>
+		<!--右上角关闭按钮-->
+		<Button Classes="Rounded PathIconButton"
+				Width="24"
+				Height="24"
+			Margin="0,10,10,0" Padding="0"
+		  HorizontalAlignment="Right"
+		  VerticalAlignment="Top"
+				HorizontalContentAlignment="Center"
+				FontSize="12"
+				FontWeight="DemiBold" Command="{Binding CloseCommand}">
+			<PathIcon Data="{x:Static suki:Icons.CircleOutlineClose}"  Classes="Manual">
+			</PathIcon>
+		</Button>
+	</Panel>
+</suki:SukiWindow>

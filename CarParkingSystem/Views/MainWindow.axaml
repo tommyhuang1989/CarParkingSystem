@@ -1,0 +1,180 @@
+<suki:SukiWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CarParkingSystem.ViewModels"
+		xmlns:v="using:CarParkingSystem.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+        xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+		xmlns:converter="using:CarParkingSystem.Converters"
+		xmlns:control="using:CarParkingSystem.Controls"
+		xmlns:ap="using:CarParkingSystem.AttachedProperty"
+        xmlns:suki="https://github.com/kikipoulet/SukiUI"
+		xmlns:sukiEnum="using:SukiUI.Enums"
+		xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+			 xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="900"
+        x:Class="CarParkingSystem.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+		BackgroundAnimationEnabled="{Binding AnimationsEnabled}"
+                 BackgroundShaderFile="{Binding CustomShaderFile}"
+                 BackgroundStyle="{Binding BackgroundStyle}"
+                 BackgroundTransitionsEnabled="{Binding TransitionsEnabled}"
+                 CanMinimize="{Binding !WindowLocked}"
+                 CanMove="{Binding !WindowLocked}"
+                 CanResize="{Binding !WindowLocked}"
+                 IsMenuVisible="True"
+                 ShowTitlebarBackground="{Binding ShowTitleBar}" ShowBottomBorder="{Binding ShowBottomBar}"
+                 IsTitleBarVisible="{Binding TitleBarVisible, Mode=TwoWay}"
+        Title="CarParkingSystem"
+		WindowStartupLocation="CenterOwner">
+    <!--<Design.DataContext>-->
+         <!--This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)--> 
+        <!--<vm:MainWindowViewModel/>
+    </Design.DataContext>-->
+	
+	<!--Toast 和 Dialog-->
+	<suki:SukiWindow.Hosts>
+		<Panel HorizontalAlignment="Center" VerticalAlignment="Center">
+			<suki:SukiToastHost x:Name="toastManager" Manager="{Binding ToastManager}" />
+		</Panel>
+		<suki:SukiDialogHost x:Name="dialogManager" Manager="{Binding DialogManager}"/>
+		<Border Background="#80000000" IsHitTestVisible="True" Opacity="0.5" IsVisible="{Binding IsBusy}"/>
+	</suki:SukiWindow.Hosts>
+
+
+	<!--菜单-->
+	<suki:SukiWindow.MenuItems>
+		<MenuItem Header="{i18n:I18n {x:Static lang:Language.Toggles}}">
+			<MenuItem Command="{Binding ToggleBaseThemeCommand}" Header="{i18n:I18n {Binding WillChangeTheme.Key}}">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon Kind="Lightbulb" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem Command="{Binding ToggleWindowLockCommand}"
+                      Header="{i18n:I18n {x:Static lang:Language.WindowLock}}"
+                      ToolTip.Tip="{i18n:I18n {x:Static lang:Language.TogglesMinimizingAndResizing}}">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon
+                        Kind="{Binding WindowLocked, Converter={x:Static converter:BoolToIconConverters.WindowLock}}" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem Command="{Binding ToggleTitleBarCommand}"
+                      Header="{i18n:I18n {x:Static lang:Language.TitleBar}}"
+                      ToolTip.Tip="{i18n:I18n {x:Static lang:Language.TogglesTheTitleBar}}">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon
+                        Kind="{Binding TitleBarVisible, Converter={x:Static converter:BoolToIconConverters.Visibility}}" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem Command="{Binding ToggleTitleBackgroundCommand}"
+                      Header="{i18n:I18n {x:Static lang:Language.ChangeTitleBarBackgroundVisibility}}"
+                  >
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon Kind="Visibility" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem Command="{Binding ToggleRightToLeftCommand}"
+                      Header="{i18n:I18n {x:Static lang:Language.RightToLeft}}"
+                      ToolTip.Tip="{i18n:I18n {x:Static lang:Language.TogglesTheRightToLeft}}">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon
+                        Kind="SwapHorizontal" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem Header="{i18n:I18n {x:Static lang:Language.Fullscreen}}"
+                      PointerPressed="MakeFullScreenPressed"
+                      ToolTip.Tip="{i18n:I18n {x:Static lang:Language.MakesTheAppFullscreen}}" />
+		</MenuItem>
+		<MenuItem Header="{i18n:I18n {x:Static lang:Language.Theme}}">
+			<MenuItem Click="ThemeMenuItem_OnClick"
+                      Header="{i18n:I18n {x:Static lang:Language.SwitchTo}}"
+                      ItemsSource="{Binding Themes}">
+				<MenuItem.DataTemplates>
+					<DataTemplate DataType="{x:Type suki:SukiColorTheme}">
+						<TextBlock Foreground="{Binding PrimaryBrush}" Text="{i18n:I18n {Binding DisplayName}}" />
+					</DataTemplate>
+				</MenuItem.DataTemplates>
+			</MenuItem>
+			<!--<MenuItem Header="-" />
+			<MenuItem Command="{Binding CreateCustomThemeCommand}" Header="{i18n:I18n {x:Static lang:Language.CreateCustom}}" />-->
+			<!--来回切换会有问题-->
+			<!--<MenuItem Header="-" />
+			<MenuItem Command="{Binding ShadCnModeCommand}" Header="{i18n:I18n {x:Static lang:Language.ShadcnMode}}" />-->
+		</MenuItem>
+		<MenuItem Header="{i18n:I18n {x:Static lang:Language.Background}}">
+			<MenuItem Click="BackgroundMenuItem_OnClick"
+                      Header="{i18n:I18n {x:Static lang:Language.SwitchTo}}"
+                      ItemsSource="{Binding BackgroundStyles}">
+				<MenuItem.DataTemplates>
+					<DataTemplate DataType="{x:Type sukiEnum:SukiBackgroundStyle}">
+						<TextBlock Text="{i18n:I18n {Binding Converter={StaticResource sukiBackgroundStyleConverter}}}" x:CompileBindings="False"/>
+					</DataTemplate>
+				</MenuItem.DataTemplates>
+			</MenuItem>
+			<MenuItem Header="-" />
+			<MenuItem Command="{Binding ToggleAnimationsCommand}" Header="{i18n:I18n {x:Static lang:Language.Animations}}">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon
+                        Kind="{Binding AnimationsEnabled, Converter={x:Static converter:BoolToIconConverters.Animation}}" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem Command="{Binding ToggleTransitionsCommand}" Header="{i18n:I18n {x:Static lang:Language.Transitions}}">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon
+                        Kind="{Binding TransitionsEnabled, Converter={x:Static converter:BoolToIconConverters.Animation}}" />
+				</MenuItem.Icon>
+			</MenuItem>
+		</MenuItem>
+		<!--代码生成不需要再显示了，一级菜单通过手动修改即可-->
+		<MenuItem Header="代码生成" Foreground="{DynamicResource HighlightBrush}" IsVisible="False">
+			<MenuItem Command="{Binding OpenCreateCommand}" Header="打开代码生成窗口">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon Kind="Lightbulb" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem Command="{Binding CreateFirstFloorCommand}" Header="生成一级菜单">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon Kind="Lightbulb" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem Command="{Binding ChangeFileCommand}" Header="转换文件">
+				<MenuItem.Icon>
+					<avalonia:MaterialIcon Kind="Lightbulb" />
+				</MenuItem.Icon>
+			</MenuItem>
+		</MenuItem>
+	</suki:SukiWindow.MenuItems>
+	
+	
+	<!--<suki:SukiSideMenu ItemsSource="{Binding DemoPages}" SelectedItem="{Binding ActivePage}">
+		<suki:SukiSideMenu.Styles>
+			<Style Selector="Image.AppIcon">
+				<Setter Property="Transitions">
+					<Transitions>
+						<DoubleTransition Property="Opacity" Duration="0.1" />
+					</Transitions>
+				</Setter>
+				<Style Selector="^:pointerover">
+					<Setter Property="Opacity" Value="0.5" />
+				</Style>
+			</Style>
+		</suki:SukiSideMenu.Styles>
+		<suki:SukiSideMenu.ItemTemplate>
+			<DataTemplate>
+				<suki:SukiSideMenuItem Classes="Compact" Header="{Binding DisplayName}">
+					<suki:SukiSideMenuItem.Icon>
+						<avalonia:MaterialIcon Kind="{Binding Icon}" />
+					</suki:SukiSideMenuItem.Icon>
+				</suki:SukiSideMenuItem>
+			</DataTemplate>
+		</suki:SukiSideMenu.ItemTemplate>
+	</suki:SukiSideMenu>-->
+
+	<!--页面主内容-->
+	<v:MainView/>
+</suki:SukiWindow>

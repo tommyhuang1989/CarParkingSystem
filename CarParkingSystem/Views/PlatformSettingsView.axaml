@@ -1,0 +1,107 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:suki="https://github.com/kikipoulet/SukiUI"
+			 xmlns:i18n="https://codewf.com"
+			 xmlns:lang="clr-namespace:CarParkingSystem.I18n;assembly=CarParkingSystem"
+			 xmlns:vm="using:CarParkingSystem.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CarParkingSystem.PlatformSettingsView"
+			 x:DataType="vm:PlatformSettingsViewModel">
+
+	<ScrollViewer MaxHeight="650">
+		<StackPanel Spacing="5" Margin="0, 0, 20, 0">
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.PayType}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding PayType}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterPayType}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding PayTimeValidationMessage}" IsVisible="{Binding PayTimeValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.UpdateUser}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding UpdateUser}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterUpdateUser}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding UpdateUserValidationMessage}" IsVisible="{Binding UpdateUserValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.UpdateDate}}"/>
+				</TextBlock>
+				<!--Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterUpdateDate}}"-->
+				<!--<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding UpdateDate}"  suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />-->
+				<CalendarDatePicker Grid.Row="1" Grid.Column="1" SelectedDate="{Binding UpdateDate, Converter={StaticResource dateTimeFormatConverter}}" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" Watermark="{i18n:I18n {x:Static lang:Language.PleaseSelectDate}}" Margin="5,0,5,0"/>
+
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding UpdateDateValidationMessage}" IsVisible="{Binding UpdateDateValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.PayTime}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding PayTime}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterPayTime}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding PayTimeValidationMessage}" IsVisible="{Binding PayTimeValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.Merchant}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding Merchant}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterMerchant}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding MerchantValidationMessage}" IsVisible="{Binding MerchantValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.PayUuid}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding PayUuid}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterPayUuid}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding PayUuidValidationMessage}" IsVisible="{Binding PayUuidValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.ParkUuid}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding ParkUuid}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterParkUuid}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding ParkUuidValidationMessage}" IsVisible="{Binding ParkUuidValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.RemainingCars}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding RemainingCars}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterRemainingCars}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding RemainingCarsValidationMessage}" IsVisible="{Binding RemainingCarsValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+					<!--<Run Text="*" Foreground="Red"/>-->
+					<Run Text="{i18n:I18n {x:Static lang:Language.TotalCars}}"/>
+				</TextBlock>
+				<TextBox Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Center" Text="{Binding TotalCars}" Watermark="{i18n:I18n {x:Static lang:Language.PleaseEnterTotalCars}}" suki:TextBoxExtensions.AddDeleteButton="True" x:CompileBindings="False" />
+				<TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding TotalCarsValidationMessage}" IsVisible="{Binding TotalCarsValidationMessage, Converter = {x:Static StringConverters.IsNotNullOrEmpty}}" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+			</Grid>
+
+			<Grid ColumnDefinitions="1.5*,5*,3*" ShowGridLines="False">
+				<StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Orientation="Horizontal">
+					<TextBlock Text="{Binding UpdateInfo}" Foreground="Red" HorizontalAlignment="Left" Margin="0,10"/>
+					<Button  Content="{i18n:I18n {x:Static lang:Language.Save}}" Command="{Binding SaveCommand}" MinWidth="180" HorizontalAlignment="Left" Margin="5,40,0,10"/>
+				</StackPanel>
+			</Grid>
+		</StackPanel>
+	</ScrollViewer>
+</UserControl>
